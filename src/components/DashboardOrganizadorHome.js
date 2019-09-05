@@ -170,7 +170,7 @@ class DashboardOrganizadorHome extends Component {
                                                 <i className="ng-user-filled"></i>
                                             </div>
                                             <div className="flex-column">
-                                                <span>{invited.items.length !== 0 ? invited.items.Todos : ''}</span>
+                                                <span>{invited.items.length !== 0 ? invited.items.Todos : 0}</span>
                                                 <p>Pessoas convidadas</p>
                                                 <p className="txt-card-mobile">Convidados</p>
 
@@ -191,7 +191,7 @@ class DashboardOrganizadorHome extends Component {
                                                 <i className="ng-hearth"></i>
                                             </div>
                                             <div className="flex-column">
-                                                <span>{invited.items.length !== 0 ? invited.items.Confirmado : ''}</span>
+                                                <span>{invited.items.length !== 0 ? invited.items.Confirmado : 0}</span>
                                                 <p>Pessoas confirmadas</p>
                                                 <p className="txt-card-mobile">Confirmados</p>
                                             </div>
@@ -208,7 +208,7 @@ class DashboardOrganizadorHome extends Component {
                                                 <i className="ng-arrow-down"></i>
                                             </div>
                                             <div className="flex-column">
-                                                <span>{invited.items.length !== 0 ? invited.items.Naovai : ''}</span>
+                                                <span>{invited.items.length !== 0 ? invited.items.Naovai : 0}</span>
                                                 <p>Não comparecerão</p>
                                                 <p className="txt-card-mobile">Não vão</p>
                                             </div>

@@ -4644,24 +4644,6 @@ body.home {
     position: relative
 }
 
-.buscar-festa .container.md,
-.contato .container.md,
-.galeria-de-templates .container.md,
-.home .container.md,
-.login .container.md,
-.sobre .container.md {
-    max-width: 55%
-}
-
-.buscar-festa .container.lg,
-.contato .container.lg,
-.galeria-de-templates .container.lg,
-.home .container.lg,
-.login .container.lg,
-.sobre .container.lg {
-    max-width: 85.8%
-}
-
 .buscar-festa .container.md:last-of-type,
 .galeria-de-templates .container.md:last-of-type,
 .sobre .container.md:last-of-type {
@@ -8402,6 +8384,10 @@ body.contato {
     display: none
 }
 
+.fileContainer > p {
+    opacity: 0;
+}
+
 @media (max-width: 1330px) {
     .responsive .container {
         max-width: 85%
@@ -10060,11 +10046,11 @@ body.contato {
     }
 }
 
-@media (max-height: 450px) {
+/*@media (max-height: 450px) {
     .area-convidado {
         display: none
     }
-}
+}*/
 
 @media (max-height: 528px) {
     .ticket-content button {

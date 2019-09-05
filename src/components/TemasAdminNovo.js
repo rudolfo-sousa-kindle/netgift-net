@@ -323,7 +323,9 @@ class TemasAdminNovo extends Component {
 				values["footer_background_image_mobile"] = $("input[name='background_footer_image_mobile']").val();
 
 				// console.log(values)
-				this.props.dispatch(addThemes(values));
+				this.props.dispatch(addThemes(values)).then( ( res ) => {
+					console.log( res )
+				});
 			}
 
 	componentDidMount(){

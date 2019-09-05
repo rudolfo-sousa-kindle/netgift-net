@@ -6987,17 +6987,6 @@ body.contato {
     display: inline-block
 }
 
-.area-convidado .modal.confirmar-presenca .modal-content .ticket-form form input,
-.ticket-form select {
-    width: 100%;
-    border: 1px solid #dbdddf;
-    height: 50px;
-    padding: 0 15px;
-    font-size: 14px;
-    font-weight: 300;
-    background: #FFF;
-    margin-bottom: 10px
-}
 
 .ticket-form select {
     border-radius: 6px;

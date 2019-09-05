@@ -6,13 +6,7 @@ header.default nav.menu-mob,
 	display: none;
 }
 
-.galeria-de-templates .logo-mob,
-.sobre .logo-mob,
-.contato .logo-mob,
-.buscar-festa .logo-mob {
-	display: block;
-	width: 166px;
-}
+
 
 .galeria-de-templates .logo-desk,
 .sobre .logo-desk,

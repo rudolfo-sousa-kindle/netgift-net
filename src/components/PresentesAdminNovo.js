@@ -8,6 +8,7 @@ import { fetchCategories, fetchSetCategories } from "../actions/categoriesAction
 import setSelect2 from "../assets/js/setSelect2";
 import CreatableSelect from 'react-select/creatable';
 import Loader from "./Loader";
+import setMask from '../assets/js/mask'
 
 const image2base64 = require('image-to-base64');
 
@@ -25,6 +26,7 @@ class PresentesAdminNovo extends Component {
 
     componentDidMount(){
         setSelect2();
+        setMask();
         this.props.fetchGiftCategories();
     }
 
@@ -84,7 +86,6 @@ class PresentesAdminNovo extends Component {
         }
 
         $("input[name=tema-categoria]").val(cat);
-        console.log( actionMeta );
     }
 
     submit = (e) => {
@@ -234,7 +235,7 @@ class PresentesAdminNovo extends Component {
                                             buttonText="Adicionar foto"
                                             withIcon={false}
                                             onChange={this.onDrop}
-                                            imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                                            imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
                                             maxFileSize={5242880}
                                             withPreview={true}
                                             singleImage={true}

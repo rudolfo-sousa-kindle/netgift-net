@@ -100,35 +100,6 @@ $(window).ready(function () {
             }
         },
         submitHandler: function (form) {
-            console.log( 'teste' );
         }
     })
-    
-    $('form[name="dado-convidado"]').validate({
-        rules: {
-            nome_convidado: {
-                required: true,
-                minlength: 2
-            },
-            email_convidado: {
-                required: true,
-                minlength: 4
-            },
-            telefone_convidado: {
-                required: true,
-                minlength: 10
-            }
-        },
-        
-        errorPlacement: function (error, element) {
-            element.addClass("formError");
-        },
-        
-        unhighlight:  function (element, errorClass, validClass) {
-            $(element).removeClass(errorClass).removeClass('formError').addClass(validClass);
-        },
-        submitHandler: function (form) {
-            //funcao se tudo estiver ok
-        }
-    });
 })

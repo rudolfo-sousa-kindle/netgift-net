@@ -44,7 +44,6 @@ export default class MenuDash extends Component {
                         <img src={Logo} alt="NetGift" width="150" />
                     </a>
                     <div className="flex flex-center admin-info">
-                        <img src={picture_path ? picture_path : this.state.avatar} alt={first_name} />
                         <div className="flex flex-column">
                             <p>Olá, {first_name + " " + last_name}</p>
                             <small>{ admin ? "Administrador" : "Organizador"}</small>

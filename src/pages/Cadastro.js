@@ -269,7 +269,7 @@ class Cadastro extends Component {
                                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                 </svg>
                             </span>
-                            Li e <span className="label-none">estou de acordo com</span> <span className="label-visible-mobile">aceito</span> os <Link className="cyan" to="">Termos e Condições.</Link>
+                            Li e <span className="label-none">estou de acordo com</span> <span className="label-visible-mobile">aceito</span> os <a className="cyan" href="/termos-de-servico" target="_blank">Termos e Condições.</a>
                         </label>
 
                     </div>

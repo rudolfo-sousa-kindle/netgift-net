@@ -75,6 +75,34 @@ div.sn-nav-wrapper {
     height: 100vh;
 }
 
+.nb-spinner {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background: transparent;
+    border-top: 3px solid #e0d5d5;
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    display: none;
+    -webkit-animation: 1s spin linear infinite;
+    animation: 1s spin linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
 .convidados-3 .hide-desk {
     margin-top: 13px;
 }
@@ -4973,12 +5001,17 @@ body.home {
 .galeria-de-templates .container,
 .home .container,
 .login .container,
-.sobre .container {
+.sobre .container,
+.termos .container {
     max-width: 72.5%;
     width: 100%;
     margin: 0 auto;
     z-index: 6;
     position: relative
+}
+
+.termos .terms-content {
+    margin-bottom: 200px;
 }
 
 .buscar-festa .container.md,
@@ -4995,7 +5028,8 @@ body.home {
 .galeria-de-templates .container.lg,
 .home .container.lg,
 .login .container.lg,
-.sobre .container.lg {
+.sobre .container.lg,
+.termos .container.lg {
     max-width: 85.8%
 }
 
@@ -5003,6 +5037,33 @@ body.home {
 .galeria-de-templates .container.md:last-of-type,
 .sobre .container.md:last-of-type {
     padding-bottom: 250px
+}
+
+.termos main {
+    position: relative;
+    z-index: 0;
+}
+
+.termos .title {
+    margin-bottom: 50px;
+}
+
+.terms-content .terms-text {
+    margin-bottom: 15px;
+    line-height: 21px;
+}
+
+.terms-content .terms-title {
+    margin: 30px 0 13px 0;
+    font-size: 22px;
+}
+
+.terms-content .sub-item {
+    margin-left: 18px
+}
+
+.terms-content.politics-content {
+    margin-bottom: 200px;
 }
 
 .container.md {
@@ -6092,7 +6153,8 @@ form.informacoes-gerais .email {
 }
 
 .modal-invited form .buttons > button:first-child,
-.modal-invited .buttons .gradient {
+.modal-invited .buttons .gradient,
+.novo-usuario form .buttons button {
     height: 45px;
     margin: 0;
 }
@@ -7499,6 +7561,20 @@ body.contato {
     font-weight: 400;
     align-self: flex-end
 }
+
+.area-convidado .modal.confirmar-presenca .modal-content .ticket-form form input,
+.ticket-form select {
+    width: 100%;
+    border: 1px solid #dbdddf;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 300;
+    background: #FFF;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+
 
 @media (max-width: 1685px) {
     .area-convidado.modal.confirmar-presenca .modal-content .ticket-title {

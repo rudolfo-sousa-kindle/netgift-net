@@ -73,7 +73,7 @@ class SiteFesta extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { pictures: [],  tituloSaudacao : "", theme: '', pictureSaudacao : [], picturesFoto : [] };
+        this.state = { pictures: [],  tituloSaudacao : "", theme: '', pictureSaudacao : [], picturesFoto : [], album : [] };
         this.onDrop = this.onDrop.bind(this);
         this.onDropSaudacao = this.onDropSaudacao.bind(this);
         this.onDropFotos = this.onDropFotos.bind(this);
@@ -86,6 +86,18 @@ class SiteFesta extends Component {
         this.props.fetchThemes( null, null, null, null, null, 1);
         this.props.fetchGetEvent(this.props.match.params.id)
         .then((res) => {
+            res.EVENTO.event_pictures.map((item) => {
+                // console.log(item.url)
+                this.setState({
+                    album : this.state.album.concat(item.url)
+                })
+                // console.log(this.state)
+                this.state.album.map((item) => {
+                    console.log(item)
+                    var div = "<div className='photo-album' style=background-image: url(" + item + "))></div>"
+                    $("#grid-album").append(div);
+                })
+            })
             this.props.fetchTheme(res.EVENTO.theme_id).then((res) => {
                 var sessions = {};
 
@@ -285,7 +297,6 @@ class SiteFesta extends Component {
     render() {
         const {items} = this.props.themes;
         const {EVENTO} = this.props.event.items
-        console.log(EVENTO)
 
         if(EVENTO){
             $("#enderecoEscrito").text(EVENTO.address.street);

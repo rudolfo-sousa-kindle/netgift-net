@@ -34,7 +34,6 @@ class Inviteds extends Component {
     render() {
         const { invited } = this.props;
         const { items } = invited;
-        console.log(invited)
         const { invites, invites_confirmados, invites_nao_comparecera, invites_nao_confirmados } = items;
 
         switch ( this.props.filter ) {

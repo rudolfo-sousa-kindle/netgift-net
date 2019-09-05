@@ -9,7 +9,7 @@ import $ from 'jquery';
 import ConfirmarPresenca from '../components/ConfirmarPresenca';
 import { fetchGetEvent } from '../actions';
 import { fetchThemeConfigurations } from '../actions/themeConfigurationsAction';
-import { bgImage, defaultStyle } from "../components/styleFunctions";
+import { bgImage, defaultStyle, bgColor } from "../components/styleFunctions";
 
 import logo from '../assets/imgs/logo.png';
 import img1 from '../assets/imgs/jogo-de-cama.png';
@@ -23,8 +23,17 @@ import '../assets/css/style-theme.css';
 
 class HomeConvidado extends Component {
     componentDidMount() {
-        console.log(this.props.match.params.id)
-        this.props.fetchGetEvent(this.props.match.params.id);
+
+        this.props.fetchGetEvent(this.props.match.params.id).then( (res) => {
+          this.setState({
+            event: res
+          });
+        } );
+
+    }
+
+    state = {
+      event: []
     }
 
     render() {
@@ -38,115 +47,184 @@ class HomeConvidado extends Component {
         const event_gifts_link = "/festa/" + id + "/lista-de-presentes";
         const event_cart_link = "/festa/" + id + "/carrinho";
         const { error, loading, fetchThemeConfigurations, event } = this.props;
-        
+
         moment.locale('pt-br');
+
+        if(this.state.event.length !== 0) {
+            var id_event   = this.state.event.EVENTO.id;
+            var name_event = this.state.event.EVENTO.name;
+        }
+
+
+        var sessions = {};
+
+        sessions['header'] = {};
+        sessions['header']["titulo"] = {};
+        sessions['header']["data"] = {};
+        sessions['header']["cta_presentear"] = {};
+        sessions['header']["cta_confirmar_presenca"] = {};
+        sessions['header']["faltam_n_dias"] = {};
+        sessions['header']["background"] = {};
+
+        sessions['saudacao'] = {};
+        sessions['saudacao']["titulo"] = {};
+        sessions['saudacao']["descricao"] = {};
+        sessions['saudacao']["background"] = {};
+
+        sessions['localizacao'] = {};
+        sessions['localizacao']["titulo"] = {};
+        sessions['localizacao']["data"] = {};
+        sessions['localizacao']["endereco"] = {};
+        sessions['localizacao']["background"] = {};
+
+        sessions['fotos'] = {}
+        sessions['fotos']["titulo"] = {};
+        sessions['fotos']["background"] = {};
+
+        sessions['rodape'] = {};
+        sessions['rodape']["titulo"] = {};
+        sessions['rodape']["cta_presentear"] = {};
+        sessions['rodape']["cta_confirmar_presenca"] = {};
+        sessions['rodape']["faltam_n_dias"] = {};
+        sessions['rodape']["background"] = {};
+
+        sessions['casamento-welcome'] = {};
+        sessions['casamento-welcome']["casament-welcome-titulo"] = {};
+        sessions['casamento-welcome']["casament-welcome-description"] = {};
+        sessions['casamento-welcome']["casamento-welcome-background"] = {};
+
+        sessions['casamento-about'] = {};
+        sessions['casamento-about']["casamento-about-titulo"] = {};
+        sessions['casamento-about']["casamento-about-description"] = {};
+        sessions['casamento-about']["casamento-about-background"] = {};
+
+        sessions['casamento-padrinhos'] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-title"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-description"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho-description"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho1-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho1-descricao"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-background"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho2-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho2-descricao"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho3-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho3-descricao"] = {};
         
-        if(event !== undefined) {
-           var textAlignTitle           = event.template.sessions[0].sub_sessions[0].features[3].value;
-           var fontSizeTitle            = event.template.sessions[0].sub_sessions[0].features[5].value;
-           var colorTitle               = event.template.sessions[0].sub_sessions[0].features[6].value;
-           var backgroundColorTitle     = event.template.sessions[0].sub_sessions[0].features[7].value;
-           var fontFamilyTitle          = event.template.sessions[0].sub_sessions[0].features[8].value;
+        if(this.state.event.template !== undefined) {
+          this.state.event.template.sessions.map((sess) => {
+
+              sess.sub_sessions.map((subSess) => {
+                  subSess.features.map( ( feature ) => {
+                      sessions[sess.session][subSess.sub_session][feature.name] = feature.value;
+                  });
+              })
+          })
+           var textAlignTitle           = this.state.event.template.sessions[0].sub_sessions[0].features[3].value;
+           var fontSizeTitle            = this.state.event.template.sessions[0].sub_sessions[0].features[5].value;
+           var colorTitle               = this.state.event.template.sessions[0].sub_sessions[0].features[6].value;
+           var backgroundColorTitle     = this.state.event.template.sessions[0].sub_sessions[0].features[7].value;
+           var fontFamilyTitle          = this.state.event.template.sessions[0].sub_sessions[0].features[8].value;
            
-           var textAlignDate            = event.template.sessions[0].sub_sessions[1].features[3].value;
-           var fontSizeDate             = event.template.sessions[0].sub_sessions[1].features[5].value;
-           var colorDate                = event.template.sessions[0].sub_sessions[1].features[6].value;
-           var backgroundColorDate      = event.template.sessions[0].sub_sessions[1].features[7].value;
-           var fontFamilyDate           = event.template.sessions[0].sub_sessions[1].features[8].value;
+           var textAlignDate            = this.state.event.template.sessions[0].sub_sessions[1].features[3].value;
+           var fontSizeDate             = this.state.event.template.sessions[0].sub_sessions[1].features[5].value;
+           var colorDate                = this.state.event.template.sessions[0].sub_sessions[1].features[6].value;
+           var backgroundColorDate      = this.state.event.template.sessions[0].sub_sessions[1].features[7].value;
+           var fontFamilyDate           = this.state.event.template.sessions[0].sub_sessions[1].features[8].value;
 
-           var textAlignBtnHeader       = event.template.sessions[0].sub_sessions[2].features[3].value;
-           var fontSizeBtnHeader        = event.template.sessions[0].sub_sessions[2].features[5].value;
-           var colorBtnHeader           = event.template.sessions[0].sub_sessions[2].features[6].value;
-           var backgroundColorBtnHeader = event.template.sessions[0].sub_sessions[2].features[7].value;
-           var fontFamilyBtnHeader      = event.template.sessions[0].sub_sessions[2].features[8].value;
+           var textAlignBtnHeader       = this.state.event.template.sessions[0].sub_sessions[2].features[3].value;
+           var fontSizeBtnHeader        = this.state.event.template.sessions[0].sub_sessions[2].features[5].value;
+           var colorBtnHeader           = this.state.event.template.sessions[0].sub_sessions[2].features[6].value;
+           var backgroundColorBtnHeader = this.state.event.template.sessions[0].sub_sessions[2].features[7].value;
+           var fontFamilyBtnHeader      = this.state.event.template.sessions[0].sub_sessions[2].features[8].value;
            
-           var textAlignConfirmHeader       = event.template.sessions[0].sub_sessions[3].features[3].value;
-           var fontSizeConfirmHeader        = event.template.sessions[0].sub_sessions[3].features[5].value;
-           var colorConfirmHeader           = event.template.sessions[0].sub_sessions[3].features[6].value;
-           var backgroundColorConfirmHeader = event.template.sessions[0].sub_sessions[3].features[7].value;
-           var fontFamilyConfirmHeader      = event.template.sessions[0].sub_sessions[3].features[8].value;
+           var textAlignConfirmHeader       = this.state.event.template.sessions[0].sub_sessions[3].features[3].value;
+           var fontSizeConfirmHeader        = this.state.event.template.sessions[0].sub_sessions[3].features[5].value;
+           var colorConfirmHeader           = this.state.event.template.sessions[0].sub_sessions[3].features[6].value;
+           var backgroundColorConfirmHeader = this.state.event.template.sessions[0].sub_sessions[3].features[7].value;
+           var fontFamilyConfirmHeader      = this.state.event.template.sessions[0].sub_sessions[3].features[8].value;
 
-           var textAlignDays       = event.template.sessions[0].sub_sessions[4].features[3].value;
-           var fontSizeDays        = event.template.sessions[0].sub_sessions[4].features[5].value;
-           var colorDays           = event.template.sessions[0].sub_sessions[4].features[6].value;
-           var backgroundColorDays = event.template.sessions[0].sub_sessions[4].features[7].value;
-           var fontFamilyDays      = event.template.sessions[0].sub_sessions[4].features[8].value;
+           var textAlignDays       = this.state.event.template.sessions[0].sub_sessions[4].features[3].value;
+           var fontSizeDays        = this.state.event.template.sessions[0].sub_sessions[4].features[5].value;
+           var colorDays           = this.state.event.template.sessions[0].sub_sessions[4].features[6].value;
+           var backgroundColorDays = this.state.event.template.sessions[0].sub_sessions[4].features[7].value;
+           var fontFamilyDays      = this.state.event.template.sessions[0].sub_sessions[4].features[8].value;
 
-           var textAlignSalutationTitle       = event.template.sessions[1].sub_sessions[0].features[3].value;
-           var fontSizeSalutationTitle        = event.template.sessions[1].sub_sessions[0].features[5].value;
-           var colorSalutationTitle           = event.template.sessions[1].sub_sessions[0].features[6].value;
-           var backgroundColorSalutationTitle = event.template.sessions[1].sub_sessions[0].features[7].value;
-           var fontFamilySalutationTitle      = event.template.sessions[1].sub_sessions[0].features[8].value;
+           var textAlignSalutationTitle       = this.state.event.template.sessions[1].sub_sessions[0].features[3].value;
+           var fontSizeSalutationTitle        = this.state.event.template.sessions[1].sub_sessions[0].features[5].value;
+           var colorSalutationTitle           = this.state.event.template.sessions[1].sub_sessions[0].features[6].value;
+           var backgroundColorSalutationTitle = this.state.event.template.sessions[1].sub_sessions[0].features[7].value;
+           var fontFamilySalutationTitle      = this.state.event.template.sessions[1].sub_sessions[0].features[8].value;
            
-           var textAlignSalutationDescription       = event.template.sessions[1].sub_sessions[1].features[3].value;
-           var fontSizeSalutationDescription        = event.template.sessions[1].sub_sessions[1].features[5].value;
-           var colorSalutationDescription           = event.template.sessions[1].sub_sessions[1].features[6].value;
-           var backgroundColorSalutationDescription = event.template.sessions[1].sub_sessions[1].features[7].value;
-           var fontFamilySalutationDescription      = event.template.sessions[1].sub_sessions[1].features[8].value;
+           var textAlignSalutationDescription       = this.state.event.template.sessions[1].sub_sessions[1].features[3].value;
+           var fontSizeSalutationDescription        = this.state.event.template.sessions[1].sub_sessions[1].features[5].value;
+           var colorSalutationDescription           = this.state.event.template.sessions[1].sub_sessions[1].features[6].value;
+           var backgroundColorSalutationDescription = this.state.event.template.sessions[1].sub_sessions[1].features[7].value;
+           var fontFamilySalutationDescription      = this.state.event.template.sessions[1].sub_sessions[1].features[8].value;
 
-           var textAlignTitleLocation       = event.template.sessions[2].sub_sessions[0].features[3].value;
-           var fontSizeTitleLocation        = event.template.sessions[2].sub_sessions[0].features[5].value;
-           var colorTitleLocation           = event.template.sessions[2].sub_sessions[0].features[6].value;
-           var backgroundColorTitleLocation = event.template.sessions[2].sub_sessions[0].features[7].value;
-           var fontFamilyTitleLocation      = event.template.sessions[2].sub_sessions[0].features[8].value;
+           var textAlignTitleLocation       = this.state.event.template.sessions[2].sub_sessions[0].features[3].value;
+           var fontSizeTitleLocation        = this.state.event.template.sessions[2].sub_sessions[0].features[5].value;
+           var colorTitleLocation           = this.state.event.template.sessions[2].sub_sessions[0].features[6].value;
+           var backgroundColorTitleLocation = this.state.event.template.sessions[2].sub_sessions[0].features[7].value;
+           var fontFamilyTitleLocation      = this.state.event.template.sessions[2].sub_sessions[0].features[8].value;
 
-           var textAlignDateLocation       = event.template.sessions[2].sub_sessions[1].features[3].value;
-           var fontSizeDateLocation        = event.template.sessions[2].sub_sessions[1].features[5].value;
-           var colorDateLocation           = event.template.sessions[2].sub_sessions[1].features[6].value;
-           var backgroundColorDateLocation = event.template.sessions[2].sub_sessions[1].features[7].value;
-           var fontFamilyDateLocation      = event.template.sessions[2].sub_sessions[1].features[8].value;
+           var textAlignDateLocation       = this.state.event.template.sessions[2].sub_sessions[1].features[3].value;
+           var fontSizeDateLocation        = this.state.event.template.sessions[2].sub_sessions[1].features[5].value;
+           var colorDateLocation           = this.state.event.template.sessions[2].sub_sessions[1].features[6].value;
+           var backgroundColorDateLocation = this.state.event.template.sessions[2].sub_sessions[1].features[7].value;
+           var fontFamilyDateLocation      = this.state.event.template.sessions[2].sub_sessions[1].features[8].value;
 
-           var textAlignAddressLocation       = event.template.sessions[2].sub_sessions[2].features[3].value;
-           var fontSizeAddressLocation        = event.template.sessions[2].sub_sessions[2].features[5].value;
-           var colorAddressLocation           = event.template.sessions[2].sub_sessions[2].features[6].value;
-           var backgroundColorAddressLocation = event.template.sessions[2].sub_sessions[2].features[7].value;
-           var fontFamilyAddressLocation      = event.template.sessions[2].sub_sessions[2].features[8].value;
+           var textAlignAddressLocation       = this.state.event.template.sessions[2].sub_sessions[2].features[3].value;
+           var fontSizeAddressLocation        = this.state.event.template.sessions[2].sub_sessions[2].features[5].value;
+           var colorAddressLocation           = this.state.event.template.sessions[2].sub_sessions[2].features[6].value;
+           var backgroundColorAddressLocation = this.state.event.template.sessions[2].sub_sessions[2].features[7].value;
+           var fontFamilyAddressLocation      = this.state.event.template.sessions[2].sub_sessions[2].features[8].value;
 
-           var textAlignTitlePhotos       = event.template.sessions[3].sub_sessions[0].features[3].value;
-           var fontSizeTitlePhotos        = event.template.sessions[3].sub_sessions[0].features[5].value;
-           var colorTitlePhotos           = event.template.sessions[3].sub_sessions[0].features[6].value;
-           var backgroundColorTitlePhotos = event.template.sessions[3].sub_sessions[0].features[7].value;
-           var fontFamilyTitlePhotos      = event.template.sessions[3].sub_sessions[0].features[8].value;
+           var textAlignTitlePhotos       = this.state.event.template.sessions[3].sub_sessions[0].features[3].value;
+           var fontSizeTitlePhotos        = this.state.event.template.sessions[3].sub_sessions[0].features[5].value;
+           var colorTitlePhotos           = this.state.event.template.sessions[3].sub_sessions[0].features[6].value;
+           var backgroundColorTitlePhotos = this.state.event.template.sessions[3].sub_sessions[0].features[7].value;
+           var fontFamilyTitlePhotos      = this.state.event.template.sessions[3].sub_sessions[0].features[8].value;
 
-           var textAlignTitlePhotos       = event.template.sessions[3].sub_sessions[0].features[3].value;
-           var fontSizeTitlePhotos        = event.template.sessions[3].sub_sessions[0].features[5].value;
-           var colorTitlePhotos           = event.template.sessions[3].sub_sessions[0].features[6].value;
-           var backgroundColorTitlePhotos = event.template.sessions[3].sub_sessions[0].features[7].value;
-           var fontFamilyTitlePhotos      = event.template.sessions[3].sub_sessions[0].features[8].value;
+           var textAlignTitlePhotos       = this.state.event.template.sessions[3].sub_sessions[0].features[3].value;
+           var fontSizeTitlePhotos        = this.state.event.template.sessions[3].sub_sessions[0].features[5].value;
+           var colorTitlePhotos           = this.state.event.template.sessions[3].sub_sessions[0].features[6].value;
+           var backgroundColorTitlePhotos = this.state.event.template.sessions[3].sub_sessions[0].features[7].value;
+           var fontFamilyTitlePhotos      = this.state.event.template.sessions[3].sub_sessions[0].features[8].value;
 
-           var textAlignTitleFooter       = event.template.sessions[4].sub_sessions[0].features[4].value;
-           var fontSizeTitleFooter        = event.template.sessions[4].sub_sessions[0].features[5].value;
-           var colorTitleFooter           = event.template.sessions[4].sub_sessions[0].features[6].value;
-           var backgroundColorTitleFooter = event.template.sessions[4].sub_sessions[0].features[7].value;
-           var fontFamilyTitleFooter      = event.template.sessions[4].sub_sessions[0].features[8].value;
+           var textAlignTitleFooter       = this.state.event.template.sessions[4].sub_sessions[0].features[4].value;
+           var fontSizeTitleFooter        = this.state.event.template.sessions[4].sub_sessions[0].features[5].value;
+           var colorTitleFooter           = this.state.event.template.sessions[4].sub_sessions[0].features[6].value;
+           var backgroundColorTitleFooter = this.state.event.template.sessions[4].sub_sessions[0].features[7].value;
+           var fontFamilyTitleFooter      = this.state.event.template.sessions[4].sub_sessions[0].features[8].value;
 
-           var textAlignDaysFooter       = event.template.sessions[4].sub_sessions[1].features[4].value;
-           var fontSizeDaysFooter        = event.template.sessions[4].sub_sessions[1].features[5].value;
-           var colorDaysFooter           = event.template.sessions[4].sub_sessions[1].features[6].value;
-           var backgroundColorDaysFooter = event.template.sessions[4].sub_sessions[1].features[7].value;
-           var fontFamilyDaysFooter      = event.template.sessions[4].sub_sessions[1].features[8].value;
+           var textAlignDaysFooter       = this.state.event.template.sessions[4].sub_sessions[1].features[4].value;
+           var fontSizeDaysFooter        = this.state.event.template.sessions[4].sub_sessions[1].features[5].value;
+           var colorDaysFooter           = this.state.event.template.sessions[4].sub_sessions[1].features[6].value;
+           var backgroundColorDaysFooter = this.state.event.template.sessions[4].sub_sessions[1].features[7].value;
+           var fontFamilyDaysFooter      = this.state.event.template.sessions[4].sub_sessions[1].features[8].value;
 
-           var textAlignBtnFooter       = event.template.sessions[4].sub_sessions[2].features[4].value;
-           var fontSizeBtnFooter        = event.template.sessions[4].sub_sessions[2].features[5].value;
-           var colorBtnFooter           = event.template.sessions[4].sub_sessions[2].features[6].value;
-           var backgroundColorBtnFooter = event.template.sessions[4].sub_sessions[2].features[7].value;
-           var fontFamilyBtnFooter      = event.template.sessions[4].sub_sessions[2].features[8].value;
+           var textAlignBtnFooter       = this.state.event.template.sessions[4].sub_sessions[2].features[4].value;
+           var fontSizeBtnFooter        = this.state.event.template.sessions[4].sub_sessions[2].features[5].value;
+           var colorBtnFooter           = this.state.event.template.sessions[4].sub_sessions[2].features[6].value;
+           var backgroundColorBtnFooter = this.state.event.template.sessions[4].sub_sessions[2].features[7].value;
+           var fontFamilyBtnFooter      = this.state.event.template.sessions[4].sub_sessions[2].features[8].value;
 
-           var textAlignBtnFooter       = event.template.sessions[4].sub_sessions[2].features[4].value;
-           var fontSizeBtnFooter        = event.template.sessions[4].sub_sessions[2].features[5].value;
-           var colorBtnFooter           = event.template.sessions[4].sub_sessions[2].features[6].value;
-           var backgroundColorBtnFooter = event.template.sessions[4].sub_sessions[2].features[7].value;
-           var fontFamilyBtnFooter      = event.template.sessions[4].sub_sessions[2].features[8].value;
+           var textAlignBtnFooter       = this.state.event.template.sessions[4].sub_sessions[2].features[4].value;
+           var fontSizeBtnFooter        = this.state.event.template.sessions[4].sub_sessions[2].features[5].value;
+           var colorBtnFooter           = this.state.event.template.sessions[4].sub_sessions[2].features[6].value;
+           var backgroundColorBtnFooter = this.state.event.template.sessions[4].sub_sessions[2].features[7].value;
+           var fontFamilyBtnFooter      = this.state.event.template.sessions[4].sub_sessions[2].features[8].value;
 
-           var textAlignConfirmFooter       = event.template.sessions[4].sub_sessions[3].features[4].value;
-           var fontSizeConfirmFooter        = event.template.sessions[4].sub_sessions[3].features[5].value;
-           var colorConfirmFooter           = event.template.sessions[4].sub_sessions[3].features[6].value;
-           var backgroundColorConfirmFooter = event.template.sessions[4].sub_sessions[3].features[7].value;
-           var fontFamilyConfirmFooter      = event.template.sessions[4].sub_sessions[3].features[8].value;
+           var textAlignConfirmFooter       = this.state.event.template.sessions[4].sub_sessions[3].features[4].value;
+           var fontSizeConfirmFooter        = this.state.event.template.sessions[4].sub_sessions[3].features[5].value;
+           var colorConfirmFooter           = this.state.event.template.sessions[4].sub_sessions[3].features[6].value;
+           var backgroundColorConfirmFooter = this.state.event.template.sessions[4].sub_sessions[3].features[7].value;
+           var fontFamilyConfirmFooter      = this.state.event.template.sessions[4].sub_sessions[3].features[8].value;
            
-           var date    = moment(event.EVENTO.date).format('LL');
-           var street  = event.EVENTO.address.street;
-           var pathImg = event.template.sessions[3].sub_sessions[1].features[1].value
+           var date    = moment(this.state.event.EVENTO.date).format('LL');
+           var street  = this.state.event.EVENTO.address.street;
+           var pathImg = this.state.event.template.sessions[3].sub_sessions[1].features[1].value
         }
 
         
@@ -284,138 +362,146 @@ class HomeConvidado extends Component {
             return false;
         }
 
-      return (
-        <div className="w100 theme-site convidado area-convidado">
-            
-            <ConfirmarPresenca />
+      if ( this.state.event.EVENTO !== undefined ) {
 
-            <div className="theme-site-header" style={bgImage(event !== undefined ? event.template.sessions[0].sub_sessions[5].features[1].value: '')}>
-               <header className="webdoor">
-                    <div className="container">
-                        <div className="menu flex flex-space flex-center">
-                            <nav className="flex">
-                                <Link to={event_home_link} className="logo"><img src={logo} alt="NetGift" /></Link>
-                                <MenuFesta tipoFesta={event !== undefined ? event.template.thematics: ''} />     
-                            </nav>
+        return (
+          <div className="w100 theme-site convidado area-convidado">
+              
+              <ConfirmarPresenca id={id_event} name={name_event} />
 
-                            <div className="nav-right flex flex-center">
-                                <button className="btn toggle-modal-confirmar-presenca" data-modal="confirmar-presenca"><span className="link-menu">Confirmar presença</span></button>
-                                <Link to={event_gifts_link} className="btn gradient border hover-animation"><span>Lista de presentes</span></Link>
+              <div className="theme-site-header" style={defaultStyle({backgroundImage:sessions.header.background.imagem, backgroundColor: sessions.header.background.fundo_cor})}>
+                 <header className="webdoor">
+                      <div className="container">
+                          <div className="menu flex flex-space flex-center">
+                              <nav className="flex">
+                                  <Link to={event_home_link} className="logo"><img src={logo} alt="NetGift" /></Link>
+                                  <MenuFesta tipoFesta={this.state.event.EVENTO !== undefined ? this.state.event.template.thematics: ''} />     
+                              </nav>
 
-                                <Link to={event_cart_link} >
-                                    <button className="btn-carrinho gradient fullcolor">
-                                        <i className="ng-shopping-cart-alt"></i>
-                                    </button>
-                                </Link>
-                                
-                                <div className="menu-mobile open-menu">
-                                    <span className="menu-icon"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                              <div className="nav-right flex flex-center">
+                                  <button className="btn toggle-modal-confirmar-presenca" data-modal="confirmar-presenca"><span className="link-menu">Confirmar presença</span></button>
+                                  <Link to={event_gifts_link} className="btn gradient border hover-animation"><span>Lista de presentes</span></Link>
 
-                <div className="container-editor">
+                                  <Link to={event_cart_link} >
+                                      <button className="btn-carrinho gradient fullcolor">
+                                          <i className="ng-shopping-cart-alt"></i>
+                                      </button>
+                                  </Link>
+                                  
+                                  <div className="menu-mobile open-menu">
+                                      <span className="menu-icon"></span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </header>
 
-                    <p id="titulo-header" 
-                        style={defaultStyle({fontSize: fontSizeTitle, textAlign: textAlignTitle, color: colorTitle, bgColor: backgroundColorTitle, fontFamily: fontFamilyTitle})}
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.header.titulo.alinhamento})}>
 
-                        className='element'
-                    >
-                        {event !== undefined ? event.EVENTO.name: ''}
-                    </p>
-                </div>
-                <div className="container-editor">
-                    <p id="data-header"
-                        style={defaultStyle({fontSize: fontSizeDate, textAlign: textAlignDate, color: colorDate, bgColor: backgroundColorDate, fontFamily: fontFamilyDate})}
+                      <p id="titulo-header" 
+                          style={defaultStyle({fontSize: sessions.header.titulo.texto_fonte_tamanho, textAlign: sessions.header.titulo.alinhamento, color: sessions.header.titulo.texto_fonte_cor, backgroundColor: sessions.header.titulo.texto_fundo_cor, fontFamily: sessions.header.titulo.estilo, fontWeight: sessions.header.titulo.negrito})}
 
-                        className='element'
-                    >
-                        {event !== undefined ? date:''}
-                    </p>
-                </div>
-                <div className="container-editor">
-                    <Link id="cta-primary-header" to={event_gifts_link} style={defaultStyle({fontSize: fontSizeDate, textAlign: textAlignDate, color: colorDate, bgColor: backgroundColorDate, fontFamily: fontFamilyDate})} className='btn-cta btn-cta-primary'
-                    >Presentear aniversariante</Link>
-                </div>
-                <div className="container-editor">
-                    <p id="cta-secondary-header" className=" btn-cta btn-cta-secondary" data-modal="confirmar-presenca" style={defaultStyle({fontSize: fontSizeConfirmHeader, textAlign: textAlignConfirmHeader, color: colorConfirmHeader, bgColor: backgroundColorConfirmHeader, fontFamily: fontFamilyConfirmHeader})}>Confirmar presença</p>
-                </div>
-                <div className="container-editor">
-                    <p id="contagem-header" className="element" style={defaultStyle({fontSize: fontSizeDays, textAlign: textAlignDays, color: colorDays, bgColor: backgroundColorDays, fontFamily: fontFamilyDays})}>Faltam 00 dias</p>
-                </div>
-            </div>
+                          className='element'
+                      >
+                          {this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.name: ''}
+                      </p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.header.data.alinhamento})}>
+                      <p id="data-header"
+                          style={defaultStyle({fontSize: sessions.header.data.texto_fonte_tamanho, textAlign: sessions.header.data.alinhamento, color: sessions.header.data.texto_fonte_cor, backgroundColor: sessions.header.data.texto_fundo_cor, fontFamily: sessions.header.data.estilo, fontWeight: sessions.header.data.negrito})}
 
-            <div className="theme-site-about" style={bgImage(event !== undefined ? event.template.sessions[1].sub_sessions[2].features[1].value: '')}>
+                          className='element'
+                      >
+                          {this.state.event.EVENTO !== undefined ? date:''}
+                      </p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.header.cta_presentear.alinhamento})}>
+                      <Link id="cta-primary-header" to={event_gifts_link} style={defaultStyle({fontSize: sessions.header.cta_presentear.texto_fonte_tamanho, textAlign: sessions.header.cta_presentear.alinhamento, color: sessions.header.cta_presentear.texto_fonte_cor, backgroundColor: sessions.header.cta_presentear.texto_fundo_cor, fontFamily: sessions.header.cta_presentear.estilo, fontWeight: sessions.header.cta_presentear.negrito})} className='btn-cta btn-cta-primary'
+                      >Presentear aniversariante</Link>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.header.cta_confirmar_presenca.alinhamento})}>
+                      <p id="cta-secondary-header" className=" btn-cta btn-cta-secondary" data-modal="confirmar-presenca" style={defaultStyle({fontSize: sessions.header.cta_confirmar_presenca.texto_fonte_tamanho, textAlign: sessions.header.cta_confirmar_presenca.alinhamento, color: sessions.header.cta_confirmar_presenca.texto_fonte_cor, backgroundColor: sessions.header.cta_confirmar_presenca.texto_fundo_cor, fontFamily: sessions.header.cta_confirmar_presenca.estilo, fontWeight: sessions.header.cta_confirmar_presenca.negrito})}>Confirmar presença</p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.header.faltam_n_dias.alinhamento})}>
+                      <p id="contagem-header" className="element" style={defaultStyle({fontSize: sessions.header.faltam_n_dias.texto_fonte_tamanho, textAlign: sessions.header.faltam_n_dias.alinhamento, color: sessions.header.faltam_n_dias.texto_fonte_cor, backgroundColor: sessions.header.faltam_n_dias.texto_fundo_cor, fontFamily: sessions.header.faltam_n_dias.estilo, fontWeight: sessions.header.faltam_n_dias.negrito})}>Faltam 00 dias</p>
+                  </div>
+              </div>
 
-                <AvatarFesta tipoFesta={event !== undefined ? event.template.thematics: ''} />
+              <div className="theme-site-about" style={defaultStyle({backgroundImage:sessions.saudacao.background.imagem, backgroundColor: sessions.saudacao.background.fundo_cor})}>
 
-                <div className="container-editor">
-                    <p id="titulo-about" className="element title-content" style={defaultStyle({fontSize: fontSizeSalutationTitle, textAlign: textAlignSalutationTitle, color: colorSalutationTitle, bgColor: backgroundColorSalutationTitle, fontFamily: fontFamilySalutationTitle})}>{event !== undefined ? event.EVENTO.salutation.title: ''}</p>
-                </div>
-                <div className="container-editor">
-                    <p id="descricao-about" className="element" style={defaultStyle({fontSize: fontSizeSalutationDescription, textAlign: textAlignSalutationDescription, color: colorSalutationDescription, bgColor: backgroundColorSalutationDescription, fontFamily: fontFamilySalutationDescription})}>{event !== undefined ? event.EVENTO.salutation.text: ''}
-                    </p>
-                </div>
-            </div>
+                  <AvatarFesta tipoFesta={this.state.event.EVENTO !== undefined ? this.state.event.template.thematics: ''} />
 
-            <SectionCasal tipoFesta={event !== undefined ? event.template.thematics: ''} /> 
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.saudacao.titulo.alinhamento})}>
+                      <p id="titulo-about" className="element title-content" style={defaultStyle({fontSize: sessions.saudacao.titulo.texto_fonte_tamanho, textAlign: sessions.saudacao.titulo.alinhamento, color: sessions.saudacao.titulo.texto_fonte_cor, backgroundColor: sessions.saudacao.titulo.texto_fundo_cor, fontFamily: sessions.saudacao.titulo.estilo, fontWeight: sessions.saudacao.titulo.negrito})}>{this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.salutation.title: ''}</p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.saudacao.descricao.alinhamento})}>
+                      <p id="descricao-about" className="element" style={defaultStyle({fontSize: sessions.saudacao.descricao.texto_fonte_tamanho, textAlign: sessions.saudacao.descricao.alinhamento, color: sessions.saudacao.descricao.texto_fonte_cor, backgroundColor: sessions.saudacao.descricao.texto_fundo_cor, fontFamily: sessions.saudacao.descricao.estilo, fontWeight: sessions.saudacao.descricao.negrito})}>{this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.salutation.text: ''}
+                      </p>
+                  </div>
+              </div>
 
-            <SectionPadrinhos tipoFesta={event !== undefined ? event.template.thematics: ''} /> 
+              <SectionCasal tipoFesta={this.state.event.EVENTO !== undefined ? this.state.event.template.thematics: ''} /> 
 
-            <div className="theme-site-address" id="localizacao" style={bgImage(event !== undefined ? event.template.sessions[2].sub_sessions[3].features[1].value: '')}>
-                <div className="container-editor">
-                    <p id="titulo-address" className="element title-content" style={defaultStyle({fontSize: fontSizeTitleLocation, textAlign: textAlignTitleLocation, color: colorTitleLocation, bgColor: backgroundColorTitleLocation, fontFamily: fontFamilyTitleLocation})}
-                    >Local da Festa</p>
-                </div>
+              <SectionPadrinhos tipoFesta={this.state.event.EVENTO !== undefined ? this.state.event.template.thematics: ''} /> 
 
-                <div className="container-editor">
-                    <p id="descricao-address" className="element" style={defaultStyle({fontSize: fontSizeDateLocation, textAlign: textAlignDateLocation, color: colorDateLocation, bgColor: backgroundColorDateLocation, fontFamily: fontFamilyDateLocation})} >A festa vai acontecer no dia {date} às {event !== undefined ? event.EVENTO.hour:''} <br /> Quer saber onde? Confere aí!</p>
-                </div>
+              <div className="theme-site-address" id="localizacao" style={defaultStyle({backgroundImage:sessions.localizacao.background.imagem, backgroundColor: sessions.localizacao.background.fundo_cor})}>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.localizacao.titulo.alinhamento})}>
+                      <p id="titulo-address" className="element title-content" style={defaultStyle({fontSize: sessions.localizacao.titulo.texto_fonte_tamanho, textAlign: sessions.localizacao.titulo.alinhamento, color: sessions.localizacao.titulo.texto_fonte_cor, backgroundColor: sessions.localizacao.titulo.texto_fundo_cor, fontFamily: sessions.localizacao.titulo.estilo, fontWeight: sessions.localizacao.titulo.negrito})}
+                      >Local da Festa</p>
+                  </div>
 
-                <div className="container-editor">
-                    <p id="endereco-address" className="element" style={defaultStyle({fontSize: fontSizeAddressLocation, textAlign: textAlignAddressLocation, color: colorAddressLocation, bgColor: backgroundColorAddressLocation, fontFamily: fontFamilyAddressLocation})} ><span>Casa de Festas Casamentos Perfeitos</span><span>{event !== undefined ? event.EVENTO.address.street:''}, 259, {event !== undefined ? event.EVENTO.address.neighborhood:''}, {event !== undefined ? event.EVENTO.address.city:''} - {event !== undefined ? event.EVENTO.address.state:''}</span></p>
-                </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.localizacao.endereco.alinhamento})}>
+                      <p id="descricao-address" className="element" style={defaultStyle({fontSize: sessions.localizacao.endereco.texto_fonte_tamanho, textAlign: sessions.localizacao.endereco.alinhamento, color: sessions.localizacao.endereco.texto_fonte_cor, backgroundColor: sessions.localizacao.endereco.texto_fundo_cor, fontFamily: sessions.localizacao.endereco.estilo, fontWeight: sessions.localizacao.endereco.negrito})} >A festa vai acontecer no dia {date} às {this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.hour:''} <br /> Quer saber onde? Confere aí!</p>
+                  </div>
 
-                <div className="container-editor">
-                    <div id="mapa-address" className="element">
-                        <iframe src={"https://maps.google.com/maps?q=" + street + '&t=&z=17&ie=UTF8&iwloc=&output=embed'} width="100%" height="450" frameBorder="0" title="localização da festa" allowFullScreen style={defaultStyle({border: "none"})}></iframe>
-                    </div>
-                </div>
-            </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.localizacao.data.alinhamento})}>
+                      <p id="endereco-address" className="element" style={defaultStyle({fontSize: sessions.localizacao.data.texto_fonte_tamanho, textAlign: sessions.localizacao.data.alinhamento, color: sessions.localizacao.data.texto_fonte_cor, backgroundColor: sessions.localizacao.data.texto_fundo_cor, fontFamily: sessions.localizacao.data.estilo, fontWeight: sessions.localizacao.data.negrito})} ><span>Casa de Festas Casamentos Perfeitos</span><span>{this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.address.street:''}, {this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.address.neighborhood:''}, {this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.address.city:''} - {this.state.event.EVENTO !== undefined ? this.state.event.EVENTO.address.state:''}</span></p>
+                  </div>
 
-            <div className="theme-site-album" id="fotos">
-                <div className="container-editor">
-                    <p id="titulo-album" className="element title-content" style={defaultStyle({fontSize:"28", textAlign:"center"})}>Fotos de {event !== undefined ? event.EVENTO.owners.map((item) => {
-                        return item.name + ' '
-                    }) : ''}</p>
-                </div>
-                <div className="container-editor">
-                    <div id="grid-album" className="element">
-                        <div className="photo-album">
-                            <img src={event !== undefined ? pathImg : ''} />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <footer className="theme-site-countdown" style={bgImage(galeriaTemplate)}>
-                <div className="container-editor">
-                    <p id="titulo-countdown" className="element" style={defaultStyle({fontSize: fontSizeTitleFooter, textAlign: textAlignTitleFooter, color: colorTitleFooter, bgColor: backgroundColorTitleFooter, fontFamily: fontFamilyTitleFooter})} >Não se esqueça...</p>
-                </div>
-                <div className="container-editor">
-                    <p id="descricao-countdown" className="element title-content" style={defaultStyle({fontSize: fontSizeDaysFooter, textAlign: textAlignDaysFooter, color: colorDaysFooter, bgColor: backgroundColorDaysFooter, fontFamily: fontFamilyDaysFooter})} >Faltam apenas 00 dias para a festa!</p>
-                </div>
-                <div className="container-editor">
-                    <Link to={event_gifts_link} id="cta-primary-countdown" className="btn-cta btn-cta-primary"  style={defaultStyle({fontSize: fontSizeBtnFooter, textAlign: textAlignBtnFooter, color: colorBtnFooter, bgColor: backgroundColorBtnFooter, fontFamily: fontFamilyBtnFooter})}>Presentear aniversariante</Link>
-                </div>
-                <div className="container-editor">
-                    <p id="cta-secondary-countdown"  className="btn-cta btn-cta-secondary" data-modal="confirmar-presenca" style={defaultStyle({fontSize: fontSizeConfirmFooter, textAlign: textAlignConfirmFooter, color: colorConfirmFooter, bgColor: backgroundColorConfirmFooter, fontFamily: fontFamilyConfirmFooter})}>Confirmar presença</p>
-                </div>
-            </footer>
-        </div>
-      )
+                  <div className="container-editor">
+                      <div id="mapa-address" className="element">
+                          <iframe src={"https://maps.google.com/maps?q=" + street + '&t=&z=17&ie=UTF8&iwloc=&output=embed'} width="100%" height="450" frameBorder="0" title="localização da festa" allowFullScreen style={defaultStyle({border: "none"})}></iframe>
+                      </div>
+                  </div>
+              </div>
+
+              <div className="theme-site-album" id="fotos" style={defaultStyle({backgroundImage:sessions.fotos.background.imagem, backgroundColor: sessions.fotos.background.fundo_cor})}>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.fotos.titulo.alinhamento})}>
+                      <p id="titulo-album" className="element title-content" style={defaultStyle({fontSize: sessions.fotos.titulo.texto_fonte_tamanho, textAlign: sessions.fotos.titulo.alinhamento, color: sessions.fotos.titulo.texto_fonte_cor, backgroundColor: sessions.fotos.titulo.texto_fundo_cor, fontFamily: sessions.fotos.titulo.estilo, fontWeight: sessions.fotos.titulo.negrito})}>Fotos de {Object.entries( this.state.event.EVENTO.owners ).length !== 0 ? this.state.event.EVENTO.owners.map((item) => {
+                          return item.name + ' '
+                      }) : ''}</p>
+                  </div>
+                  <div className="container-editor">
+                      <div id="grid-album" className="element">
+                          <div className="photo-album">
+                              <img src={this.state.event.EVENTO !== undefined ? pathImg : ''} />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <footer className="theme-site-countdown" style={defaultStyle({backgroundImage:sessions.rodape.background.imagem, backgroundColor: sessions.rodape.background.fundo_cor})}>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.rodape.titulo.alinhamento})}>
+                      <p id="titulo-countdown" className="element" style={defaultStyle({fontSize: sessions.rodape.titulo.texto_fonte_tamanho, textAlign: sessions.rodape.titulo.alinhamento, color: sessions.rodape.titulo.texto_fonte_cor, backgroundColor: sessions.rodape.titulo.texto_fundo_cor, fontFamily: sessions.rodape.titulo.estilo, fontWeight: sessions.rodape.titulo.negrito})} >Não se esqueça...</p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.rodape.faltam_n_dias.alinhamento})}>
+                      <p id="descricao-countdown" className="element title-content" style={defaultStyle({fontSize: sessions.rodape.faltam_n_dias.texto_fonte_tamanho, textAlign: sessions.rodape.faltam_n_dias.alinhamento, color: sessions.rodape.faltam_n_dias.texto_fonte_cor, backgroundColor: sessions.rodape.faltam_n_dias.texto_fundo_cor, fontFamily: sessions.rodape.faltam_n_dias.estilo, fontWeight: sessions.rodape.faltam_n_dias.negrito})} >Faltam apenas 00 dias para a festa!</p>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.rodape.cta_presentear.alinhamento})}>
+                      <Link to={event_gifts_link} id="cta-primary-countdown" className="btn-cta btn-cta-primary"  style={defaultStyle({fontSize: sessions.rodape.cta_presentear.texto_fonte_tamanho, textAlign: sessions.rodape.cta_presentear.alinhamento, color: sessions.rodape.cta_presentear.texto_fonte_cor, backgroundColor: sessions.rodape.cta_presentear.texto_fundo_cor, fontFamily: sessions.rodape.cta_presentear.estilo, fontWeight: sessions.rodape.cta_presentear.negrito})}>Presentear aniversariante</Link>
+                  </div>
+                  <div className="container-editor" style={defaultStyle({textAlign: sessions.rodape.cta_confirmar_presenca.alinhamento})}>
+                      <p id="cta-secondary-countdown"  className="btn-cta btn-cta-secondary" data-modal="confirmar-presenca" style={defaultStyle({fontSize: sessions.rodape.cta_confirmar_presenca.texto_fonte_tamanho, textAlign: sessions.rodape.cta_confirmar_presenca.alinhamento, color: sessions.rodape.cta_confirmar_presenca.texto_fonte_cor, backgroundColor: sessions.rodape.cta_confirmar_presenca.texto_fundo_cor, fontFamily: sessions.rodape.cta_confirmar_presenca.estilo, fontWeight: sessions.rodape.cta_confirmar_presenca.negrito})}>Confirmar presença</p>
+                  </div>
+              </footer>
+          </div>
+        )
+      } else {
+        return(
+          <div></div>
+        )
+      }
+      
     }
 }
 

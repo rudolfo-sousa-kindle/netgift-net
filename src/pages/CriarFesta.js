@@ -63,9 +63,9 @@ class CriarFesta extends Component {
                 let sexo = $(item).find(".sexo").val();
     
                 data = {
-                    nome: nome,
-                    nascimento: nascimento,
-                    sexo: sexo
+                    'name': nome,
+                    'birthday': moment(nascimento).format().split('T')[0],
+                    'sex': sexo
                 }
     
                 objEvent.owners[i] = data;
@@ -84,6 +84,7 @@ class CriarFesta extends Component {
 
     
     criarFesta() {
+        console.log( this.props.match.params.type )
         if(this.props.authenticated && localStorage.getItem('user')) {
             return (
                 <div className="parent first-div">
@@ -114,37 +115,37 @@ class CriarFesta extends Component {
                                         <p className="subtitle">Ou crie uma festa personalizada</p>
                                     </div>
                                     <div className="tipos-festa">
-                                        <input type="radio" name="tipo_festa" id="infantil" value="Infantil" />
+                                        <input type="radio" name="tipo_festa" id="infantil" defaultChecked={ 'infantil' === this.props.match.params.type ? true : '' } value="Infantil" />
                                         <label htmlFor="infantil" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Infantil</div>
                                         </label>
 
-                                        <input type="radio" name="tipo_festa" id="casamento" value="Casamento" />
+                                        <input type="radio" name="tipo_festa" id="casamento" defaultChecked={ 'casamento' === this.props.match.params.type ? true : '' } value="Casamento" />
                                         <label htmlFor="casamento" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Casamento</div>
                                         </label>
 
-                                        <input type="radio" name="tipo_festa" id="adulto" value="Adulto" />
+                                        <input type="radio" name="tipo_festa" id="adulto" defaultChecked={ 'adulto' === this.props.match.params.type ? true : '' } value="Adulto" />
                                         <label htmlFor="adulto" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Adulto</div>
                                         </label>
 
-                                        <input type="radio" name="tipo_festa" id="cha-bebe" value="Chá de Bebê" />
+                                        <input type="radio" name="tipo_festa" id="cha-bebe" defaultChecked={ 'cha-de-bebe' === this.props.match.params.type ? true : '' } value="Chá de Bebê" />
                                         <label htmlFor="cha-bebe" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Chá de Bebê</div>
                                         </label>
 
-                                        <input type="radio" name="tipo_festa" id="teen" value="Teen" />
+                                        <input type="radio" name="tipo_festa" id="teen" defaultChecked={ 'teen' === this.props.match.params.type ? true : '' } value="Teen" />
                                         <label htmlFor="teen" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Teen</div>
                                         </label>
 
-                                        <input type="radio" name="tipo_festa" id="pet" value="Pet" />
+                                        <input type="radio" name="tipo_festa" id="pet" defaultChecked={ 'pet' === this.props.match.params.type ? true : '' } value="Pet" />
                                         <label htmlFor="pet" className="festa">
                                             <div className="thumb"></div>
                                             <div className="title">Pet</div>

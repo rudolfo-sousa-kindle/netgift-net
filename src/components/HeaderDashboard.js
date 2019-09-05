@@ -48,7 +48,6 @@ export default class HeaderDashboard extends Component {
                   <p className="badges">7</p>
               </button>
               <div className="action-bio flex">
-                  <img src={ picture_path ? picture_path : this.state.avatar } alt={first_name} />
                   <div className="action-bio-content">
                       <p>{first_name + " " + last_name}</p>
                   </div>

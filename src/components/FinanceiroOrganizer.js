@@ -12,7 +12,7 @@ import "../assets/css/jquery-ui.css";
 
 class FinanceiroOrganizer extends Component {
     componentDidMount() {
-        this.props.fetchResumeFinancial(43, 10, 1);
+        this.props.fetchResumeFinancial(this.props.match.params.id, 10, 1);
         setSelect2();
     }
 

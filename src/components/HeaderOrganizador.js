@@ -16,6 +16,7 @@ import { fetchEventsByUser } from '../actions/eventsByUserAction';
 import { fetchNotificationsUser } from '../actions/notificationsUserAction';
 import { fetchUsersOrganizer } from '../actions/usersOrganizerActions';
 import { fetchGetEvent } from '../actions/getEventAction'; 
+import { fetchGetUser } from '../actions/getUserAction'; 
 
 import avatar from "../assets/imgs/avatar_d.svg";
 
@@ -45,16 +46,24 @@ class HeaderOrganizador extends Component {
             });
         }
         
-        this.props.fetchNotificationsUser(6);
         this.props.fetchGetEvent(this.props.id);
         this.props.fetchUsersOrganizer(this.props.id);
 
         var user = localStorage.getItem('user');
-        var banks = localStorage.getItem('banks');
-        var events = localStorage.getItem('events');
         user = JSON.parse(user);
     
         if(user) { 
+            this.props.fetchGetUser( user.id ).then( ( res ) => {
+                console.log( res.events );
+                localStorage.setItem( 'banks', JSON.stringify( res.banks ) );
+                localStorage.setItem( 'events', JSON.stringify( res.events ) );
+                localStorage.setItem( 'user', JSON.stringify( res.user[0] ) );
+            });
+            this.props.fetchNotificationsUser(user.id);
+
+            var banks = localStorage.getItem('banks');
+            var events = localStorage.getItem('events');
+
             this.setState({
                 bank: banks,
                 events: events,
@@ -68,7 +77,6 @@ class HeaderOrganizador extends Component {
         $('#logout').on("click", function(){
             signOutAction();
         });
-
 
         if ( undefined !== eventsByUser && 0 < eventsByUser.items.length ) {
             this.state.events_list = eventsByUser;
@@ -103,9 +111,8 @@ class HeaderOrganizador extends Component {
                                             </div>
                                         </div>
                                         <div className="flex flex-column notifications-content">
-                                            <div className="day">Hoje</div>
                                             {
-                                                notificationsUser.items !== 0 ? 
+                                                notificationsUser.items !== "" && notificationsUser.items !== 0 ? 
                                                 notificationsUser.items.map((item) => {
                                                     return (
                                                         <div className="card-notification" key={item.id}>
@@ -234,4 +241,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps,  {fetchInvited, fetchEventsByUser, fetchNotificationsUser, fetchUsersOrganizer, fetchGetEvent})(HeaderOrganizador);
+export default connect(mapStateToProps,  {fetchInvited, fetchEventsByUser, fetchNotificationsUser, fetchGetUser, fetchUsersOrganizer, fetchGetEvent})(HeaderOrganizador);

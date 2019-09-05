@@ -10,7 +10,6 @@ import Swiper from 'swiper';
 import $ from 'jquery';
 
 
-import "../assets/css/sobre.css"
 import "../assets/css/sobre-responsive.css"
 
 import quote from  '../assets/imgs/quote.png';

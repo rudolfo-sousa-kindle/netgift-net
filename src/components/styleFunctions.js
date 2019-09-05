@@ -127,7 +127,7 @@ export const defaultStyle = (styles) => {
     if(styles.backgroundImage){
       backgroundImage =  `url(${styles.backgroundImage})`
     }else{
-      backgroundImage = "url(/static/media/thumb-template.97538df7.svg);"
+      backgroundImage = "url()"
     }
 
     if(styles.fontSize){

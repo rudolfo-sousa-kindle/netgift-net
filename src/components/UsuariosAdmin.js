@@ -38,7 +38,7 @@ class UsuariosAdmin extends Component {
         user_admin.filter();
     });
 
-    this.props.dispatch(fetchEvents()).then((res) => {
+    this.props.dispatch(fetchEvents( true )).then((res) => {
         // console.log(res)
         setMasonry();
         res.map( ( item ) => {
@@ -71,32 +71,35 @@ class UsuariosAdmin extends Component {
     this.props.dispatch(fetchEvents()).then((res) => {
         // console.log(res)
         res.map( ( item ) => {
-            item.map( ( event, index ) => {
-                if(event.notified){
-                    // console.log(event)
-                    // Get notifieds per user_id TODO
-                }
-                this.props.dispatch(fetchFinancial(event.id)).then( ( response ) => {
-                    this.setState(( state ) => {
-                        var event_id = event.id;
-                        state.financials[event_id] = response;
-                        return state
+            if ( undefined !== item && '' !== item ) {
+                item.map( ( event, index ) => {
+                    if(event.notified){
+                        // console.log(event)
+                        // Get notifieds per user_id TODO
+                    }
+                    this.props.dispatch(fetchFinancial(event.id)).then( ( response ) => {
+                        this.setState(( state ) => {
+                            var event_id = event.id;
+                            state.financials[event_id] = response;
+                            return state
+                        });
+                    });
+                    this.props.dispatch(fetchInvited(event.id)).then( ( response ) => {
+                        this.setState(( state ) => {
+                            var event_id = event.id;
+                            state.inviteds[event_id] = response;
+                            return state
+                        });
                     });
                 });
-                this.props.dispatch(fetchInvited(event.id)).then( ( response ) => {
-                    this.setState(( state ) => {
-                        var event_id = event.id;
-                        state.inviteds[event_id] = response;
-                        return state
-                    });
-                });
-            });
+            }
         });
+    }).then( () => {
         this.state.page++;
         setTimeout( function() {
             reloadUsuariosCard();
         }, 1000 );
-    })
+    } );
   }
 
   filter() {
@@ -114,34 +117,38 @@ class UsuariosAdmin extends Component {
     this.props.dispatch(fetchEvents(true, publicado, suspenso, finalizado, notificados)).then((res) => {
         // console.log(res)
         res.map( ( item ) => {
-            item.map( ( event, index ) => {
-                if(event.notified){
-                    // console.log(event)
-                    // Get notifieds per user_id TODO
-                }
-                this.props.dispatch(fetchFinancial(event.id)).then( ( response ) => {
-                    this.setState(( state ) => {
-                        var event_id = event.id;
-                        state.financials[event_id] = response;
-                        return state
+            if ( undefined !== item && '' !== item ) {
+                item.map( ( event, index ) => {
+                    if(event.notified){
+                        // console.log(event)
+                        // Get notifieds per user_id TODO
+                    }
+                    this.props.dispatch(fetchFinancial(event.id)).then( ( response ) => {
+                        this.setState(( state ) => {
+                            var event_id = event.id;
+                            state.financials[event_id] = response;
+                            return state
+                        });
+                    });
+                    this.props.dispatch(fetchInvited(event.id)).then( ( response ) => {
+                        this.setState(( state ) => {
+                            var event_id = event.id;
+                            state.inviteds[event_id] = response;
+                            return state
+                        });
                     });
                 });
-                this.props.dispatch(fetchInvited(event.id)).then( ( response ) => {
-                    this.setState(( state ) => {
-                        var event_id = event.id;
-                        state.inviteds[event_id] = response;
-                        return state
-                    });
-                });
-            });
+            }
         });
+        
+    }).then( () => {
         this.state.page     = 2;
         this.state.page_old = 0;
         this.state.events   = [];
         setTimeout( function() {
             reloadUsuariosCard();
         }, 1000 );
-    })
+    } );
   }
 
   notifiedUser(id){
@@ -213,6 +220,7 @@ class UsuariosAdmin extends Component {
                     <div className="box-festas-sizer"></div>
                     {
                         loading ? <Loader /> :
+                        0 < this.state.events.length ?
                         this.state.events.map((item, i) => {
                             var user_img = item.created_by.picture_path ? item.created_by.picture_path : fotoUser;
                             return(
@@ -255,7 +263,6 @@ class UsuariosAdmin extends Component {
                                             <div>
                                                 <p className="name-user">{item.created_by.first_name} {item.created_by.last_name}</p>
                                                 <p className="email-user">{item.created_by.email}</p>
-                                                <a href="#" className="text-purple ver-perfil">Ver perfil</a>
                                             </div>
                                         </div>
                                     </div>
@@ -264,13 +271,16 @@ class UsuariosAdmin extends Component {
                                     </div>
                                 </div>
                             )
-                        })
+                        }) : 'Não foram encontrados resultados para estes filtros'
                         
                     }
 
                     
                 </div>
-                <button className="btn-large" onClick={() => this.paginate()}>Ver Mais</button>
+                {
+                    10 > this.state.events.length ?
+                    '' : <button className="btn-large" onClick={() => this.paginate()}>Ver Mais</button>
+                }
             </div>
 
         </div>

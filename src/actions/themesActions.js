@@ -1,5 +1,6 @@
 import axios from "axios";
 import { textAlign } from "../components/styleFunctions";
+import Snackbar from 'node-snackbar';
 const URL   = "http://51.15.99.120:4700";
 const urlWP = "https://www.localkindle.com.br/netgift_api/wp-json/ntgift/api";
 
@@ -1696,10 +1697,18 @@ export function addThemes(values, id = null, edit = false){
               let contagemHeader = sess.contagemHeader;
               let headerBackgroundColor = sess.headerBackgroundColor;
     
-              title.features.map((fet) => {
+              title.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": title.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": title.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
-                      console.log(res);
+                      if ( 0 === index ) {
+                              Snackbar.show({
+                                    pos: 'bottom-center',
+                                    text: 'Atualizando Configurações do Header',
+                                    backgroundColor: '#8332f5',
+                                    showAction: false,
+                                    duration: 5000
+                              });
+                        }
                     })
                   })
               data.features.map((fet) => {
@@ -1736,6 +1745,7 @@ export function addThemes(values, id = null, edit = false){
             
           }
     
+            
           for(let i = 0; i < sectionAbout.length; i++){
             let item = sectionAbout[i];
             let {about} = item;
@@ -1746,10 +1756,18 @@ export function addThemes(values, id = null, edit = false){
               let descricaoAbout = sess.descricaoAbout;
               let aboutBackgroundColor = sess.aboutBackgroundColor;
     
-              titleAbout.features.map((fet) => {
+              titleAbout.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": titleAbout.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res);
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações da Saudação',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
     
@@ -1772,6 +1790,7 @@ export function addThemes(values, id = null, edit = false){
           }
           
           if(thematics == 5){
+            
             for(let i = 0; i < sectionCasamentoWelcome.length; i++){
               let item = sectionCasamentoWelcome[i];
               let{casamento_welcome} = item;
@@ -1782,10 +1801,18 @@ export function addThemes(values, id = null, edit = false){
                 let descricaoCasamentoWelcome = sess.descricaoCasamentoWelcome;
                 let casamentoWelcomeBackgoundColor = sess.casamentoWelcomeBackgoundColor;
       
-                tituloCasamentoWelcome.features.map((fet) => {
+                tituloCasamentoWelcome.features.map((fet, index) => {
                   axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCasamentoWelcome.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {
-                    console.log(res);
+                    if ( 0 === index ) {
+                          Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações dos Noivos',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                        }
                   })
                 })
       
@@ -1840,6 +1867,7 @@ export function addThemes(values, id = null, edit = false){
               })
             }
       
+            
             for(let i = 0; i < sectionCasamentoPadrinhos.length; i++){
               let item = sectionCasamentoPadrinhos[i];
               let{casamento_padrinhos} = item;
@@ -1856,10 +1884,18 @@ export function addThemes(values, id = null, edit = false){
                 let tituloCasamentoPadrinho3 = sess.tituloCasamentoPadrinho3;
                 let descricaoCasamentoPadrinho3 = sess.descricaoCasamentoPadrinho3;
       
-                tituloCasamentoPadrinhos.features.map((fet) => {
+                tituloCasamentoPadrinhos.features.map((fet, index) => {
                   axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCasamentoPadrinhos.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {
-                    console.log(res);
+                    if ( 0 === index ) {
+                          Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações dos Padrinhos',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                        }
                   })
                 })
       
@@ -1923,6 +1959,7 @@ export function addThemes(values, id = null, edit = false){
             }
           }
     
+            
           for(let i = 0; i < sectionAddress.length; i++){
             let item = sectionAddress[i];
             let {address} = item;
@@ -1935,10 +1972,18 @@ export function addThemes(values, id = null, edit = false){
               let enderecoAddress = sess.enderecoAddress;
               let addressBackgroundColor = sess.addressBackgroundColor;
     
-              tituloAddress.features.map((fet) => {
+              tituloAddress.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloAddress.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações do Endereço',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
     
@@ -1966,6 +2011,7 @@ export function addThemes(values, id = null, edit = false){
             })
           }
     
+            
           for(let i = 0; i < sectionAlbum.length; i++){
             let item = sectionAlbum[i];
             let {album} = item;
@@ -1975,10 +2021,18 @@ export function addThemes(values, id = null, edit = false){
               let tituloAlbum = sess.tituloAlbum;
               let albumBackgroundColor = sess.albumBackgroundColor;
     
-              tituloAlbum.features.map((fet) => {
+              tituloAlbum.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloAlbum.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações das Fotos',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
     
@@ -1992,6 +2046,7 @@ export function addThemes(values, id = null, edit = false){
             })
           }
     
+            
           for(let i = 0; i < sectionCountdown.length; i++){
             let item = sectionCountdown[i];
             let {countdown} = item;
@@ -2003,10 +2058,18 @@ export function addThemes(values, id = null, edit = false){
               let ctaPrimaryCountdown = sess.ctaPrimaryCountdown;
               let ctaSecondaryCountdown = sess.ctaSecondaryCountdown;
     
-              tituloCountdown.features.map((fet) => {
+              tituloCountdown.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCountdown.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Atualizando Configurações do Rodapé',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
     
@@ -2059,6 +2122,7 @@ export function addThemes(values, id = null, edit = false){
           console.log(res)
         })
 
+            
           for(var i = 0; i < sectionHeader.length; i++){
             var item = sectionHeader[i];
             var {header} = item;
@@ -2075,10 +2139,18 @@ export function addThemes(values, id = null, edit = false){
 
               console.log(sess) 
 
-              title.features.map((fet) => {
+              title.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": title.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": title.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
-                      console.log(res);
+                      if ( 0 === index ) {
+                            Snackbar.show({
+                                    pos: 'bottom-center',
+                                    text: 'Salvando Configurações do Header',
+                                    backgroundColor: '#8332f5',
+                                    showAction: false,
+                                    duration: 5000
+                              });
+                        }
                     })
                   })
               data.features.map((fet) => {
@@ -2115,6 +2187,7 @@ export function addThemes(values, id = null, edit = false){
             
           }
 
+            
           for(let i = 0; i < sectionAbout.length; i++){
             let item = sectionAbout[i];
             let {about} = item;
@@ -2125,10 +2198,18 @@ export function addThemes(values, id = null, edit = false){
               let descricaoAbout = sess.descricaoAbout;
               let aboutBackgroundColor = sess.aboutBackgroundColor;
 
-              titleAbout.features.map((fet) => {
+              titleAbout.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": titleAbout.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res);
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Salvando Configurações de Saudação',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
 
@@ -2151,6 +2232,7 @@ export function addThemes(values, id = null, edit = false){
           }
 
           if(thematics == 5){
+            
             for(let i = 0; i < sectionCasamentoWelcome.length; i++){
               let item = sectionCasamentoWelcome[i];
               let{casamento_welcome} = item;
@@ -2161,10 +2243,18 @@ export function addThemes(values, id = null, edit = false){
                 let descricaoCasamentoWelcome = sess.descricaoCasamentoWelcome;
                 let casamentoWelcomeBackgoundColor = sess.casamentoWelcomeBackgoundColor;
 
-                tituloCasamentoWelcome.features.map((fet) => {
+                tituloCasamentoWelcome.features.map((fet, index) => {
                   axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCasamentoWelcome.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {
-                    console.log(res);
+                    if ( 0 === index ) {
+                              Snackbar.show({
+                                    pos: 'bottom-center',
+                                    text: 'Salvando Configurações dos Noivos',
+                                    backgroundColor: '#8332f5',
+                                    showAction: false,
+                                    duration: 5000
+                              });
+                        }
                   })
                 })
 
@@ -2184,6 +2274,7 @@ export function addThemes(values, id = null, edit = false){
 
               })
             }
+
 
             for(let i = 0; i < sectionCasamentoAbout.length; i++){
               let item = sectionCasamentoAbout[i];
@@ -2219,6 +2310,7 @@ export function addThemes(values, id = null, edit = false){
               })
             }
 
+            
             for(let i = 0; i < sectionCasamentoPadrinhos.length; i++){
               let item = sectionCasamentoPadrinhos[i];
               let{casamento_padrinhos} = item;
@@ -2235,10 +2327,18 @@ export function addThemes(values, id = null, edit = false){
                 let tituloCasamentoPadrinho3 = sess.tituloCasamentoPadrinho3;
                 let descricaoCasamentoPadrinho3 = sess.descricaoCasamentoPadrinho3;
 
-                tituloCasamentoPadrinhos.features.map((fet) => {
+                tituloCasamentoPadrinhos.features.map((fet, index) => {
                   axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCasamentoPadrinhos.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                   .then((res) => {
-                    console.log(res);
+                    if ( 0 === index ) {
+                              Snackbar.show({
+                                    pos: 'bottom-center',
+                                    text: 'Salvando Configurações dos Padrinhos',
+                                    backgroundColor: '#8332f5',
+                                    showAction: false,
+                                    duration: 5000
+                              });
+                        }
                   })
                 })
 
@@ -2302,22 +2402,31 @@ export function addThemes(values, id = null, edit = false){
             }
 
           }
+
+            
           for(let i = 0; i < sectionAddress.length; i++){
             let item = sectionAddress[i];
             let {address} = item;
             address = address[0];
 
             address.map((sess) => {
-              console.log(sess)
               let tituloAddress = sess.tituloAddress;
               let dataAddress = sess.dataAddress;
               let enderecoAddress = sess.enderecoAddress;
               let addressBackgroundColor = sess.addressBackgroundColor;
 
-              tituloAddress.features.map((fet) => {
+              tituloAddress.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloAddress.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Salvando Configurações de Endereço',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
 
@@ -2345,6 +2454,7 @@ export function addThemes(values, id = null, edit = false){
             })
           }
 
+            
           for(let i = 0; i < sectionAlbum.length; i++){
             let item = sectionAlbum[i];
             let {album} = item;
@@ -2354,10 +2464,18 @@ export function addThemes(values, id = null, edit = false){
               let tituloAlbum = sess.tituloAlbum;
               let albumBackgroundColor = sess.albumBackgroundColor;
 
-              tituloAlbum.features.map((fet) => {
+              tituloAlbum.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloAlbum.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
-                  console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Salvando Configurações das Fotos',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
 
@@ -2371,6 +2489,7 @@ export function addThemes(values, id = null, edit = false){
             })
           }
 
+            
           for(let i = 0; i < sectionCountdown.length; i++){
             let item = sectionCountdown[i];
             let {countdown} = item;
@@ -2383,10 +2502,19 @@ export function addThemes(values, id = null, edit = false){
               let ctaSecondaryCountdown = sess.ctaSecondaryCountdown;
               let countdownBackgroundColor = sess.countdownBackgroundColor;
 
-              tituloCountdown.features.map((fet) => {
+              tituloCountdown.features.map((fet, index) => {
                 axios.post(`${URL}/theme/` + dataId + `/config`, {"theme_ss_id": tituloCountdown.sub_sess_id, "theme_feature_id": fet.feature_id, "value": fet.value}, config)
                 .then((res) => {
                   console.log(res)
+                  if ( 0 === index ) {
+                        Snackbar.show({
+                              pos: 'bottom-center',
+                              text: 'Salvando Configurações do Rodapé',
+                              backgroundColor: '#8332f5',
+                              showAction: false,
+                              duration: 5000
+                        });
+                  }
                 })
               })
 
@@ -2421,6 +2549,10 @@ export function addThemes(values, id = null, edit = false){
 
             })
           }
+
+            var {data} = res;
+            dispatch(fetchThemeSuccess(data));
+            return data;
 
         })
       }

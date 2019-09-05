@@ -27,10 +27,24 @@ export function fetchCreateEvent(obj, history){
         .then((response) => {
           var {data} = response;
           dispatch(fetchCreateEventSuccess(data));
-          //history.push(`/dashboard/home/${data.event.id}`);
-          window.location.href = `/dashboard/home/${data.event.id}`;
+            var user = localStorage.getItem('user');
+            user = JSON.parse(user);
+            var user_id = user.id;
+            //history.push(`/dashboard/home/${data.event.id}`);
+            var EVENT    = data;
+            var EVENT_ID = data.event.id;
+              console.log( EVENT )
+            return axios.post(`${URL}/event/${data.event.id}/user/${user_id}`)
+            .then((response) => {
+              var {data} = response;
+              dispatch(fetchCreateEventSuccess(EVENT));
+              //history.push(`/dashboard/home/${data.event.id}`);
+              window.location.href = `/dashboard/home/${EVENT_ID}`;
 
-          return data;
+              return EVENT;
+            })
+
+          return EVENT;
         })
         .catch(error => dispatch(fetchCreateEventFailure(error)));
     }

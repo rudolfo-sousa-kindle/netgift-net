@@ -44,12 +44,9 @@ class ListaPresentes extends Component {
 
     submit = (item) => {
         var search = item.search;
-        console.log(item);
-        console.log(search);
         
         if ( 0 !== this.state.event_id ) {
             this.props.dispatch(fetchGifts(this.state.event_id, search)).then( (response) => {
-                console.log( response.gift );
                 this.setState({
                     gifts: response.gift,
                 });
@@ -281,7 +278,9 @@ class ListaPresentes extends Component {
                             </div>
                         </div>
 
-                        <div className="cards-gift flex flex-wrap">
+                        {
+                            gifts.length > 0 ? 
+                            <div className="cards-gift flex flex-wrap">
                             {
                                 gifts.map((item) => {
                                     return (
@@ -326,10 +325,13 @@ class ListaPresentes extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                    )
-                                })
-                            }
-                        </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                            : ''
+                        }    
+                        
                     </div>
                 </main>
                 

@@ -60,7 +60,10 @@ class Dashboard extends Component {
   
   dashboard() {
     let id_event = this.props.match.params[0];
-    id_event = id_event.split('/')[1];
+    id_event = window.location.pathname.split('/');
+    id_event = id_event[ id_event.length - 1 ];
+
+    id_event = '' === id_event || 'home' === id_event ? '' : id_event;
 
     if(this.props.authenticated && user && user.admin == 1){
       return(
@@ -79,16 +82,16 @@ class Dashboard extends Component {
 
               <div className="wrap flex">
                   <Switch>
-                    <Route path="/dashboard/home" component={DashboardAdminHome} />
-                    <Route path="/dashboard/presentes" component={PresentesAdmin} />
-                    <Route path="/dashboard/presentes/novo-presente" component={PresentesAdminNovo} />
-                    <Route path="/dashboard/presentes/editar-presente/:id" component={PresentesAdminEditar} />
-                    <Route path="/dashboard/temas/editar-tema/:id" component={TemaAdminEditar} />
-                    <Route path="/dashboard/temas" component={TemasAdmin} />
-                    <Route path="/dashboard/financeiro" component={FinanceiroAdmin} />
-                    <Route path="/dashboard/extrato-financeiro" component={ExtratoFinanceiroAdmin} />
-                    <Route path="/dashboard/temas/novo-tema" component={TemasAdminNovo} />
-                    <Route path="/dashboard/usuarios" component={UsuariosAdmin} />
+                    <Route path="/dashboard/home" exact component={DashboardAdminHome} />
+                    <Route path="/dashboard/presentes" exact component={PresentesAdmin} />
+                    <Route path="/dashboard/presentes/novo-presente" exact component={PresentesAdminNovo} />
+                    <Route path="/dashboard/presentes/editar-presente/:id" exact component={PresentesAdminEditar} />
+                    <Route path="/dashboard/temas/editar-tema/:id" exact component={TemaAdminEditar} />
+                    <Route path="/dashboard/temas" exact component={TemasAdmin} />
+                    <Route path="/dashboard/financeiro" exact component={FinanceiroAdmin} />
+                    <Route path="/dashboard/extrato-financeiro" exact component={ExtratoFinanceiroAdmin} />
+                    <Route path="/dashboard/temas/novo-tema" exact component={TemasAdminNovo} />
+                    <Route path="/dashboard/usuarios" exact component={UsuariosAdmin} />
                   </Switch>
                 <Notificacoes />
               </div>
@@ -108,20 +111,20 @@ class Dashboard extends Component {
 
             <main>
               <Switch>
-                <Route path="/dashboard/home/:id" component={DashboardOrganizadorHome} />
-                <Route path="/dashboard/lista-de-presentes/:id" component={PresentesOrganizador} />
-                <Route path="/dashboard/presentes-recebidos/:id" component={PresentesRecebidos} />
-                <Route path="/dashboard/editar-presentes/:id" component={EditarPresentes} />
-                <Route path="/dashboard/adicionar-convidado/:id" component={AdicionarConvidado} />
-                <Route path="/dashboard/usuarios/:id" component={UsuariosOrganizador} />
-                <Route path="/dashboard/site/:id" component={SiteFesta} />
-                <Route path="/dashboard/convidados/:id" component={Convidados} />
-                <Route path="/dashboard/informacoes/:id" component={Informacoes} />
-                <Route path="/dashboard/financeiro/:id" component={FinanceiroOrganizer} />
-                <Route path="/dashboard/adicionar-usuario/:id" component={AdcionarUsuario} />
-                <Route path="/dashboard/editar-perfil/:id" component={EditarPerfil} />
-                <Route path="/dashboard/notificacoes/:id" component={NotificacoesOrganizador} />
-                <Route path="/dashboard/configurar-rsvp/:id" component={ConfigurarRsvp} />
+                <Route path="/dashboard/home/:id" exact component={DashboardOrganizadorHome} />
+                <Route path="/dashboard/lista-de-presentes/:id" exact component={PresentesOrganizador} />
+                <Route path="/dashboard/presentes-recebidos/:id" exact component={PresentesRecebidos} />
+                <Route path="/dashboard/editar-presentes/:id" exact component={EditarPresentes} />
+                <Route path="/dashboard/adicionar-convidado/:id" exact component={AdicionarConvidado} />
+                <Route path="/dashboard/usuarios/:id" exact component={UsuariosOrganizador} />
+                <Route path="/dashboard/site/:id" exact component={SiteFesta} />
+                <Route path="/dashboard/convidados/:id" exact component={Convidados} />
+                <Route path="/dashboard/informacoes/:id" exact component={Informacoes} />
+                <Route path="/dashboard/financeiro/:id" exact component={FinanceiroOrganizer} />
+                <Route path="/dashboard/adicionar-usuario/:id" exact component={AdcionarUsuario} />
+                <Route path="/dashboard/editar-perfil/:id" exact component={EditarPerfil} />
+                <Route path="/dashboard/notificacoes/:id" exact component={NotificacoesOrganizador} />
+                <Route path="/dashboard/configurar-rsvp/:id" exact component={ConfigurarRsvp} />
               </Switch>
             </main>
           </div>

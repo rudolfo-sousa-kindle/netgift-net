@@ -31,15 +31,27 @@ export function fetchSetSlug(event_id, obj){
           var {data} = response;
           dispatch(fetchSetSlugSuccess(data));
           $('.flex .nb-spinner').hide();
-          setTimeout(() => {
-            Snackbar.show({
-                pos: 'bottom-center',
-                text: 'Endereço do site alterado com succeso',
-                backgroundColor: '#8332f5',
-                showAction: false,
-                duration: 5000
-            });
-          }, 1000);
+          if ( data.SUCCESS ) {
+            setTimeout(() => {
+              Snackbar.show({
+                  pos: 'bottom-center',
+                  text: 'Endereço do site alterado com succeso',
+                  backgroundColor: '#8332f5',
+                  showAction: false,
+                  duration: 5000
+              });
+            }, 1000);
+          } else {
+            setTimeout(() => {
+                Snackbar.show({
+                    pos: 'bottom-center',
+                    text: 'Já existe outro site com este endereço',
+                    backgroundColor: '#da1e1e',
+                    showAction: false,
+                    duration: 5000
+                });
+            }, 1000);
+          }
           return data;
         })
         .catch(error => {

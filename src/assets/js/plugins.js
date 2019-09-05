@@ -65,7 +65,12 @@ export default function setTooltipster() {
         position: 'bottom'
     });
 
-    
+    $('form[name="dado-convidado"] input').tooltipster({
+        animation: 'fade',
+        updateAnimation: 'null',
+        trigger: 'custom',
+        position: 'bottom'
+    });
 }
 
 export function setMask() {
@@ -283,12 +288,6 @@ export function setValidate() {
             ddd: {
                 required: true,
                 minlength: 2
-            },
-            adulto: {
-                required: true
-            },
-            crianca: {
-                required: true
             }
         },
         messages: {
@@ -422,7 +421,42 @@ export function setValidate() {
 
     updateObject(validator, validateMaiorIdade);
 
-    /* página de pagamento-2 */
-   
-    
+    $('form[name="dado-convidado"]').validate({
+        rules: {
+            nome_convidado: {
+                required: true,
+                minlength: 2
+            },
+            email_convidado: {
+                required: true,
+                minlength: 4
+            },
+            telefone_convidado: {
+                required: true,
+                minlength: 10
+            }
+        },
+        
+        errorPlacement: function (error, element) {
+            var ele = element,
+                err = error.text();
+            ele.addClass('formError')
+            if (err != null && err !== '') {
+                setTooltipster();
+                ele.tooltipster('content', err);
+                ele.tooltipster('open');
+            }
+        },
+        
+        unhighlight:  function (element, errorClass, validClass) {
+            $(element)
+                  .removeClass("formError")
+                  .removeClass(errorClass)
+                  .addClass(validClass)
+                  .tooltipster('close');
+        },
+        submitHandler: function (form) {
+            //funcao se tudo estiver ok
+        }
+    });
 }

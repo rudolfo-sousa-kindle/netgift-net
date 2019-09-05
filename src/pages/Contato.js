@@ -45,8 +45,8 @@ class Contato extends Component {
                                 <div className="nossos-termos">
                                     <p>Nossos termos</p>
                                     <div className="flex flex-column">
-                                        <Link to="#">Termos de Serviço</Link>
-                                        <Link to="#">Política de Privacidade</Link>
+                                        <Link to="/termos-de-servico">Termos de Serviço</Link>
+                                        <Link to="/politica-de-privacidade">Política de Privacidade</Link>
                                     </div>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@ class Contato extends Component {
                         <div className="nossos-termos nossos-termos-mob">
                             <p>Nossos termos</p>
                             <div className="flex flex-column">
-                                <Link to="#">Termos de Serviço</Link>
-                                <Link to="#">Política de Privacidade</Link>
+                                <Link to="/termos-de-servico">Termos de Serviço</Link>
+                                <Link to="/politica-de-privacidade">Política de Privacidade</Link>
                             </div>
                         </div>
 

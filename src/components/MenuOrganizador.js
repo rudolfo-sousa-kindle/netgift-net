@@ -22,7 +22,9 @@ class MenuOrganizador extends Component {
         let userStorage = JSON.parse(localStorage.getItem('user'))
         
         //this.props.fetchGetUser(userStorage.id)
-        this.props.fetchNotificationsUser(6);
+        if(userStorage) { 
+            this.props.fetchNotificationsUser(userStorage.id);
+        }
         this.props.fetchUsersOrganizer(this.props.id);
     }
 

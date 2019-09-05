@@ -21,42 +21,54 @@ export default class CadastroConcluido extends Component {
 
                     <div class="festas ball">
                         <div class="line-festa">
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Infantil</p>
-                            </div>
+                            <Link to="/criarFesta/infantil" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Infantil</p>
+                                </div>
+                            </Link>
 
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Teen</p>
-                            </div>
+                            <Link to="/criarFesta/teen" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Teen</p>
+                                </div>
+                            </Link>
 
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Casamento</p>
-                            </div>
+                            <Link to="/criarFesta/casamento" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Casamento</p>
+                                </div>
+                            </Link>
 
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Pet</p>
-                            </div>
+                            <Link to="/criarFesta/pet" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Pet</p>
+                                </div>
+                            </Link>
 
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Chá de Bebê</p>
-                            </div>
+                            <Link to="/criarFesta/cha-de-bebe" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Chá de Bebê</p>
+                                </div>
+                            </Link>
 
-                            <div class="box-festa">
-                                <div class="circle"></div>
-                                <p class="title-festa">Adulto</p>
-                            </div>
+                            <Link to="/criarFesta/adulto" class="cyan event-type">
+                                <div class="box-festa">
+                                    <div class="circle"></div>
+                                    <p class="title-festa">Adulto</p>
+                                </div>
+                            </Link>
                         </div>
 
                         <div class="line-festa margin-festa">
 
                         </div>
 
-                        <Link to="#" class="cyan">Criar minha festa depois</Link>
+                        <Link to="/dashboard/home" class="cyan">Criar minha festa depois</Link>
                     </div>
                 </main>
 

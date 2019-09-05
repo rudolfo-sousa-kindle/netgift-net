@@ -60,7 +60,6 @@ export function fetchAddUser(id_event, id_user, obj){
           return axios.put(`${URL}/users/${id_user}/picture`)
           .then((response) => {
             var {data} = response;
-            console.log(response)
             dispatch(fetchPictureUserSuccess(data));
             return data;
           })

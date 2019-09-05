@@ -9,6 +9,7 @@ import CreatableSelect from 'react-select/creatable';
 import Select from 'react-select';
 import { fetchCategories, fetchSetCategories } from "../actions/categoriesActions";
 import Loader from "./Loader";
+import setMask from '../assets/js/mask'
 
 const image2base64 = require('image-to-base64');
 
@@ -25,6 +26,7 @@ class PresentesAdminEditar extends Component {
         super(props);
         this.state = { pictures: [] };
         this.onDrop = this.onDrop.bind(this);
+        setMask();
     }
 
     onDrop(picture) {
@@ -144,36 +146,35 @@ class PresentesAdminEditar extends Component {
       var gift = {};
       var bgUrl;
 
-      if(!loading && !loadingOne){
-            this.state.category_values = [];
-            this.state.categ = 0;
-            bgUrl = {
-                "backgroundImage" : item[0].url
-            }
-            $('.card-gift').fadeIn(200);
-            gift = item[0];
-            var cat = 0;
-            category_values = [];
-            setSelect2(gift.category_id);
-            item.map((i, j) => {
-                i.categories.map((cat, index) => {
-                        let default_option = {
-                            value: cat.id,
-                            label: cat.name,
-                        };
-                        category_values.push( default_option );
-                    })
-                    
-                    category_values.map((item) => {
-                        cat = cat + "," + item.value;
-                    })
-                })
-                if(cat != 0){
-                    $("input[name=tema-categoria]").val(cat);
-                }
-            console.log(category_values)
-
+    if(!loading && !loadingOne){
+        this.state.category_values = [];
+        this.state.categ = 0;
+        bgUrl = {
+            "backgroundImage" : item[0].url
         }
+        $('.card-gift').fadeIn(200);
+        gift = item[0];
+        var cat = 0;
+        category_values = [];
+        setSelect2(gift.category_id);
+        item.map((i, j) => {
+        i.categories.map((cat, index) => {
+                let default_option = {
+                    value: cat.id,
+                    label: cat.name,
+                };
+                category_values.push( default_option );
+            })
+            
+            category_values.map((item) => {
+                cat = cat + "," + item.value;
+            })
+        })
+        if(cat != 0){
+            $("input[name=tema-categoria]").val(cat);
+        }
+
+    }
         
 
         if(giftsCategories){
@@ -278,7 +279,7 @@ if (null === category_values ) {
                                     buttonText="Adicionar foto"
                                     withIcon={false}
                                     onChange={this.onDrop}
-                                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                                    imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
                                     maxFileSize={5242880}
                                     withPreview={true}
                                     singleImage={true}

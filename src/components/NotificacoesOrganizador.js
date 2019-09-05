@@ -8,7 +8,13 @@ import { fetchNotificationsUser } from '../actions/notificationsUserAction';
 
 class NoficicacoesOrganizador extends Component {
     componentDidMount() {        
-        this.props.fetchNotificationsUser(6);
+        
+        let userStorage = JSON.parse(localStorage.getItem('user'))
+        
+        //this.props.fetchGetUser(userStorage.id)
+        if(userStorage) { 
+            this.props.fetchNotificationsUser(userStorage.id);
+        }
     }
 
     render() {

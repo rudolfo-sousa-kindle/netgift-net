@@ -127,23 +127,22 @@ jQuery(document).ready(function ($) {
     });
 
 
-    if ($(".modal.confirmar-presenca").length > 0) {
-        $(document).on('click', function (event) {
-            if (!$(event.target).closest('.modal-content').length) {
-                $('.modal.confirmar-presenca').removeClass("active");
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('.modal-content').length) {
+            $('.modal.confirmar-presenca').removeClass("active");
 
-                if( $('div').hasClass('tooltipster-base') ) {
-                    $('.tooltipstered').tooltipster('close');
-                }
+            if( $('div').hasClass('tooltipster-base') ) {
+                $('.tooltipstered').tooltipster('close');
             }
-        });
+        }
+    });
 
-        $(document).on('click', '[data-modal="confirmar-presenca"]', function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-            $(".modal.confirmar-presenca").toggleClass("active");
-        });
-    }
+    $(document).on('click', '[data-modal="confirmar-presenca"]', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log( 'teste' );
+        $(".modal.confirmar-presenca").toggleClass("active");
+    });
 
 
     if ($(".fileup-btn").length > 0) {

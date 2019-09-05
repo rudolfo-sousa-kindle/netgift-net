@@ -49,7 +49,7 @@ export const sendEventSuccess = data => ({
 var count = 0;
 var events = [];
 
-export function fetchEvents(reset_page = false, published = false, suspended = true, notified = true, finished = true ) {
+export function fetchEvents(reset_page = false, published = null, suspended = null, notified = null, finished = null ) {
   count = reset_page ? 0 : count;
 
   return dispatch => {
@@ -59,11 +59,22 @@ export function fetchEvents(reset_page = false, published = false, suspended = t
       dispatch(fetchEventsBeginNextLine());
     }
 
-    var filters = {
-      'published' : published,
-      'suspended' : suspended,
-      'notified'  : notified,
-      'finished'  : finished
+    var filters = {}
+
+    if ( null !== published ) {
+      filters.published = published;
+    }
+
+    if ( null !== suspended ) {
+      filters.suspended = suspended;
+    }
+
+    if ( null !== notified ) {
+      filters.notified = notified;
+    }
+
+    if ( null !== finished ) {
+      filters.finished = finished;
     }
 
     count++;

@@ -10,6 +10,7 @@ import ResumeOrganizerMobile from './ResumeOrganizerMobile';
 import  $ from 'jquery';
 import setMask from '../assets/js/mask'
 
+import setTooltipster, { setMessages, setValidate } from '../assets/js/plugins';
 import setSelect2 from "../assets/js/setSelect2";
 
 class AdicionarConvidado extends Component {
@@ -17,6 +18,8 @@ class AdicionarConvidado extends Component {
         this.props.fetchInvited(this.props.match.params.id);
         this.props.dispatch(fetchListGroups());
         
+        setTooltipster();
+        setValidate();
         setSelect2();
         setMask();
     }
@@ -47,7 +50,7 @@ class AdicionarConvidado extends Component {
                 objSendInvite.send_email = true;
             }
 
-            console.log(objSendInvite)
+            console.log($(element.target).find('.nb-spinner'))
 
             this.props.fetchSendInvited( this.props.match.params.id, objSendInvite );
         }

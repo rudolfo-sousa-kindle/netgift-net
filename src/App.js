@@ -31,6 +31,8 @@ import Carrinho from "./pages/Carrinho";
 import Pagamento from "./pages/Pagamento";
 import Checkout from "./pages/Checkout";
 import PainelControle from "./pages/PainelControle";
+import TermosServico from "./pages/TermosServico";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 
 
 
@@ -46,10 +48,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Route render={({location}) => {
             return (
               <TransitionGroup>
+              
                 <Switch location={location}>
                   <Route path="/" exact component={HomePage} />
                   <Route path="/sobre" component={noRequireAuth(Sobre)} />
