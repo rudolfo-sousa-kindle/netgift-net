@@ -46,11 +46,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Route render={({location}) => {
             return (
               <TransitionGroup>
-              
                 <Switch location={location}>
                   <Route path="/" exact component={HomePage} />
                   <Route path="/sobre" component={noRequireAuth(Sobre)} />
