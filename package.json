@@ -1,0 +1,82 @@
+{
+  "name": "netgift",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "^7.5.1",
+    "a-color-picker": "^1.1.8",
+    "axios": "^0.19.0",
+    "card": "^2.4.0",
+    "datatables": "^1.10.18",
+    "doctrine": "^3.0.0",
+    "file": "^0.2.2",
+    "fileup": "0.0.1",
+    "gsap": "^2.1.3",
+    "image-to-base64": "^2.0.1",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.4.1",
+    "jquery-datepicker": "^1.12.3",
+    "jquery-mask-plugin": "^1.14.15",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-validation": "^1.19.1",
+    "jquery.secretnav": "^0.1.8",
+    "lodash": "^4.17.15",
+    "markdown-it": "^9.1.0",
+    "masonry-layout": "^4.2.2",
+    "mkdirp": "^0.5.1",
+    "modernizr": "^3.7.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "node-snackbar": "^0.1.15",
+    "react": "^16.8.6",
+    "react-csv": "^1.1.1",
+    "react-datepicker": "^2.8.0",
+    "react-dom": "^16.8.6",
+    "react-draggable": "^3.3.0",
+    "react-images-upload": "^1.2.7",
+    "react-jqueryui": "^0.1.0",
+    "react-jqueryui-datepicker": "^1.0.3",
+    "react-pdf": "^4.1.0",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "react-select": "^3.0.4",
+    "reactide-config": "^1.0.2",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.4",
+    "redux-thunk": "^2.3.0",
+    "requirejs": "^2.3.6",
+    "select2": "^4.0.7",
+    "selectize": "^0.12.6",
+    "swiper": "^4.5.0",
+    "tippy.js": "^4.3.4",
+    "tooltipster": "^4.2.6",
+    "xml-js": "^1.6.11",
+    "yargs": "^14.0.0"
+  },
+  "homepage": "http://cloud921.hospedagem.w3br.com",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/assets/scss:src/assets/css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
