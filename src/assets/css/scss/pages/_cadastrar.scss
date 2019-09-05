@@ -1,0 +1,81 @@
+.cadastrar {
+    .txt-login {
+        margin-top: 142px;
+    }
+
+    .titulo {
+        margin-bottom: 58px;
+        font-weight: 300;
+        line-height: 44px;
+    }
+
+    .column-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .input-login[type="email"] {
+        margin-bottom: 0px;
+    }
+
+    .column-form {
+        margin-top: 23px;
+    }
+
+    .faca-login {
+        position: relative;
+    }
+
+    .ball:after {
+        top: 407px;
+        right: 452px;
+    }
+
+    .checkbox {
+        margin: 24px 0;
+        padding: 22px 20px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+
+    form.card-purple label:last-child {
+        margin-top: 0;
+    }
+
+    .checkbox .cyan:after {
+        bottom: 1px;
+    }
+
+    .label-visible-mobile {
+        display: none;
+    }
+
+    button.gradient.comecar-festa {
+        justify-content: space-between;
+    }
+
+    form button.gradient:not(.icon-add-person) {
+        padding: 0 20px;
+    }
+
+    .btn-facebook {
+        margin-top: 0;
+        opacity: 0.6
+    }
+
+    .copyright-mobile {
+        display: none;
+    }
+
+
+
+
+
+
+    @media (max-width: 930px) {
+        .div-facebook {
+            display: none;
+        }
+    }
+}

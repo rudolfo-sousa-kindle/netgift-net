@@ -1,0 +1,36 @@
+.sobre header.wave {
+  background: #eef1f7 url("../imgs/header-sobre.png") no-repeat right top;
+
+  p.subtitle {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+}
+
+.sobre {
+  .icon-text {
+
+      &.black {
+        font-size: 18px;
+      }
+    }
+
+
+  .sobre-1 {
+    margin-bottom: 180px;
+
+    .sobre-img {
+      transform: translateX(60px);
+    }
+  }
+
+  .sobre-2 {
+    margin-bottom: 120px;
+    transform: translateX(-20px);
+
+    .sobre-img {
+      transform: translateX(-40px);
+    }
+  }
+}

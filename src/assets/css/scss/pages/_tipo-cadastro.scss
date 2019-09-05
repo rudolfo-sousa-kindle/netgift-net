@@ -1,0 +1,99 @@
+.tipo-cadastro {
+    &.bg-login {
+        background: url('../imgs/background-cadastro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .progresso {
+        margin-top: 9px;
+        line-height: 21px;
+    }
+
+    .barra-progresso {
+        width: 325px;
+        height: 7px;
+        background-image: linear-gradient(to right, #3997e2 0%, #8f6be9 60%);
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .txt-progresso {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        color: #957ee7;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.6px;
+    }
+
+    .txt-progresso .active {
+        font-size: 15px;
+        color: #fcbe13;
+    }
+
+    .titulo {
+        margin-bottom: 34px;
+    }
+
+    .subtitulo {
+        margin-bottom: 75px;
+        font-size: 35px;
+    }
+
+    .p-1 {
+        margin-bottom: 21px;
+        font-weight: 100;
+    }
+
+    .txt-facebook {
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 24px;
+    }
+
+    .txt-facebook .faca-login {
+        color: #fff;
+        text-decoration: none;
+        position:  relative;
+    }
+
+    .txt-facebook .cyan:after {
+        bottom: 0;
+    }
+
+    .txt-facebook .faca-login::after {
+        content: '';
+        width: 82.16px;
+        height: 1px;
+        margin-top: 16px;
+        padding-top: 3px;
+        position: absolute;
+        left: 0;
+        border-bottom: 1px solid #fafafa;
+        transition: all ease 0.3s;
+    }
+
+    .txt-facebook .faca-login:hover::after {
+        width: 0;
+    }
+
+    button.gradient.comecar-festa {
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .btn-facebook {
+        margin-top: 24px;
+    }
+
+    .txt-redes-sociais {
+        margin-top: 23px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    
+}

@@ -1,0 +1,46 @@
+.left {
+    text-align: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.Museo {
+    font-family: 'Museo Sans', sans-serif;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .convidado .theme-site-header {
+        background-position: right;
+    }
+
+    .area-convidado #titulo-header {
+        font-size: 40px !important;
+    }
+
+    .convidado .title-content {
+        font-size: 26px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .area-convidado #titulo-header {
+        font-size: 30px !important;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .area-convidado #titulo-header {
+        font-size: 26px !important;
+    }
+}

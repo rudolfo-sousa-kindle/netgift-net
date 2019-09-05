@@ -1,0 +1,40 @@
+.recuperar-senha {
+    .txt-login {
+	    margin-top: 10px;
+    }
+    
+    .titulo {
+	    line-height: 43px;
+    }
+    
+    .subtitulo {
+	    margin-bottom: 50px;
+    }
+    
+    button.gradient.comecar-festa {
+        margin-top: 20px;
+    }
+    
+    .login .p-2 {
+	    line-height: 40px;
+    }
+    
+    a.btn-criar-conta.gradient  {
+        padding: 0 37px;
+    }
+    
+    .input-login[type="email"] {
+	    margin-bottom: 0;    
+    }
+    
+    .input-login[type="password"]:nth-of-type(1) {
+        margin-bottom: 13px;
+    }
+    
+    .form:after {
+	    top: 244px;
+        right: 452px;
+    }
+    
+    
+}

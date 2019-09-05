@@ -1,0 +1,95 @@
+h1 {
+    font-size: 42px;
+    @include font(500);
+    letter-spacing: -1px;
+}
+
+h2 {
+    color: #000;
+    font-size: 40px;
+    @include font(600);
+    letter-spacing: -0.5px;
+    line-height: 1.1em;
+}
+
+h2 + p.subtitle {
+    color: #636466;
+    font-size: 16px;
+    @include font(300);
+    margin: 0.8em 0 1.8em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 30px;
+    color: #3d3d3d;
+    @include font(500);
+    letter-spacing: -1px;
+}
+
+.icon-text {
+    p {
+        margin-top: 20px;
+        color: #58595b;
+        font-size: 20px;
+        letter-spacing: -0.3px;
+        line-height: 1.5em;
+        @include font(300);
+
+        strong {
+            @include font(600);
+        }
+
+        &.subtitle {
+            color: #636466;
+            font-size: 16px;
+        }
+    }
+}
+
+.newsletter p {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.3em;
+    margin-bottom: 25px;
+    @include font(300);
+
+    strong {
+        @include font(600);
+    }
+}
+
+/* === COLORS === */
+
+.white {
+    color: #FFF;
+}
+
+.black {
+    color: #000 !important;
+}
+
+.negative{
+    color: #f80101 !important;
+}
+
+.text-gradient {
+    @include font2(600);
+    @include linear-gradient(80deg, #21b2e4 0, #00d9c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.2s linear;
+
+    &.underline:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-image: -webkit-linear-gradient(350deg, #21b2e4 0%, #00d9c7);
+        background-image: -o-linear-gradient(350deg, #21b2e4 0%, #00d9c7);
+        background-image: linear-gradient(80deg, #21b2e4 0%, #00d9c7);
+    }
+}

@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'netgift_icons';
+  src: url('fonts/icons/netgift_icons.eot?80476728');
+  src: url('fonts/icons/netgift_icons.eot?80476728#iefix') format('embedded-opentype'),
+       url('fonts/icons/netgift_icons.woff2?80476728') format('woff2'),
+       url('fonts/icons/netgift_icons.woff?80476728') format('woff'),
+       url('fonts/icons/netgift_icons.ttf?80476728') format('truetype'),
+       url('fonts/icons/netgift_icons.svg?80476728#netgift_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'netgift_icons';
+    src: url('fonts/icons/netgift_icons.svg?80476728#netgift_icons') format('svg');
+  }
+}
+*/
+ 
+ [class^="ng-"]:before, [class*=" ng-"]:before {
+  font-family: "netgift_icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+  
+.ng-down-open-big:before { content: '\e800'; } /* '' */
+.ng-left-open-big:before { content: '\e801'; } /* '' */
+.ng-right-open-big:before { content: '\e802'; } /* '' */
+.ng-up-open-big:before { content: '\e803'; } /* '' */
+.ng-checklist:before { content: '\e804'; } /* '' */
+.ng-check-mark:before { content: '\e805'; } /* '' */
+.ng-cloud:before { content: '\e806'; } /* '' */
+.ng-cloud-alt:before { content: '\e807'; } /* '' */
+.ng-cog:before { content: '\e808'; } /* '' */
+.ng-cog-alt:before { content: '\e809'; } /* '' */
+.ng-comment:before { content: '\e80a'; } /* '' */
+.ng-comment-alt:before { content: '\e80b'; } /* '' */
+.ng-comment-list:before { content: '\e80c'; } /* '' */
+.ng-compose:before { content: '\e80d'; } /* '' */
+.ng-compose-alt:before { content: '\e80e'; } /* '' */
+.ng-control:before { content: '\e80f'; } /* '' */
+.ng-controls:before { content: '\e810'; } /* '' */
+.ng-credit-card:before { content: '\e811'; } /* '' */
+.ng-crosshair:before { content: '\e812'; } /* '' */
+.ng-devices:before { content: '\e813'; } /* '' */
+.ng-dial-pad:before { content: '\e814'; } /* '' */
+.ng-directions:before { content: '\e815'; } /* '' */
+.ng-discussion:before { content: '\e816'; } /* '' */
+.ng-download:before { content: '\e817'; } /* '' */
+.ng-download-alt:before { content: '\e818'; } /* '' */
+.ng-downloading:before { content: '\e819'; } /* '' */
+.ng-edit:before { content: '\e81a'; } /* '' */
+.ng-email-alt:before { content: '\e81b'; } /* '' */
+.ng-email-secure:before { content: '\e81c'; } /* '' */
+.ng-exit-fullscreen:before { content: '\e81d'; } /* '' */
+.ng-eye:before { content: '\e81e'; } /* '' */
+.ng-favorites:before { content: '\e81f'; } /* '' */
+.ng-flag:before { content: '\e820'; } /* '' */
+.ng-folder:before { content: '\e821'; } /* '' */
+.ng-fullscreen:before { content: '\e822'; } /* '' */
+.ng-full-screen:before { content: '\e823'; } /* '' */
+.ng-full-screen-alt:before { content: '\e824'; } /* '' */
+.ng-glasses:before { content: '\e825'; } /* '' */
+.ng-go-back:before { content: '\e826'; } /* '' */
+.ng-headphones:before { content: '\e827'; } /* '' */
+.ng-healthcare:before { content: '\e828'; } /* '' */
+.ng-idea:before { content: '\e829'; } /* '' */
+.ng-image:before { content: '\e82a'; } /* '' */
+.ng-laptop:before { content: '\e82b'; } /* '' */
+.ng-letter:before { content: '\e82c'; } /* '' */
+.ng-list:before { content: '\e82d'; } /* '' */
+.ng-list-alt:before { content: '\e82e'; } /* '' */
+.ng-lock:before { content: '\e82f'; } /* '' */
+.ng-map-pin:before { content: '\e830'; } /* '' */
+.ng-menu:before { content: '\e831'; } /* '' */
+.ng-message:before { content: '\e832'; } /* '' */
+.ng-microphone:before { content: '\e833'; } /* '' */
+.ng-mouse:before { content: '\e834'; } /* '' */
+.ng-mouse-alt:before { content: '\e835'; } /* '' */
+.ng-mute:before { content: '\e836'; } /* '' */
+.ng-next:before { content: '\e837'; } /* '' */
+.ng-open:before { content: '\e838'; } /* '' */
+.ng-organization:before { content: '\e839'; } /* '' */
+.ng-paper-plane:before { content: '\e83a'; } /* '' */
+.ng-pen:before { content: '\e83b'; } /* '' */
+.ng-pencil:before { content: '\e83c'; } /* '' */
+.ng-pie-graph:before { content: '\e83d'; } /* '' */
+.ng-play:before { content: '\e83e'; } /* '' */
+.ng-plug:before { content: '\e83f'; } /* '' */
+.ng-polaroid:before { content: '\e840'; } /* '' */
+.ng-printer:before { content: '\e841'; } /* '' */
+.ng-privacy:before { content: '\e842'; } /* '' */
+.ng-private:before { content: '\e843'; } /* '' */
+.ng-profile:before { content: '\e844'; } /* '' */
+.ng-refresh:before { content: '\e845'; } /* '' */
+.ng-refresh-alt:before { content: '\e846'; } /* '' */
+.ng-remove:before { content: '\e847'; } /* '' */
+.ng-remove-message:before { content: '\e848'; } /* '' */
+.ng-reply-alt-left:before { content: '\e849'; } /* '' */
+.ng-reply-alt-right:before { content: '\e84a'; } /* '' */
+.ng-reply-left:before { content: '\e84b'; } /* '' */
+.ng-reply-right:before { content: '\e84c'; } /* '' */
+.ng-rotate:before { content: '\e84d'; } /* '' */
+.ng-rotate-alt:before { content: '\e84e'; } /* '' */
+.ng-search:before { content: '\e84f'; } /* '' */
+.ng-sent:before { content: '\e850'; } /* '' */
+.ng-share:before { content: '\e851'; } /* '' */
+.ng-share-alt:before { content: '\e852'; } /* '' */
+.ng-shield:before { content: '\e853'; } /* '' */
+.ng-shopping-cart:before { content: '\e854'; } /* '' */
+.ng-shuffle:before { content: '\e855'; } /* '' */
+.ng-socket:before { content: '\e856'; } /* '' */
+.ng-speaker:before { content: '\e857'; } /* '' */
+.ng-speech-bubble:before { content: '\e858'; } /* '' */
+.ng-storage:before { content: '\e859'; } /* '' */
+.ng-storage-alt:before { content: '\e85a'; } /* '' */
+.ng-store:before { content: '\e85b'; } /* '' */
+.ng-switch:before { content: '\e85c'; } /* '' */
+.ng-switcher:before { content: '\e85d'; } /* '' */
+.ng-sync:before { content: '\e85e'; } /* '' */
+.ng-system:before { content: '\e85f'; } /* '' */
+.ng-tag:before { content: '\e860'; } /* '' */
+.ng-telephone:before { content: '\e861'; } /* '' */
+.ng-thumbs-down:before { content: '\e862'; } /* '' */
+.ng-thumbs-up:before { content: '\e863'; } /* '' */
+.ng-toggle:before { content: '\e864'; } /* '' */
+.ng-trash:before { content: '\e865'; } /* '' */
+.ng-umbrella:before { content: '\e866'; } /* '' */
+.ng-unlock:before { content: '\e867'; } /* '' */
+.ng-update:before { content: '\e868'; } /* '' */
+.ng-update-alt:before { content: '\e869'; } /* '' */
+.ng-upload:before { content: '\e86a'; } /* '' */
+.ng-uploading:before { content: '\e86b'; } /* '' */
+.ng-user:before { content: '\e86c'; } /* '' */
+.ng-user-alt:before { content: '\e86d'; } /* '' */
+.ng-users:before { content: '\e86e'; } /* '' */
+.ng-volume:before { content: '\e86f'; } /* '' */
+.ng-add:before { content: '\e870'; } /* '' */
+.ng-at:before { content: '\e871'; } /* '' */
+.ng-avatar:before { content: '\e872'; } /* '' */
+.ng-bag-alt:before { content: '\e873'; } /* '' */
+.ng-bank:before { content: '\e874'; } /* '' */
+.ng-bar-chart:before { content: '\e875'; } /* '' */
+.ng-bell:before { content: '\e876'; } /* '' */
+.ng-bin:before { content: '\e877'; } /* '' */
+.ng-book:before { content: '\e878'; } /* '' */
+.ng-bug:before { content: '\e879'; } /* '' */
+.ng-call:before { content: '\e87a'; } /* '' */
+.ng-camera:before { content: '\e87b'; } /* '' */
+.ng-capture:before { content: '\e87c'; } /* '' */
+.ng-cart:before { content: '\e87d'; } /* '' */
+.ng-chat:before { content: '\e87e'; } /* '' */
+.ng-chat-alt:before { content: '\e87f'; } /* '' */
+.ng-check:before { content: '\e880'; } /* '' */
+.ng-arrow-down:before { content: '\e881'; } /* '' */
+.ng-bars:before { content: '\e882'; } /* '' */
+.ng-help-circled:before { content: '\e883'; } /* '' */
+.ng-down-open:before { content: '\e884'; } /* '' */
+.ng-left-open:before { content: '\e885'; } /* '' */
+.ng-right-open:before { content: '\e886'; } /* '' */
+.ng-up-open:before { content: '\e887'; } /* '' */
+.ng-hearth:before { content: '\e888'; } /* '' */
+.ng-notification:before { content: '\e889'; } /* '' */
+.ng-cancel:before { content: '\e88a'; } /* '' */
+.ng-left-arrow-extend:before { content: '\e88b'; } /* '' */
+.ng-right-arrow-extend:before { content: '\e88c'; } /* '' */
+.ng-gift:before { content: '\e88d'; } /* '' */
+.ng-bag:before { content: '\e88e'; } /* '' */
+.ng-user-filled:before { content: '\e88f'; } /* '' */
+.ng-money-circled:before { content: '\e890'; } /* '' */
+.ng-email:before { content: '\e891'; } /* '' */
+.ng-ballon:before { content: '\e892'; } /* '' */
+.ng-ok:before { content: '\e893'; } /* '' */
+.ng-more:before { content: '\e894'; } /* '' */
+.ng-shopping-cart-alt:before { content: '\e895'; } /* '' */
+.ng-setting:before { content: '\e896'; } /* '' */
+.ng-user-more:before { content: '\e897'; } /* '' */
+.ng-info-circled:before { content: '\e898'; } /* '' */
+.ng-dot-x:before { content: '\e899'; } /* '' */
+.ng-mobile:before { content: '\e8a9'; } /* '' */
+.ng-logout:before { content: '\e8aa'; } /* '' */
+.ng-admin-financeiro:before { content: '\e8ab'; } /* '' */
+.ng-admin-home:before { content: '\e8ac'; } /* '' */
+.ng-admin-presentes:before { content: '\e8ad'; } /* '' */
+.ng-admin-usuarios:before { content: '\e8ae'; } /* '' */
+.ng-admin-temas:before { content: '\e8af'; } /* '' */
+.ng-checked:before { content: '\e8b0'; } /* '' */
+.ng-desktop:before { content: '\e8b1'; } /* '' */
+.ng-lupa:before { content: '\e8b2'; } /* '' */
+.ng-facebook:before { content: '\f09a'; } /* '' */
+.ng-instagram:before { content: '\f16d'; } /* '' */

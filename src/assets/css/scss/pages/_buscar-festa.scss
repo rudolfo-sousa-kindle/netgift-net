@@ -1,0 +1,211 @@
+.buscar-festa header {
+  &.wave {
+    background: #eef1f7 url("../imgs/header-buscar-festa.png") no-repeat right top;
+
+    .header-content {
+      max-width: 500px;
+    }
+  }
+
+  p.subtitle {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  form.card-purple {
+    margin-bottom: 120px;
+    transform: translateX(-17px);
+    width: 470px;
+
+    input[type=email],
+    input[type=number],
+    input[type=text] {
+      width: 100%;
+      font-size: 14px;
+      @include font(300);
+      text-indent: 20px;
+    }
+
+    .columns-2 > div:first-child {
+      width: 59%;
+    }
+
+    .columns-2 > div:last-child {
+      width: 37%;
+    }
+  }
+
+  form .flex-space > .flex-column:not(:last-child) {
+    margin-right: 4%;
+  }
+}
+
+.buscar-festa header + .container {
+  margin-top: 80px;
+}
+
+.festas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin: 50px 0 100px;
+
+  .festa {
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -3px 7px 10px 0 rgba(0, 0, 0, 0.05);
+    // width: 319px;
+    min-height: 340px;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all ease .3s;
+
+    &:hover{
+      box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    // <div class="festa">
+    //   <div class="info">
+    //     <div class="thumb"></div>
+    //     <div class="categoria">Infantil</div>
+    //     <p class="title">Jake</p>
+    //     <p class="title">Garret</p>
+    //     <p class="end">Rio de Janeiro</p>
+    //     <p class="data">29/12/2018</p>
+    //     <button class="gradient fullcolor border bgwhite"><span>Visitar site</span></button>
+    //   </div>
+    // </div>
+    .info {
+      transition: all ease 0.3s;
+      @include flex(center, center);
+      flex-direction: column;
+      padding: 40px;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      line-height: 1.2em;
+      color: #636466;
+
+
+      .thumb {
+        width: 90px;
+        height: 90px;
+        background: #eef1f7;
+        border-radius: 150px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        transition: all ease 0.3s;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .categoria {
+        @include font2(400);
+        color: #fcbe13;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 18px;
+        @include font(600);
+      }
+
+      .end {
+        margin-top: 10px;
+      }
+
+      .data {
+        margin-bottom: 20px;
+      }
+
+      .data,
+      .end {
+        font-size: 14px;
+        @include font(400);
+      }
+
+      button {
+        padding: 0 35px;
+        height: 43px;
+        font-size: 13px;
+        border: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.menu-filtros-festas{
+
+  margin-top: 30px;
+
+  .column-1{
+    width: 70%;
+
+    label{
+      margin-left: 20px;
+    }
+
+    button{
+      border-radius: 8px;
+      text-transform: inherit;
+      padding: 0 20px;
+
+      i{
+        font-size: 12px;
+        margin-left: 20px;
+
+        &:before{
+            width: 25px;
+        }
+      }
+    }
+  }
+  .column-2{
+    width: 29%;
+  }
+
+  .column-1, .column-2{
+    background: #eef1f7;
+    border-radius: 5px;
+    padding: 20px;
+
+  }
+  label, .result{
+    font-size: 14px;
+    color: #808285;
+    @include font2(400);
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+
+  .result-info{
+    font-size: 20px;
+    @include font(300);
+    letter-spacing: -0.3px;
+  }
+
+  .custom-select.bg-white + .select2-container{
+    width: 100% !important;
+    box-shadow: -3px 5px 7px 0px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    border-radius: 8px;
+
+    &.select2-container--open{
+          border-bottom-right-radius: 0px;
+          border-bottom-left-radius: 0px;
+    }
+  }
+
+  .custom-select + .select2-container .select2-selection .select2-selection__arrow{
+    padding-left: 25px;
+  }
+}
+
+.select2-container.select2-container--default.select2-container--open{
+  z-index: 99;
+}

@@ -1,0 +1,1023 @@
+body.page-criar-festa {
+    overflow-x: hidden;
+}
+
+body.page-criar-festa ::selection {
+    background: rgba(123, 48, 227, 0.55);
+    color: #FFF;
+}
+
+body.page-criar-festa ::-moz-selection {
+    background: rgba(123, 48, 227, 0.55);
+    color: #FFF;
+}
+
+body.page-criar-festa {
+    background-image: url(../imgs/criar-festa-bg.svg);
+    background-color: #f1f3f8;
+    background-position: right -20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+body.page-criar-festa header .container {
+    max-width: 66.5%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+}
+
+body.page-criar-festa header .account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.page-criar-festa header .account p {
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+body.page-criar-festa header .account a.gradient {
+    padding: 0 15px;
+    margin: 0;
+    margin-left: 100px;
+    color: #FFF;
+    border: 6px solid transparent !important;
+    -o-border-image: url(../imgs/bg-button-gradient.svg) 8 8 8 stretch !important;
+    border-image: url(../imgs/bg-button-gradient.svg) 8 8 8 stretch !important;
+}
+
+body.page-criar-festa header .account a.gradient:after {
+    width: 108%;
+    height: 127%;
+    left: -5px;
+    bottom: -5px;
+}
+
+body.page-criar-festa main .container {
+    max-width: 66.5%;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 140px;
+}
+
+body.page-criar-festa main .dados-crumb > div {
+    color: #FFF;
+    background-image: -moz-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    background-image: -webkit-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    background-image: -ms-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    background-image: linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    border-radius: 150px;
+    display: inline-block;
+    padding: 20px 23px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    min-width: 96px;
+    background-size: 100%;
+    transition: all ease .3s;
+    margin-right: 10px;
+}
+
+body.page-criar-festa main .dados-crumb > div:hover {
+    background-size: 200%;
+}
+
+body.page-criar-festa main .dados-crumb > div:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    background-image: url(../imgs/criar-festa-edit-etapa.svg);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    width: 22px;
+    height: 18px;
+    margin-left: 5px;
+    margin-top: -10px;
+}
+
+body.page-criar-festa .dados-crumb .dados-1,
+body.page-criar-festa main .etapa-2,
+body.page-criar-festa .dados-crumb .dados-2,
+body.page-criar-festa main .etapa-3,
+body.page-criar-festa .dados-crumb .dados-3,
+body.page-criar-festa main .etapa-4,
+body.page-criar-festa .dados-crumb .dados-4,
+body.page-criar-festa main .etapa-5,
+body.page-criar-festa .dados-crumb .dados-5 {
+    display: none;
+}
+
+body.page-criar-festa main .dados-crumb {
+    height: 55px;
+    white-space: nowrap;
+}
+
+body.page-criar-festa main .header {
+    margin-top: 40px;
+}
+
+body.page-criar-festa main p.subtitle {
+    color: #000000;
+    font-size: 20px;
+}
+
+body.page-criar-festa main .tipos-festa {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    max-width: 630px;
+    width: 100%;
+}
+
+body.page-criar-festa main .festa {
+    background: #FFF;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: inherit;
+}
+
+body.page-criar-festa .switch {
+    margin-top: 0;
+}
+
+main .personalizada {
+    background: transparent;
+    margin-top: 20px;
+    padding: 0;
+    font-weight: 400 !important;
+    font-size: 17px;
+    font-family: 'Museo Sans', sans-serif;
+    cursor: pointer;
+    text-transform: none;
+    display: inline-block;
+}
+
+body.page-criar-festa main .tipos-festa input[type="radio"]:checked + label {
+    color: #FFF;
+    background-color: #5129de;
+    background-image: linear-gradient(120deg, #5129de, #7b30e3);
+}
+
+body.page-criar-festa main .thumb {
+    border-radius: 150px;
+    width: 54px;
+    height: 54px;
+    background-color: #eef1f7;
+    margin-bottom: 15px;
+}
+
+body.page-criar-festa main .tipos-festa input[type="radio"]:checked + label .thumb {
+    background-color: rgba(238, 241, 247, 0.4);
+}
+
+body.page-criar-festa main .festa .title {
+    font-size: 15px;
+}
+
+body.page-criar-festa main .tipos-festa input[type="radio"],
+main #criar-festa input[type="radio"] {
+    display: none;
+}
+
+body.page-criar-festa main .continue button.gradient.comecar-festa {
+    height: 56px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0;
+    padding: 0 20px;
+    max-width: 300px;
+    box-shadow: 0px 6px 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 35px;
+}
+
+body.page-criar-festa main .continue button.gradient.comecar-festa i {
+    font-size: 9px;
+}
+
+body.page-criar-festa main .peoples {
+    position: fixed;
+    right: 80px;
+    top: 320px;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa main .peoples img {
+    width: 520px;
+}
+
+body.page-criar-festa #mapa iframe {
+    height: 450px;
+    width: 800px;
+    top: 260px;
+    border-radius: 5px;
+    right: 150px;
+    position: fixed;
+}
+
+body.page-criar-festa #mapa {
+    display: none;
+}
+
+body.page-criar-festa .loader {
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='lds-rolling' preserveAspectRatio='xMidYMid' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='15' fill='none' stroke='%235129de' stroke-dasharray='70.68583 25.56194' stroke-width='5' transform='rotate(190.898 50 50)'%3E%3CanimateTransform attributeName='transform' begin='0s' calcMode='linear' dur='0.5s' keyTimes='0;1' repeatCount='indefinite' type='rotate' values='0 50 50;360 50 50'/%3E%3C/circle%3E%3C/svg%3E");
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 26px;
+    left: 250px;
+}
+
+body.page-criar-festa .leaflet-control-attribution.leaflet-control {
+    display: none;
+}
+
+.leaflet-touch .leaflet-control-layers,
+body.page-criar-festa .leaflet-touch .leaflet-bar {
+    border: 0px;
+}
+
+.leaflet-touch .leaflet-bar a,
+.leaflet-touch .leaflet-bar a:first-child,
+body.page-criar-festa .leaflet-touch .leaflet-bar a:last-child {
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.38);
+    margin-bottom: 5px;
+    font-weight: 300;
+    background-color: #552adf;
+    color: #FFF;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa .leaflet-touch .leaflet-bar a:hover {
+    background-color: rgb(123, 48, 227);
+}
+
+body.page-criar-festa main .peoples.move {
+    transform: translateX(-300px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.page-criar-festa .progress {
+    width: 100%;
+    height: 140px;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.page-criar-festa .progress .container {
+    max-width: 66.5%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+body.page-criar-festa .progress .container:before {
+    content: '';
+    background-image: url(../imgs/criar-festa-traco.png);
+    background-repeat: repeat-x;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 68px;
+    left: 0;
+}
+
+body.page-criar-festa .progress .container .progress-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f4f4f4;
+    border-radius: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa .progress .container .progress-icon:nth-child(1) img {
+    width: 35px;
+}
+
+body.page-criar-festa .progress .container .progress-icon:nth-child(2) img {
+    width: 65px;
+}
+
+
+body.page-criar-festa .progress .container .progress-icon.active {
+    background-color: #5429df;
+    width: 90px;
+    height: 90px;
+    transform: translateY(-40px);
+    position: relative;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 2, 0.1), 0px 30px 0px 20px rgba(255, 255, 255, 1);
+}
+
+.progress .container .progress-icon.active img {
+    filter: brightness(2);
+}
+
+body.page-criar-festa .progress .container .progress-icon:before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 100px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #fcbe13;
+    opacity: 0;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa .progress .container .progress-icon.active:before {
+    opacity: 1;
+    bottom: -25px;
+}
+
+body.page-criar-festa .progress .container .progress-icon.active path {
+    fill: #FFF;
+}
+
+
+body.page-criar-festa .progress #progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(to right, #7b30e3 20%, #f1f1f1 40%);
+    background-color: #f1f1f1;
+    background-repeat: no-repeat;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa .progress #progress-bar.etapa-1 {
+    background-size: 100%;
+}
+
+body.page-criar-festa .progress #progress-bar.etapa-2 {
+    background-size: 160%;
+}
+
+body.page-criar-festa .progress #progress-bar.etapa-3 {
+    background-size: 210%;
+}
+
+body.page-criar-festa .progress #progress-bar.etapa-4 {
+    background-size: 280%;
+}
+
+body.page-criar-festa .campos {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 270px;
+    width: 100%;
+    padding-right: 100px;
+}
+
+
+body.page-criar-festa .campos .linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    max-width: 620px;
+}
+
+body.page-criar-festa .campos .linha .campo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+body.page-criar-festa .campos .linha .section-inputs .campo {
+    margin-right: 0;
+}
+
+body.page-criar-festa .campos .linha .section-inputs {
+    margin-right: 10px;
+}
+
+body.page-criar-festa .campos .linha .section-inputs .campo:last-child {
+    margin-top: 13px;
+}
+
+body.page-criar-festa .campos .linha .campo:last-of-type {
+    margin-right: 0px;
+}
+
+body.page-criar-festa .campo label {
+    opacity: 0.3;
+    color: #000;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: inherit;
+    letter-spacing: 0px;
+    font-weight: 600;
+    padding-left: 13px;
+    margin: 0 0 7px;
+    position: relative;
+}
+
+body.page-criar-festa .campo .label-checkbox {
+    padding-left: 0;
+}
+
+body.page-criar-festa .cbx span:first-child {
+    width: 15px;
+    height: 15px;
+    border-color: #676161;
+}
+
+body.page-criar-festa .checkbox {
+    margin-bottom: -23px;
+}
+
+body.page-criar-festa .cbx span:last-child {
+    font-size: 12px;
+    padding-left: 4px;
+}
+
+body.page-criar-festa .cbx span:first-child svg {
+    width: 10px;
+    stroke: #2f2929;
+}
+
+.campo input,
+body.page-criar-festa .campo select {
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+    font-size: 14px;
+    padding: 0 20px;
+    height: 60px;
+    border-radius: 6px;
+    font-weight: 400;
+    font-family: 'Museo Sans', sans-serif;
+    width: auto;
+}
+
+body.page-criar-festa .campo input[type="email"].disabled {
+    opacity: 0.5;
+}
+
+body.page-criar-festa .campo select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 45px;
+}
+
+body.page-criar-festa .campo-sexo label:after {
+    content: '\e800';
+    font-family: "netgift_icons";
+    font-size: 8px;
+    position: absolute;
+    bottom: -45px;
+    right: 20px;
+    z-index: 9;
+    color: #000;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 100px;
+}
+
+body.page-criar-festa .campo input:focus {
+    padding: 0 19px;
+}
+
+body.page-criar-festa .linha .campo .nome {
+    width: 300px;
+}
+
+body.page-criar-festa .linha .campo .nascimento {
+    width: 140px;
+}
+
+body.page-criar-festa .linha .campo:nth-child(3) input {
+    width: 140px;
+}
+
+body.page-criar-festa .adicionar-campo {
+    border-radius: 150px;
+    display: inline-block;
+    padding: 8px 4px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 18px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 30px;
+    transition: all ease .3s;
+}
+
+body.page-criar-festa .adicionar-campo.add {
+    background-image: linear-gradient(to right, #00afe0 0%, #00d6c8 100%);
+    color: #fff;
+    right: 50px;
+    transition: all ease .3s;
+    background-size: 101%;
+}
+
+body.page-criar-festa .adicionar-campo.trash {
+    display: none;
+    color: rgb(81, 41, 222);
+    background-color: #FFF;
+    right: 10px;
+}
+
+body.page-criar-festa .adicionar-campo.add:hover {
+    background-size: 200%;
+}
+
+body.page-criar-festa .adicionar-campo.trash:hover {
+    color: #FFF;
+    background-color: rgb(81, 41, 222);
+}
+
+body.page-criar-festa .configs p {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+body.page-criar-festa .config-accordion .config-item {
+    width: 300px;
+}
+
+body.page-criar-festa .config-accordion .config-item .config-item-content p {
+    height: 40px;
+}
+
+body.page-criar-festa .config-accordion .config-item .config-item-content {
+    padding-bottom: 0px;
+}
+
+body.page-criar-festa .tooltipster-criarfesta .tooltipster-box {
+    background-image: -moz-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%) !important;
+    background-image: -webkit-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%) !important;
+    background-image: -ms-linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%) !important;
+    background-image: linear-gradient( 145deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%) !important;
+}
+
+body.page-criar-festa .tooltipster-sidetip.tooltipster-bottom.tooltipster-criarfesta .tooltipster-arrow-background {
+    border-bottom-color: #632ce0 !important;
+}
+
+body,
+html,
+body.page-criar-festa #app {
+    height: inherit;
+}
+
+body.page-criar-festa #endereco-festa {
+    padding-right: 40px;
+}
+
+@media (max-height: 930px) {
+    body.page-criar-festa header .container {
+        padding-top: 20px;
+    }
+
+    body.page-criar-festa main .peoples {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    body.page-criar-festa main .peoples.move {
+        transform: translateY(-50%) translateX(-200px);
+    }
+
+
+}
+
+@media (max-width: 1800px) {
+    body.page-criar-festa #mapa iframe {
+        width: 550px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 1700px) {
+
+    body.page-criar-festa main .header {
+        margin-top: 30px;
+    }
+
+    main .container,
+    body.page-criar-festa header .container {
+        max-width: 86.5%;
+    }
+
+    body.page-criar-festa header .account p {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.4em;
+        opacity: 1;
+        text-align: right;
+        color: #fff;
+    }
+
+    body.page-criar-festa header .account a.gradient {
+        margin-left: 40px;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    body.page-criar-festa header .account a.gradient:after {
+        width: 110%;
+        height: 134%;
+        left: -5px;
+        bottom: -5px;
+        border-radius: 5px;
+    }
+
+    body.page-criar-festa main .peoples img {
+        width: 480px;
+        height: auto;
+    }
+
+    body.page-criar-festa h2 {
+        font-size: 32px;
+    }
+
+    body.page-criar-festa main p.subtitle {
+        font-size: 16px;
+        margin: 0.4em 0 1.4em;
+    }
+}
+
+@media (max-width: 1366px) {
+
+    body.page-criar-festa main .peoples img {
+        width: 320px;
+        height: auto;
+    }
+
+    body.page-criar-festa main .tipos-festa {
+        display: flex;
+        overflow-x: auto;
+        max-width: 550px;
+        padding-bottom: 10px;
+    }
+
+    body.page-criar-festa main .festa {
+        min-width: 150px;
+        margin-right: 10px;
+    }
+
+    body.page-criar-festa main .continue button.gradient.comecar-festa {
+        max-width: 220px;
+        padding: 0 15px;
+        height: 50px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon.active {
+        width: 60px;
+        height: 60px;
+        transform: translateY(-20px);
+    }
+
+    body.page-criar-festa .progress .container .progress-icon:nth-child(1) img {
+        width: 30px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon:nth-child(2) img {
+        width: 45px;
+        height: 45px;
+    }
+
+    body.page-criar-festa .progress #progress-bar {
+        height: 5px;
+    }
+
+    body.page-criar-festa .progress {
+        height: 130px;
+    }
+
+    body.page-criar-festa .progress .container:before {
+        bottom: 65px;
+    }
+
+    body.page-criar-festa main .dados-crumb > div {
+        font-size: 12px;
+        padding: 15px 15px;
+    }
+
+    main .continue button.gradient.comecar-festa,
+    body.page-criar-festa main .festa .title {
+        font-size: 12px;
+    }
+
+    body.page-criar-festa header .logo img {
+        width: 180px;
+    }
+
+    body.page-criar-festa .campos .linha .campo {
+        margin-right: 10px;
+    }
+
+    body.page-criar-festa .linha .campo .nome {
+        width: 200px;
+    }
+
+    .campo input,
+    body.page-criar-festa .campo select {
+        height: 50px;
+        font-size: 12px;
+    }
+
+    body.page-criar-festa .campo-sexo label:after {
+        bottom: -40px;
+    }
+
+    body.page-criar-festa .config-accordion .config-item .config-item-title {
+        padding: 0 20px;
+    }
+
+    body.page-criar-festa .config-accordion .config-item {
+        line-height: 50px;
+    }
+
+    body.page-criar-festa .config-accordion .config-item {
+        width: 240px;
+    }
+
+    .config-accordion .config-item .config-item-content .gray,
+    body.page-criar-festa .config-accordion .config-item p {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    body.page-criar-festa .switch {
+        width: 50px;
+    }
+
+    body.page-criar-festa .config-accordion .config-item .config-item-content:after {
+        height: 10px;
+    }
+
+    body.page-criar-festa .configs p {
+        font-size: 15px;
+    }
+
+    body.page-criar-festa .loader {
+        width: 28px;
+        height: 28px;
+        top: 30px;
+        left: 165px;
+    }
+
+    body.page-criar-festa #endereco-festa {
+        padding-right: 30px;
+    }
+    body.page-criar-festa #mapa iframe {
+        top: 93px;
+        right: 95px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body.page-criar-festa #mapa iframe {
+        width: 400px;
+        height: 400px;
+        right: 7%;
+    }
+    body.page-criar-festa main .peoples {
+        right: 5%;
+    }
+}
+
+
+@media (max-width: 999px) {
+    body.page-criar-festa {
+        background-image: inherit;
+    }
+
+    body.page-criar-festa main .peoples {
+        display: none;
+    }
+
+    body.page-criar-festa header .account p {
+        color: #333;
+    }
+
+    header .account p,
+    body.page-criar-festa header .account a.gradient {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    body.page-criar-festa .progress .container {
+        max-width: 86.5%;
+    }
+
+    body.page-criar-festa h2 {
+        font-size: 24px;
+    }
+
+    body.page-criar-festa main p.subtitle {
+        font-size: 14px;
+        margin: 0.4em 0 1.4em;
+    }
+
+    body.page-criar-festa main .tipos-festa {
+        max-width: 85vw;
+    }
+}
+
+@media (max-width: 850px) {
+    body.page-criar-festa #mapa iframe {
+        position: relative;
+        top: inherit;
+        left: 0px;
+        right: inherit;
+        width: 300px;
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 650px) {
+    body.page-criar-festa header .account p {
+        display: none;
+    }
+
+    header .logo img {
+        width: 120px;
+    }
+
+    body.page-criar-festa .campos .linha {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body.page-criar-festa .checkbox {
+        margin-bottom: 0;
+    }
+
+    body.page-criar-festa .campo label {
+        font-size: 11px;
+        margin: 10px 0 5px;
+    }
+
+    .campo-sexo label:after {
+        bottom: -32px;
+        right: 16px;
+    }
+
+    body.page-criar-festa .campo input, 
+    body.page-criar-festa .campo select {
+        height: 39px;
+        padding: 0 13px;
+    }
+
+    body.page-criar-festa .campos .linha .campo,
+    body.page-criar-festa .linha .campo input[type="text"],
+    body.page-criar-festa .linha .campo input[type="email"],
+    body.page-criar-festa .config-accordion .config-item {
+        width: 190px;
+    }
+
+    body.page-criar-festa .campo-sexo label:after {
+        bottom: -34px;
+    }
+
+    body.page-criar-festa .campos .linha .section-inputs .campo:last-child {
+        margin-top: 0px;
+    }
+
+    body.page-criar-festa form > div {
+        margin: 0 auto;
+    }
+
+    .etapa-3 .campos,
+    body.page-criar-festa .etapa-4 .campos {
+        padding-right: 0px;
+    }
+
+    body.page-criar-festa main .continue button.gradient.comecar-festa {
+        height: 36px;
+        font-size: 12px;
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .configs,
+    body.page-criar-festa #mapa {
+        margin-bottom: 30px;
+    }
+
+    main .tipos-festa {
+        margin-bottom: 10px;
+    }
+
+    body.page-criar-festa header .account a.gradient {
+        margin-left: 0px;
+    }
+
+    body.page-criar-festa .progress {
+        height: 80px;
+    }
+
+    body.page-criar-festa .progress .container:before {
+        bottom: 40px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    body.page-criar-festa .progress .container .progress-icon.active {
+        width: 40px;
+        height: 40px;
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 2, 0.1), 0px 0px 0px 10px rgba(255, 255, 255, 1);
+    }
+
+    body.page-criar-festa .progress .container .progress-icon.active:before {
+        bottom: -10px;
+        width: 6px;
+        height: 6px;
+    }
+
+    body.page-criar-festa main .dados-crumb {
+        max-width: 280px;
+        width: 100%;
+        overflow-x: auto;
+        height: 60px;
+    }
+
+    main .personalizada {
+        margin: 0 0 30px 0; 
+        font-size: 15px;
+    }
+
+    body.page-criar-festa header .logo img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 420px) {
+    body.page-criar-festa h2 {
+        width: 90%;
+    }
+
+    body.page-criar-festa .loader {
+        top: 35px;
+        left: 255px;
+    }
+
+    body.page-criar-festa #mapa iframe {
+        width: 280px;
+        height: 280px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    body.page-criar-festa main .container {
+        max-width: 90%;
+    }
+}

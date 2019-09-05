@@ -1,0 +1,353 @@
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.upload{
+    background: #00afe0;
+    background-color: #00afe0;
+    background-image: -webkit-linear-gradient(left, #00afe0 0%, #00d6c8 100%);
+    background-image: linear-gradient(to right, #00afe0 0%, #00d6c8 100%);
+    background-size: 101%;
+    color: #FFFFFF;
+    transition: all ease 0.3s;
+    font-size: 12px;
+    @include font2(400);
+    padding: 15px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.excluir{
+    background: #cacbcb;
+    color: #FFFFFF;
+    transition: all ease 0.3s;
+    font-size: 12px;
+    @include font2(400);
+    padding: 15px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+a,
+button {
+    &.gradient {
+        font-size: 14px;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 5px;
+        height: 50px;
+        padding: 0 30px;
+        box-sizing: border-box;
+        box-shadow: 0 1px 7px #d4d5d6;
+        outline: none;
+        @include font2(400);
+
+        &.fullcolor {
+            background: rgba(0, 175, 224, 1);
+            @include linear-gradient(to right, rgba(0, 175, 224, 1) 0%, rgba(0, 214, 200, 1) 100%);
+            background-size: 101%;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+            color: #FFFFFF;
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-size: 200%;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+            }
+
+            &.gray {
+                background: #bfc9cb;
+                @include linear-gradient(to right, rgba(202, 202, 202, 1) 0%, rgba(189, 201, 203, 1) 100%);
+                box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &.border {
+            box-sizing: border-box;
+            box-shadow: 0 0 0 transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            border: 2px solid transparent;
+            background-image: linear-gradient(#f9fafc, #f9fafc), linear-gradient(80deg, #21b2e4 0, #00d9c7);
+
+            &.bgwhite {
+                background-image: linear-gradient(#fff, #fff), linear-gradient(80deg, #21b2e4 0, #00d9c7) !important;
+            }
+
+            &.white {
+                color: #FFF;
+                background: transparent;
+                border: 1px solid #FFF;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    background: #FFF;
+                    color: #3d3d3d;
+                }
+            }
+
+            span {
+                @include font2(600);
+                @include linear-gradient(80deg, #21b2e4 0, #00d9c7);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent; // transition: 0.2s linear;
+            }
+        }
+    }
+
+    &.btn-large {
+        width: 95%;
+        position: absolute;
+        bottom: 4%;
+        z-index: 1;
+        height: 70px;
+        background: #e8eef5;
+        border-radius: 5px;
+        color: #58595b;
+        @include font(600);
+        font-size: 20px;
+        transition: all ease 0.3s;
+        box-shadow: 0 -30px 100px -10px white, 0 -60px 100px -10px white, 0 -90px 100px -10px white;
+        display: none;
+
+        &:hover {
+            background: #dde3e9;
+        }
+    }
+
+    &.btn-filter {
+        p {
+            @include font(400);
+            font-size: 13px;
+            color: #3d3d3d;
+
+            strong {
+                @include font(800);
+            }
+        }
+
+        .dots {
+            margin-left: 16px;
+
+            div {
+                background-color: #898989;
+            }
+        }
+    }
+
+    &.icon-add-person {
+        padding: 10px 15px;
+        margin-left: 10px;
+        height: 60px;
+        width: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #00c3d4;
+    }
+}
+
+.carregar-mais button.btn-large {
+    display: block;
+}
+
+button.gradient.comecar-festa {
+    text-transform: inherit;
+    font-size: 17px;
+    letter-spacing: -1px;
+    @include flex(center, space-between);
+    height: 65px;
+    max-width: 230px;
+    width: 100%;
+    padding: 0 25px;
+    margin: 10px 0 40px;
+    box-shadow: -5px 6px 10px 0 rgba(0, 0, 0, 0.1);
+
+    i {
+        font-size: 12px;
+        margin-top: 3px;
+        width: 24px;
+        text-align: left;
+        display: inline-block;
+        transition: all ease 0.3s;
+    }
+
+    &:hover {
+        i {
+            transform: translateX(5px);
+        }
+    }
+}
+
+/* === ALT === */
+
+.border.grey{
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 0 30px;
+}
+
+.buttons > button:first-child {
+    margin-right: 10px;
+}
+
+header.roxo a.gradient.border {
+    margin: 0;
+    padding: 0 10px;
+    height: 43px;
+    font-size: 13px;
+
+    &:after {
+        width: 114%;
+        height: 150%;
+    }
+
+    span {
+        font-weight: 400;
+        color: #FFF;
+    }
+}
+
+/* === DOTS === */
+
+.dots {
+    position: relative;
+    width: auto;
+    height: 15px;
+    cursor: pointer;
+    padding: 0 10px;
+    margin-right: -10px;
+    z-index: 2;
+    background: transparent;
+    border-radius: 150px;
+    width: 26px;
+    height: 25px;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease .3s;
+
+    &:hover {
+        background: #ebebf5;
+    }
+
+    i:before {
+        width: auto;
+        margin: 0;
+    }
+
+    .context-menu {
+        background-color: #fafafa;
+        box-shadow: 3px 6px 7px 0 rgba(0, 0, 0, 0.07);
+        position: absolute;
+        top: -10px;
+        right: -3px;
+        width: 141px;
+        height: 85px;
+        z-index: -1;
+        border-radius: 0 0 13px 13px;
+        opacity: 0;
+        transform: scale(0);
+        transition: all cubic-bezier(0.96, 0.03, 0.1, 1) 0.3s;
+        transform-origin: right top;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+
+        .item {
+            font-size: 12px;
+            @include font(600);
+            color: #3d3d3d;
+            text-transform: uppercase;
+            padding: 13px 20px;
+            transition: all ease 0.3s;
+            text-align: left;
+            background: transparent;
+            opacity: 0;
+
+            &:hover {
+                background: #f1f1f1;
+            }
+
+            i {
+                color: #969696;
+                font-size: 16px;
+                margin-right: 10px;
+            }
+        }
+    } // .middle {
+    //   top: 40%;
+    // }
+    //
+    // .bottom {
+    //   bottom: 0;
+    // }
+    //
+    // & > div {
+    //   position: absolute;
+    //   background-color: #FFFFFF;
+    //   width: 80%;
+    //   height: 3px;
+    //   box-sizing: border-box;
+    //   border-radius: 100%;
+    // }
+}
+
+.filtro {
+    position: relative;
+}
+
+.filtro .options {
+    position: absolute;
+    background: rgba(202, 202, 202, 1);
+    @include linear-gradient(to right, rgba(202, 202, 202, 1) 0%, rgba(189, 201, 203, 1) 100%);
+    border-radius: 0 0 5px 5px;
+    width: 286px;
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+}
+
+.filtro .options li {
+    display: block;
+    color: #3d3d3d;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* === criar festa === */
+
+.criar-festa,
+header.default nav ul li a.criar-festa {
+    border-radius: 5px;
+    @include flex(center, center);
+    padding: 19px 20px;
+    color: #333 !important;
+    background: #fcbe13;
+    text-decoration: none;
+    @include font(600);
+    font-size: 14px !important;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 15px;
+    transition: all ease 0.3s;
+
+    &:hover {
+        background: #ffd767;
+    }
+}

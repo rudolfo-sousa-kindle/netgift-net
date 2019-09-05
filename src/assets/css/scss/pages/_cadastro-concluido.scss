@@ -1,0 +1,310 @@
+.cadastro-concluido {
+    &.bg-login {
+        background: linear-gradient(#5129de, #7b31e3);
+    }
+
+    .barra-progresso {
+        background-image: linear-gradient(to right, #66cbef 0%, #66eadc 73%);
+    }
+
+    .txt-login {
+        margin-top: 35px;
+    }
+
+    .title-mobile {
+        display: none;
+    }
+
+    .festas {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 741px;
+        z-index: 9;
+    }
+
+    .line-festa {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box-festa {
+        width: 227px;
+        height: 219px;
+        background: #ffffff;
+        border-radius: 6px;
+        margin: 0 0 0 20px;
+        padding: 31px;
+        text-align: center;
+        box-shadow: 3px 3px 11px #333333bf;
+        transition: .4s all ease;
+        cursor: pointer;
+    }
+
+    .box-festa:nth-of-type(4),
+    .box-festa:nth-of-type(5),
+    .box-festa:nth-of-type(6) {
+        margin-top: 16px;
+    }
+
+    .box-festa:hover {
+        background: linear-gradient(to bottom, #00dcc5 31%, #00a8e5);
+        transform: scale(1.04);
+        color: #fff;
+    }
+
+    .circle {
+        width: 105px;
+        height: 105px;
+        background: #ebebeb;
+        border-radius: 150px;
+        margin: 0 auto;
+        transition: all ease 0.3s;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .title-festa {
+        font-size: 18px;
+        padding-top: 28px;
+    }
+
+    .margin-festa {
+        margin-top: 16px;
+    }
+
+    .ball::after {
+        right: auto;
+        top: 328px;
+        margin-left: -32px;
+        z-index: -1;
+        align-self: self-end;
+    }
+
+    .cyan {
+        margin-top: 29px;
+        font-size: 17px;
+        font-weight: 400;
+        align-self: flex-end;
+    }
+
+    @media (max-width: 1685px) {
+        .container {
+            width: 80%;
+        }
+
+        .festas {
+            width: 720px;
+            margin: 40px 0 100px;
+        }
+
+        .box-festa {
+            width: 215px;
+            height: 210px;
+        }
+
+        .circle {
+            width: 94px;
+            height: 93px;
+        }
+    }
+
+    @media (max-width: 1590px) {
+        .festas {
+            width: 790px;
+        }
+
+        .box-festa {
+            width: 203px;
+            height: 203px;
+        }
+    }
+
+    @media (max-width: 1523px) {
+        main {
+            margin-top: 80px;
+            flex-direction: column;
+        }
+
+        .subtitulo {
+            margin-bottom: 38px;
+        }
+
+        .box-festa {
+            margin: 0 20px 0 0px;
+        }
+
+        .ball::after {
+            top: 450px;
+            margin-left: -45px;
+        }
+
+        .cyan {
+            align-self: flex-start;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        div.container::after {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media (max-width: 930px) {
+        .festas {
+            width: 100%;
+            align-items: center
+        }
+
+        .line-festa {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 18px;
+            grid-row-gap: 16px;
+        }
+
+        .box-festa,
+        .box-festa:nth-of-type(4),
+        .box-festa:nth-of-type(5),
+        .box-festa:nth-of-type(6) {
+            margin: 0;
+        }
+
+        .festas .cyan {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .box-festa {
+            width: 197px;
+            height: 199px;
+            margin: 0;
+        }
+
+        .circle {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    @media (max-width: 690px) {
+        .box-festa {
+            width: 181px;
+            height: 189px;
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .box-festa {
+            width: 165px;
+            height: 170px;
+        }
+
+        .box-festa:nth-of-type(3) {
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        main {
+            margin-bottom: 0;
+        }
+
+        .container .txt-login {
+            margin-top: 0px;
+        }
+
+        .titulo {
+            display: none;
+        }
+
+        .ball::after {
+            top: 292px;
+            width: 85px;
+            height: 85px;
+        }
+
+        .subtitulo {
+            margin: 18px 0 0 0;
+        }
+
+        .festas {
+            margin-bottom: 80px;
+        }
+
+        .box-festa {
+            width: 146px;
+            height: 154px;
+        }
+
+        .circle {
+            width: 65px;
+            height: 65px;
+        }
+
+        .title-festa {
+            padding-top: 21px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        main {
+            margin-top: 38px;
+        }
+
+        .box-festa {
+            width: 109px;
+            height: 122px;
+            padding: 20px 0 10px 0;
+        }
+
+        .circle {
+            width: 53px;
+            height: 53px;
+        }
+
+        .title-festa {
+            font-size: 15px;
+            padding-top: 15px;
+        }
+
+        .margin-festa {
+            margin-top: 10px;
+        }
+
+        .ball::after {
+            margin-left: -185px;
+            top: 313px;
+            transform: rotate(85deg);
+            align-self: auto;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .line-festa {
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+
+        .festas {
+            margin-top: 31px;
+        }
+    }
+
+
+
+    @media (max-width: 360px) {
+        .line-festa {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .ball::after {
+            margin-left: -119px;
+            top: 248px;
+        }
+    }
+}

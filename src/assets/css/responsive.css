@@ -1,0 +1,2696 @@
+/* responsivo - dashboard */
+
+@media (max-width: 1895px) {
+    main .container,
+    header.roxo .container {
+        width: 90%;
+    }
+    header.roxo .container:before {
+        transform: translate(0%, 80px);
+    }
+}
+
+@media (max-width: 1800px) {
+    .dashboard-home .card-convidados-sizer,
+    .dashboard-home .card-convidados {
+        width: calc(33% - 7px);
+    }
+
+    .dashboard-home {
+        width: 100%;
+        max-width: 1120px;
+    }
+
+    .dashboard .brief.brief-colors > .brief .brief-card {
+        padding: 27px 85px 27px 55px;
+    }
+
+    .status-filter .badges-filter {
+        padding: 10px 9px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 1680px) {
+    header.roxo .container .header-bottom > div:first-child {
+        width: 100%;
+    }
+
+    .status-filter .badges-filter {
+        padding: 10px 5px;
+    }
+
+    .dashboard .brief.brief-colors > .brief .brief-card {
+        padding: 36px 45px 36px 30px;
+    }
+
+    .brief-card {
+        padding: 20px 23px;
+    }
+
+    .brief-card span,
+    .brief.brief-colors > .brief .brief-card span {
+        font-size: 33px;
+    }
+
+    .welcome {
+        width: 614px;
+        height: 91px;
+    }
+
+    .convidados-1 button.btn-large {
+        bottom: 1%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .dashboard-home {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .welcome .anel-welcome {
+        width: 8%;
+        transform: translateY(0px);
+    }
+
+    .welcome .welcome-info small,
+    .copy-link input[type=text],
+    label.prefixo {
+        font-size: 14px;
+    }
+
+    .copy-link input[type=text] {
+        padding-left: 155px;
+        width: 75%;
+    }
+
+    .welcome .welcome-info p,
+    .welcome .welcome-info small span {
+        font-size: 16px;
+    }
+
+    .welcome {
+        width: 505px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 17px 20px;
+    }
+
+}
+
+
+@media (max-width: 1550px) {
+    header.roxo .container .header-bottom nav ul li {
+        margin-right: 1%;
+        font-size: 16px;
+    }
+
+    header.roxo .container .header-bottom nav ul li.active {
+        font-size: 17px;
+    }
+
+    .status-filter .badges-filter:last-child {
+        margin-right: 10px;
+    }
+}
+
+
+@media (max-width: 1500px) {
+    .categorias-mobile {
+        display: block;
+    }
+
+    .lista-presentes-2 .status-filter {
+        display: none;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 119px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .cards-gift {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 1475px) {
+    .dashboard-home button.fullcolor.gradient {
+        font-size: 13px;
+    }
+
+    .dashboard .left {
+        margin-right: 20px;
+    }
+
+    .dashboard .brief.brief-colors > .brief .brief-card {
+        padding: 25px 25px 25px 20px;
+    }
+
+    .card-default > .flex {
+        overflow-x: auto;
+        display: -webkit-box;
+    }
+
+    .editar-perfil .card-default > .flex {
+        display: flex;
+    }
+
+    .brief.brief-colors > .brief .brief-card p {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .card-convidados .card-convidados-name p {
+        font-size: 18px;
+    }
+
+    .card-convidados .card-convidados-infos,
+    .card-convidados .card-convidados-name span {
+        font-size: 14px;
+    }
+
+    .card-convidados .card-convidados-infos {
+        padding: 13px 0;
+    }
+
+    .dashboard-home {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .dashboard-home .card-convidados {
+        min-width: 250px;
+    }
+
+    .dashboard-home .card-convidados-sizer,
+    .dashboard-home .card-convidados {
+        width: calc(33% - 7px);
+    }
+
+    .left + div .brief-card p {
+        font-size: 13px;
+        max-width: 160px;
+        transform: translateX(-35px);
+        width: calc(100% + 35px);
+        max-width: calc(160px + 35px);
+    }
+
+    .left + div .brief-card .brief-icon {
+        height: 30px;
+    }
+
+
+    .left + div .brief-card.icon button {
+        transform: translateX(-35px);
+        font-size: 12px;
+    }
+
+    .left + div .brief-card {
+        padding: 17px 20px;
+    }
+
+    .brief-card span, 
+    .brief.brief-colors > .brief .brief-card span {
+        font-size: 25px;
+    }
+
+    .cards-gift {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1366px) {
+    .lista-presentes-2 main .container .summary {
+        display: block;
+    }
+}
+
+@media (max-width: 1365px) {
+
+    main .container {
+        margin: 60px auto 0;
+    }
+
+    .left > .flex-column {
+        flex-direction: row;
+    }
+
+    main .container .summary {
+        display: block;
+    }
+
+    .welcome,
+    .copy-link {
+        width: 50%;
+    }
+
+    .copy-link {
+        margin-left: 26px;
+    }
+
+    .copy-link label {
+        margin-top: 0;
+    }
+
+    .copy-link input[type=text] {
+        width: 100%;
+        margin-right: 25px;
+    }
+
+    .copy-link .flex-space {
+        justify-content: flex-start;
+    }
+
+    .copy-link .flex-column {
+        margin-top: 11px;
+    }
+
+    .brief.flex-end {
+        margin-top: 37px;
+    }
+
+    .dashboard .left {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .cards-gift {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1243px) {
+
+    .dashboard-home {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 70px;
+    }
+
+    header.roxo .container .header-bottom nav ul li.active {
+        font-size: 15px;
+    }
+
+    header.roxo .container .header-bottom nav ul li {
+        font-size: 14px;
+    }
+
+    .section-convidados {
+        flex-direction: column;
+    }
+
+    .brief {
+        flex-direction: row;
+    }
+
+    .brief.brief-colors > .brief {
+        margin-right: 0px;
+        width: 32%;
+    }
+
+    .section-convidados .brief.brief-colors {
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 1160px) {
+    .open-menu {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        z-index: 99;
+    }
+
+    .menu-icon {
+        width: 22px;
+        height: 3px;
+        right: 0px;
+        background: #fff;
+        display: block;
+        border-radius: 5px;
+        position: relative;
+        transition: .2s all linear;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+        content: '';
+        width: 27px;
+        height: 3px;
+        right: 0px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        border-radius: 5px;
+        top: -9px;
+        transition: .2s all linear;
+    }
+    
+    .menu-icon::before {
+        top: -9px;
+    }
+    
+    .menu-icon::after {
+        top: 9px;
+    }
+    
+    .menu-icon.active {
+        transition: .3s all linear;
+        background: transparent;
+    }
+    
+    .menu-icon.active::before,
+    .menu-icon.active::after {
+	    top: 0px;
+    }
+    
+    .menu-icon.active::before {
+        transform: rotate(45deg);
+    }
+    
+    .menu-icon.active::after {
+        transform: rotate(-45deg);
+    }
+
+    
+
+    header.roxo .container .header-top .notification,
+    header.roxo .container .header-top .user-info,
+    .card.card-user {
+        display: none;
+    }
+    header.roxo .container .header-top .options {
+        width: 165px;
+        justify-content: space-between;
+    }
+
+    header.roxo .container .header-bottom {
+        display: block;
+    }
+
+    header.roxo .container .header-bottom > div:first-child {
+        width: 100%;
+    }
+
+    header.roxo .container:before {
+        display: none;
+    }
+
+    .cards-gift {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1053px) {
+    .options button.gradient {
+        padding: 0;
+        font-size: 13px;
+        height: 45px;
+    }
+
+    header.roxo .container .header-bottom nav ul li {
+        margin-right: 1.2%;
+    }
+
+    header.roxo button.gradient.border span {
+        padding: 0 13px;
+    }
+
+    header.roxo .container .header-bottom nav ul li a {
+        letter-spacing: 0.3px;
+    }
+
+    .card.card-user {
+        max-width: 174px;
+    }
+
+    .card.card-user p {
+        font-size: 14px;
+    }
+
+    .convidados-1 .status-filter .badges-filter:last-child {
+        margin-right: 86px;
+    }
+
+    /* fim pagina de convidados 1 */
+    .lista-presentes-2 .card-default > .flex {
+        display: flex;
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu-mob .menu-mobile {
+        top: 20px;
+        left: auto;
+    }
+}
+
+@media (max-width: 970px) {
+    .dashboard-home .card-convidados-sizer,
+    .dashboard-home .card-convidados {
+        width: calc(50% - 10px);
+    }
+
+}
+
+@media (max-width: 920px) {
+
+    .footer-logged p {
+        color: rgba(61, 61, 61, 0.4);
+    }
+
+    .status-filter .badges-filter {
+        width: auto;
+        font-size: 12px;
+    }
+
+    .dashboard-home button.gradient {
+        height: 41px;
+        padding: 0 25px;
+    }
+
+    .cards-gift {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 856px) {
+    header.roxo .container .header-bottom h1 {
+        font-size: 35px;
+    }
+
+    /*    header.roxo .container .header-bottom h1:before,*/
+    header.roxo .menu-indicator {
+        display: none;
+    }
+
+    header.roxo .container .header-bottom nav ul li.active {
+        position: relative;
+    }
+    header.roxo .container .header-bottom nav ul li.active:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        background: #fbbd13;
+        width: 38px;
+        height: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header.roxo .container .header-bottom nav {
+        overflow-x: auto;
+        width: 113%;
+        transform: translateX(-8%);
+        padding-left: 10%;
+        position: relative;
+    }
+
+    header.roxo .container .header-bottom:before {
+        position: absolute;
+        z-index: 2;
+        left: 0px;
+        transform: translateX(-55px);
+        bottom: 0px;
+        content: '';
+        width: 40px;
+        height: 50px;
+        background-image: linear-gradient(to right, #4f3ce4, #4f3ce400);
+    }
+
+    header.roxo .container .header-bottom nav::-webkit-scrollbar {
+        height: 0;
+    }
+
+    header.roxo .container .header-bottom nav ul {
+        display: flex;
+        width: 100vw;
+    }
+
+    header.roxo .container .header-bottom nav ul li {
+        margin: 0 15px;
+    }
+
+    header.roxo .container .header-bottom nav ul li:first-child {
+        margin-left: 0px;
+    }
+
+    header.roxo .container .header-bottom nav ul li a {
+        padding-bottom: 19px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 820px) {
+    .left > .flex-column {
+        flex-direction: column;
+    }
+
+    .welcome,
+    .copy-link {
+        width: 100%;
+    }
+
+    .copy-link {
+        margin: 30px 0 0 0;
+    }
+
+    .info-mobile {
+        display: block;
+    }
+
+    .info-mobile .buttons a:first-child {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .brief.flex-end {
+        margin-top: 22px;
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 10px;
+
+    }
+
+    .brief.flex-end::-webkit-scrollbar,
+    .card-default > .flex::-webkit-scrollbar {
+        height: auto;
+    }
+
+    .brief-icon {
+        height: 30px;
+    }
+
+    .left + div .brief-card .brief-icon {
+        margin-top: 2px;
+        height: 20px;
+    }
+
+    .brief-card {
+        padding: 10px 14px;
+    }
+
+    .brief-card .gradient,
+    .brief > p,
+    .copy-link {
+        display: none;
+    }
+
+    .brief-card span,
+    .brief.brief-colors > .brief .brief-card span {
+        font-size: 25px;
+    }
+
+    .brief.brief-colors > .brief .brief-card p {
+        font-size: 13px;
+        display: none;
+    }
+
+    .brief.brief-colors > .brief .brief-card .txt-card-mobile {
+        display: block;
+    }
+
+    .brief.brief-colors > .brief .brief-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-convidados .brief-icon {
+        display: none;
+    }
+
+    .section-convidados .flex-column {
+        text-align: center;
+    }
+
+    .convidados-1 main .container .summary {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .dashboard-home > .flex {
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: -moz-box;
+        display: -ms-box;
+        display: -webkit-box;
+    }
+
+    .dashboard-home > .flex::-webkit-scrollbar {
+        height: 0;
+    }
+
+    .status-filter .badges-filter:last-child {
+        margin-right: 10px;
+    }
+
+    /* pagina de convidados 1 */
+    .convidados-1 .status-filter .badges-filter:last-child {
+        margin-right: 46px;
+    }
+}
+
+@media (max-width: 650px) {
+    .flex h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    h2.title {
+        font-size: 22px;
+    }
+
+    h2 + p.subtitle {
+        font-size: 13px;
+    }
+
+    button.gradient.fullcolor,
+    button.gradient.border,
+    a.gradient.border.download-csv {
+        height: 40px;
+    }
+
+    a.gradient.border.download-csv::after {
+        height: 151%;
+    }
+
+    .dashboard .buttons > button:first-child {
+        padding: 0 15px;
+    }
+
+    button.gradient.border {
+        padding: 0 15px;
+    }
+    header.roxo button.gradient.border {
+        padding: inherit;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .lista-presentes-2 main .container .summary {
+        margin-bottom: 0;
+    }
+
+    .lista-presentes-2 .my50 {
+        margin: 14px 0 23px 0;
+    }
+
+    .select-ordenar {
+        display: inline-block;
+    }
+
+    .lista-presentes-2 .custom-select + .select2-container {
+        width: 122px !important;
+        height: 32px;
+    }
+
+    .cards-gift {
+        grid-template-columns: 1fr;
+        align-self: center;
+        margin-top: 50px;
+    }
+
+    /* pagina convidados 1 */
+    .buscar-convidado {
+        display: block;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 564px) {
+
+    header.roxo .container .header-bottom:before {
+        transform: translateX(-40px);
+    }
+
+    header.roxo {
+        height: 222px;
+    }
+
+    .logo img {
+        width: 103px;
+    }
+
+    .options button.gradient {
+        font-size: 12px;
+    }
+
+    header.roxo .container .header-bottom h1 {
+        font-size: 22px;
+    }
+
+    .brief.brief-colors > .brief .brief-card {
+        /*        width: 97px;*/
+        height: 78px;
+        padding: inherit;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 120px;
+        margin-right: 5px;
+        padding: 7px 5px;
+        font-size: 11px;
+    }
+
+    .status-filter .badges-filter {
+        font-size: 11px;
+    }
+
+    .status-filter .badges-filter {
+        /*        width: 129px;*/
+        height: 30px;
+        margin-right: 5px;
+        padding: 7px 8px;
+        white-space: nowrap;
+    }
+
+    .dashboard-home button.gradient {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 551px) {
+    .lista-presentes-1 .brief.flex-end,
+    .lista-presentes-2 .brief.flex-end,
+    .lista-presentes-3 .brief.flex-end,
+    .convidados-1 .brief.flex-end,
+    .resumo-financeiro .brief.flex-end {
+        display: none;
+    }
+
+    .select-mobile .flex-space {
+        padding-top: 23px;
+    }
+
+    .select-mobile .brief.flex-end {
+        display: block;
+    }
+
+    .select-mobile .brief-card {
+        margin-top: 7px;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        box-shadow: none;
+    }
+
+    .select-mobile .brief-card {
+        padding: 15px 22px;
+    }
+
+    .select-mobile .brief > .brief:not(:last-of-type) {
+        margin-right: 0;
+    }
+
+    .select-mobile {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .lista-presentes-1 .brief-card.list-card {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+    header.roxo {
+        height: 225px;
+    }
+
+    .logo img {
+        width: 103px;
+    }
+
+    .header-top .options button.gradient {
+        height: 36px;
+    }
+
+
+    header.roxo .container .header-bottom h1 {
+        top: 12px;
+    }
+
+    header.roxo .container .header-bottom nav ul li {
+        margin: 0 15px;
+    }
+
+    header.roxo .container .header-bottom nav ul li:first-child {
+        margin-left: 0;
+    }
+
+    header.roxo .container .header-bottom nav ul li a {
+        padding-bottom: 19px;
+        white-space: nowrap;
+    }
+
+    main .container {
+        width: 85%;
+        margin: 40px auto auto auto;
+    }
+
+    main .container .summary {
+        margin-bottom: 30px;
+        padding-bottom: 25px;
+    }
+
+    .welcome {
+        height: auto;
+        padding: 10px 35px;
+        text-align: center;
+    }
+
+    .welcome .flex-center {
+        flex-direction: column;
+    }
+
+    .welcome .welcome-info {
+        margin-left: 0;
+        transform: translateY(-13px);
+    }
+
+    .welcome .anel-welcome {
+        width: 43px;
+    }
+
+    .welcome .anel-welcome {
+        transform: translateY(-22px);
+    }
+
+    .welcome .welcome-info p {
+        font-size: 18px;
+    }
+
+    .welcome .welcome-info small {
+        font-size: 14px;
+        line-height: 18px;
+        /*        padding-left: 16px;*/
+        max-width: 160px;
+    }
+
+    .card-convidados {
+        min-width: 100%;
+    }
+
+    .card-convidados .card-convidados-name span,
+    .display-none {
+        display: none;
+    }
+
+    .card-convidados .card-convidados-infos {
+        margin-top: 0;
+        padding: 2px 0 10px 0;
+        border-top: none;
+    }
+
+    .dashboard-home:after {
+        display: none;
+    }
+
+    .my50 {
+        margin: 23px 0;
+    }
+
+    .footer-logged p {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .lista-presentes-1 .footer-logged p {
+        padding-left: 0;
+    }
+
+    .lista-presentes-2 button.gradient {
+        padding: 0 17px;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 100px;
+    }
+
+    /* pagina convidados 1 */
+    .convidados-1 .buttons {
+        display: flex;
+    }
+
+    .convidados-1 .buttons .gradient {
+        padding: 0 11px;
+    }
+
+    .convidados-1 .buttons button {
+        width: 50%;
+    }
+
+    .convidados-1 .my50 {
+        margin: 0 0 23px 0;
+    }
+
+    .convidados-1 .list-cards {
+        margin-top: 0;
+    }
+
+    .convidados-1 .line {
+        margin: 14px 0 18px 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .lista-presentes-1 h2 + p.subtitle {
+        width: 76%;
+    }
+
+    .brief-card.list-card .avatar-user {
+        width: 72px;
+        height: 72px;
+    }
+
+    .lista-presentes-1 .brief-content button.gradient {
+        padding: 0 21px;
+    }
+
+    .lista-presentes-1 .brief-card.list-card .letter-user p {
+        font-size: 36.77px;
+    }
+
+    .lista-presentes-1 .brief-card.list-card p:nth-of-type(2) {
+        line-height: 18px;
+    }
+
+    .lista-presentes-1 .brief-card.list-card button {
+        margin-top: 24px;
+    }
+
+    .brief.brief-colors > .brief {
+        margin-right: 0px;
+    }
+
+    .brief-card.list-card .user-list {
+        font-size: 22px;
+    }
+
+    .dashboard-home::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-convidados {
+        width: 100%;
+        min-width: inherit;
+        padding: 12.5px 26px;
+    }
+
+    .card-convidados .card-convidados-name p {
+        font-size: 16px;
+    }
+
+    .card-convidados .card-convidados-infos {
+        font-size: 13px;
+    }
+
+    .card-convidados .card-convidados-infos.tags p {
+        font-size: 13px;
+    }
+
+    .brief-card.list-card {
+        padding: 30px 58px;
+    }
+
+    .cards-gift {
+        margin-top: 19px;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 83px;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        font-size: 10px;
+    }
+
+    .lista-presentes-2 .my50 {
+        margin: 8px 0 23px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .buscar-festa br {
+        display: none;
+    }
+
+    .lista-presentes-1 .container .brief-card.list-card {
+        margin-top: 3px;
+    }
+
+    .configs {
+        display: none;
+    }
+
+    .config-mobile {
+        display: block;
+        position: relative;
+    }
+}
+
+@media (max-width: 420px) {
+    .dashboard main .container .summary,
+    .lista-presentes-1 main .container .summary,
+    .lista-presentes-2 main .container .summary,
+    .lista-presentes-3 main .container .summary {
+        border-bottom: none;
+        margin-bottom: 0px;
+        padding-bottom: 8px;
+    }
+
+    .select-categorias {
+        padding: 9.5px 7px;
+        font-size: 13px;
+    }
+
+    .select-categorias.active {
+        width: 307px;
+    }
+
+    .lista-presentes-2 .card-default.my50 {
+        padding: 20px;
+    }
+
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 88px;
+        padding: 7px 3px;
+    }
+
+
+    form.informacoes-gerais .email {
+        font-size: 15px;
+    }
+
+    .select2-results__option {
+        padding: 7px 11px;
+    }
+}
+
+@media (max-width: 400px) {
+    header.roxo .troca-festa {
+        width: 87vw;
+    }
+}
+
+@media (max-width: 390px) {
+
+
+    .select-categorias {
+        width: 100px;
+    }
+
+    .lista-presentes-2 .custom-select + .select2-container {
+        width: 100px !important;
+        height: 30px;
+    }
+}
+
+@media (max-width: 382px) {
+    .lista-presentes-2 .status-filter .badges-filter {
+        width: 78px;
+        font-size: 10px;
+    }
+
+    .select-categorias {
+        font-size: 12px;
+    }
+
+    .custom-select + .select2-container .select2-selection .select2-selection__rendered {
+        font-size: 12px;
+    }
+
+    .dashboard-home .list-cards {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 365px) {
+    .btn-salvar {
+        width: 43.2%;
+    }
+}
+
+@media (max-width: 360px) {
+    .info-mobile .gradient {
+        font-size: 12px;
+        padding: 0 7px;
+    }
+
+    .brief.brief-colors > .brief .brief-card {
+        width: 88px;
+        height: 72px;
+    }
+
+    .brief-card span,
+    .brief.brief-colors > .brief .brief-card span {
+        font-size: 22px;
+    }
+
+    .brief.brief-colors > .brief .brief-card p {
+        font-size: 12px;
+    }
+
+    .select2-results__option {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 345px) {
+    .buttons button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 340px) {
+    .lista-presentes-2 .custom-select + .select2-container {
+        width: 110px !important;
+    }
+}
+
+@media (max-width: 330px) {
+
+    header.roxo .container .header-top .options {
+        width: 155px;
+    }
+
+    .btn-taxa {
+        font-size: 12px;
+    }
+
+    .brief .brief-card.two .brief-content > .flex:not(:last-of-type) {
+        margin-right: 14px;
+    }
+}
+
+
+/* fim de responsivo - dashboard */
+
+/* responsivo - lista de presentes 1 */
+
+.lista-presentes-1 .brief-card .gradient {
+    display: initial;
+}
+
+@media (max-width: 1243px) {
+    .lista-presentes-1 .brief {
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 820px) {
+    .lista-presentes-1 .brief-card.list-card {
+        margin-top: 35px;
+    }
+
+    .dashboard-home button.fullcolor.gradient {
+        display: none;
+    }
+}
+
+
+/* lista de presentes 3 */
+
+@media (max-width: 1150px) {
+    .lista-presentes-3 table.custom-table tbody a,
+    .lista-presentes-3 table.custom-table tbody tr td {
+        font-size: 16px;
+    }
+
+    .lista-presentes-3 table.custom-table tbody tr td:first-child {
+        font-size: 14px;
+    }
+
+    .lista-presentes-3 table.custom-table tbody .tags p {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1050px) {
+    .lista-presentes-3 .card-table {
+        display: none;
+    }
+    .lista-presentes-3 .hide-desk {
+        display: block !important;
+        padding: 20px;
+    }
+
+    .lista-presentes-3 .card-default .btn-large,
+    .lista-presentes-2 .cards-gift .btn-large,
+    .dashboard-home .btn-large,
+    .convidados-1 .btn-large {
+        display: block;
+        font-size: 16px;
+        color: #58595b;
+        height: 45px;
+        position: relative;
+        width: 100%;
+        box-shadow: 0px 0px;
+    }
+
+    .dashboard-home .btn-large {
+        box-shadow: 0 -10px 50px 0px white, 0 -10px 50px 0px white, 0 -10px 50px 0px white, 0 -10px 50px 0px white;
+        z-index: 2;
+    }
+
+    .lista-presentes-3 .items-lista {
+        padding-top: 20px;
+    }
+    .lista-presentes-3 .item-lista {
+        padding: 20px 0;
+        width: 100%;
+        border-top: 1px solid #f5f5f5;
+    }
+
+    .lista-presentes-3 .item-lista .convidado {
+        font-weight: 600;
+        font-size: 18px;
+        color: #3d3d3d;
+        margin-bottom: 5px;
+    }
+
+    .lista-presentes-3 .item-lista .presente {
+        font-weight: 400;
+        font-size: 16px;
+        color: #4778f4;
+        max-width: 150px;
+        width: 100%;
+        line-height: 1.2em;
+    }
+
+
+    .lista-presentes-3 .item-lista .preco {
+        font-weight: 400;
+        font-size: 18px;
+        color: #3d3d3d;
+        margin-bottom: 10px
+    }
+
+    .lista-presentes-3 .item-lista .data {
+        font-weight: 400;
+        font-size: 16px;
+        color: #8d8d8d;
+        margin-bottom: 5px
+    }
+
+    /*
+    .lista-presentes-3 .tags {
+        white-space: nowrap;
+    }
+    .lista-presentes-3 .tags p {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+*/
+}
+
+@media (max-width: 450px) {
+    .lista-presentes-3 .item-lista .convidado {
+        font-size: 15px;
+    }
+
+    .lista-presentes-3 .item-lista .presente {
+        font-size: 13px;
+        max-width: 120px;
+    }
+
+
+    .lista-presentes-3 .item-lista .preco {
+        font-size: 15px;
+    }
+
+    .lista-presentes-3 .item-lista .data {
+        font-size: 13px;
+    }
+
+    .lista-presentes-3 .tags {
+        white-space: nowrap;
+    }
+    .lista-presentes-3 .tags p {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 330px) {
+    .lista-presentes-3 .item-lista {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .lista-presentes-3 .item-lista .flex-end {
+        align-items: center;
+        margin-top: 15px;
+    }
+}
+
+/* fim responsivo lista presentes 3 */
+
+/* site do aniversario */
+
+@media (max-width: 1200px) {
+    .site-aniversario .card-preview.window {
+        height: 98%;
+    }
+}
+
+@media (max-width: 999px) {
+    .site-aniversario .preview-config {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .config-accordion .config-item .config-item-content .custom-select.bg-white + .select2-container,
+    .config-accordion .config-item .config-item-content select {
+        height: 40px;
+        width: 100% !important;
+    }
+
+    .site-aniversario .config-accordion .config-item .config-item-content .bd-black {
+        height: 45px;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-aniversario main .container {
+        margin: 0 auto;
+    }
+    .site-aniversario main .container .summary {
+        display: none;
+    }
+    .site-aniversario main .container .summary + div {
+        margin-top: 35px;
+        display: block;
+    }
+
+    .site-aniversario .config-accordion.without-toggle .config-item {
+        width: 100%;
+    }
+
+    .site-aniversario .config-accordion .config-item .config-item-content .title {
+        font-size: 18px;
+    }
+    .site-aniversario .config-accordion .config-item .config-item-content .blue-small {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .site-aniversario .fileup-file .fileup-controls .fileup-remove:after {
+        transform: translateY(-1px);
+    }
+}
+
+@media (max-width: 450px) {
+    .site-aniversario .config-accordion .config-item .config-item-content.tema button {
+        padding: 0 15px;
+    }
+    .site-aniversario .custom-select + .select2-container .select2-selection {
+        padding: 0 10px;
+    }
+    .site-aniversario .select2-container--default .select2-selection--single .select2-selection__arrow {
+        width: 0px;
+    }
+}
+
+@media (max-width: 350px) {
+    .site-aniversario .config-accordion .config-item .config-item-content.tema button {
+        padding: 0 10px;
+    }
+    .site-aniversario .custom-select + .select2-container .select2-selection {
+        padding: 0 5px;
+    }
+}
+
+
+/* pagina de informações 1 */
+
+@media (max-width: 900px) {
+    .informacoes {
+        width: 100%;
+    }
+
+    .informacoes .small {
+        width: 100% !important;
+    }
+
+    .informacoes input {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .dashboard-home {
+        width: 100%;
+        max-width: 100%;
+        margin: 30px 0 0 0;
+    }
+
+    .info-1 main .container {
+        margin-top: 60px;
+    }
+
+    main .container .summary.without-buttons {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .without-buttons h2 + p.subtitle {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .informacoes form .small.custom-select + .select2-container {
+        width: 100% !important;
+    }
+
+    .informacoes .display-block {
+        display: block;
+    }
+
+    .informacoes .display-block.mT40 {
+        border-top: 1px solid #f2f2f2;
+    }
+
+    .container .informacoes form .flex-space > .flex-column:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .informacoes .custom-select + .select2-container {
+        height: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .informacoes.my50 {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 529px) {
+    .info-1 form p.title,
+    .info-1 form .title-with-button button {
+        width: 100%;
+    }
+
+    .info-1 form .title-with-button button {
+        height: 35px;
+        padding: 0 5px !important;
+        font-size: 11px;
+    }
+
+    .info-1 form p.title,
+    .informacoes input {
+        font-size: 16px;
+    }
+
+    .informacoes input {
+        height: 40px;
+        padding: 0px 13px;
+    }
+
+    .informacoes .custom-select + .select2-container {
+        height: 40px;
+    }
+}
+
+@media (max-width: 385px) {
+    .info-1 form .title-with-button button {
+        font-size: 10px;
+    }
+}
+
+/* fim site aniversario */
+
+.convidados-3 .container .config .modal-title,
+.convidados-2 .modal-title,
+.convidados-2 .save-modal,
+.convidados-3 .container .save-modal {
+    display: none;
+}
+
+@media (max-width: 1140px) {
+
+    .convidados-3 .config-accordion .config-item .config-item-content .w100 {
+        display: none;
+    }
+    .convidados-3 .config-accordion .config-item .config-item-content .bd-black {
+        height: 45px;
+    }
+    .convidados-3 .container .config .switch {
+        width: 40px;
+        min-width: 36px;
+    }
+
+    .convidados-3 .container .config {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #f9fafc;
+        top: 0;
+        left: 0;
+        overflow-y: scroll;
+        overscroll-behavior: none;
+        transform: translateX(-100%);
+    }
+
+    .convidados-3 .card-preview button.btn-large {
+        display: none;
+    }
+
+    .convidados-3 .card-preview {
+        height: 100%;
+        margin-left: 0px;
+    }
+
+    .convidados-3 .container .save-modal {
+        display: flex;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
+        width: 100%;
+        background: #FFF;
+        height: 85px;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(105%);
+        box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .convidados-3 .container .fullcolor.desk {
+        display: none;
+    }
+
+    .convidados-3 .container .save-modal button {
+        width: 85% !important;
+        margin: 0 auto;
+        height: 45px;
+    }
+
+    .convidados-3 .container .config .modal-title {
+        display: flex;
+        background: #4c50e9;
+        width: 100%;
+        height: 90px;
+        margin-bottom: 40px;
+    }
+
+    .convidados-3 .container .config .modal-title > div {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .convidados-3 .container .config .modal-title p {
+        font-size: 22px;
+        color: #FFF;
+        font-weight: 600;
+    }
+
+    .convidados-3 .container .config .modal-title .exit-modal {
+        padding: 20px;
+        transform: translateX(20px);
+        cursor: pointer;
+    }
+
+    .convidados-3 .container .config .modal-title i {
+        color: #4c50e9;
+        background: #8285f0;
+        border-radius: 150px;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+    .convidados-3 .container .config .config-accordion .config-item {
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 680px) {
+    .convidados-3 .hide-desk {
+        display: block !important;
+    }
+
+    .convidados-3 .preview-config .mkt {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .convidados-3 .container .config .config-accordion .config-item {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .convidados-3 .container .config .config-accordion .config-item .switch + p {
+        font-size: 12px;
+        letter-spacing: -0.3px;
+        padding-left: 8px;
+    }
+
+}
+
+
+/* convidados 2 */
+
+.convidados-2 .hide-mobile {
+    display: block;
+}
+
+.convidados-2 .hide-desk {
+    display: none;
+}
+
+.convidados-2 .column-2.w100 {
+    width: inherit !important;
+}
+
+
+
+@media (max-width: 1550px) {
+    .convidados-2 .card-default {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 880px) {
+
+    .convidados-2 .column-2.w100 {
+        width: 100% !important;
+    }
+
+    .convidados-2 form p.title.bdT {
+        border-top: 0px solid transparent;
+        padding-top: 0;
+        margin-bottom: 0px;
+    }
+
+    .convidados-2 .column-2 .flex-column {
+        width: 50%;
+    }
+
+    .convidados-2 .column-2 .w100 {
+        width: 50% !important;
+    }
+
+    .convidados-2 .custom-select.flat + .select2-container,
+    .convidados-2 input[type="number"] {
+        background: #FFF;
+        border-radius: 5px;
+        border: 2px solid transparent;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .convidados-2 input {
+        border: 1px solid #e5e6e8;
+        background: transparent;
+        font-weight: 400;
+        width: 100%;
+    }
+
+    .select2-container.select2-container--default.select2-container--open {
+        z-index: 9999;
+    }
+
+    .convidados-2 .hide-desk {
+        display: block !important;
+    }
+
+    .convidados-2 .hide-mobile {
+        display: none;
+    }
+
+    .convidados-2 {
+        overflow: hidden;
+    }
+
+    .convidados-2 .container .save-modal {
+        display: flex;
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        z-index: 99999;
+        width: 100%;
+        background: #FFF;
+        height: 85px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .convidados-2 .container .save-modal button {
+        width: 85% !important;
+        height: 45px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .convidados-2 .container .modal-title {
+        display: flex;
+        background: #4c50e9;
+        width: 100%;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+
+    .convidados-2 .container .modal-title > div {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .convidados-2 .container .modal-title p {
+        font-size: 22px;
+        color: #FFF;
+        font-weight: 600;
+    }
+
+    .convidados-2 .container .modal-title .exit-modal {
+        padding: 20px;
+        transform: translateX(20px);
+        cursor: pointer;
+    }
+
+    .convidados-2 .container .modal-title i {
+        color: #4c50e9;
+        background: #8285f0;
+        border-radius: 150px;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .convidados-2 .card-default {
+        z-index: 9999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #f9fafc;
+        top: 0;
+        left: 0;
+        overflow-y: scroll;
+        overscroll-behavior: none;
+        padding: 0;
+        padding-bottom: 150px;
+        border-radius: 0px;
+        margin-top: 0px !important;
+        /* transition: all ease .3s; */
+    }
+    .convidados-2 .card-default form {
+        width: 85%;
+        margin: 0 auto;
+    }
+    .convidados-2 .card-default form label {
+        color: #4778f4;
+        margin: 20px 0 10px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .convidados-2 .column-2:not(.w100):first-of-type .flex-column {
+        width: 100%;
+    }
+    .convidados-2 .column-2:not(.w100):first-of-type {
+        flex-direction: column;
+    }
+    
+    .convidados-2 input {
+        height: 45px;
+        font-size: 14px;
+        padding: 0 20px;
+    }
+
+    form[name="dado-convidado"] .custom-select+.select2-container {
+        height: 45px;
+        width: 100% !Important;
+    }
+
+    .convidados-2 form .uppercase.custom-select + .select2-container .select2-selection .select2-selection__rendered {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .convidados-2 form p.title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+
+
+/* editar-perfil-1 */
+
+.info-banco-mobile {
+    display: none;
+}
+
+
+ 
+@media (max-width: 1683px) {
+    .square:last-child {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .square {
+        width: 230px;
+        padding: 30px 15px;
+    }
+
+    .informacoes-bancarias {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .informacoes-bancarias .flex {
+        flex-direction: column;
+    }
+
+    .square {
+        width: 100%;
+        margin-top: 23px;
+    }
+
+    .form-1,
+    .form-2 {
+        display: block;
+    }
+
+    .modal-white .main-modal.novo-usuario .form-1,
+    .modal-white .main-modal.novo-usuario .form-2 {
+        display: flex;
+    }
+
+    .informacoes-bancarias .form-title {
+        margin-bottom: 27px;
+    }
+
+    form.informacoes-gerais input {
+        width: 100%;
+    }
+
+    form .flex-space > .flex-column:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .informacoes form .flex-space > .flex-column:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .form-add-user input,
+    .form-add-user .columns-2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .flex.form-info {
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .form-add-user,
+    .informacoes-bancarias {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1053px) {
+    .card-default.mT20 > .flex {
+        display: block;
+        overflow-x: inherit;
+    }
+
+    .modal .card-default > .flex {
+        overflow: auto;
+    }
+
+    .informacoes-bancarias {
+        margin: 30px 0 0 0;
+    }
+
+    .informacoes-bancarias .form-title {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .card-default .form-info {
+        display: block;
+    }
+
+    .form-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .info-1 .form-1 {
+        display: block;
+    }
+
+    .form-1 > .flex {
+        width: 100%;
+    }
+
+    form.informacoes-gerais input {
+        width: 100%;
+    }
+
+    .informacoes-bancarias {
+        margin: 60px 0 0 0;
+    }
+
+    .editar-perfil .card-default.mT20 {
+        background: none;
+        box-shadow: none;
+        padding: 0px !important;
+    }
+
+    form.informacoes-gerais,
+    .informacoes-bancarias {
+        background: #fff;
+        -webkit-box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.07);
+        box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.07);
+        padding: 30px;
+    }
+
+    form.informacoes-gerais .columns-2 {
+        width: 100%;
+    }
+
+    form.informacoes-gerais .columns-2 input.ddd {
+        width: 72px;
+        text-align: left;
+    }
+
+    form.informacoes-gerais .columns-2 input.telefone {
+        width: 100%;
+    }
+
+    .buttons-action {
+        padding-top: 0;
+        margin-top: 19px;
+        border-top: none;
+    }
+}
+
+.title-main-modal-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .editar-perfil .my50 {
+        margin-bottom: 37px;
+    }
+
+    .editar-perfil button.gradient.fullcolor,
+    .editar-perfil button.gradient.border,
+    .editar-perfil .text-gradient {
+        height: 50px;
+    }
+
+    .editar-perfil .buttons > button:not(.gradient):first-child {
+        margin: 0;
+    }
+
+    form.informacoes-gerais input, 
+    form.informacoes-gerais select {
+        height: 40px;
+    }
+
+    .editar-perfil main .container {
+        margin-top: 42px;
+    }
+
+    .buttons-action .buttons {
+        width: 100%;
+        display: flex;
+        overflow-x: inherit;
+        justify-content: space-between
+    }
+
+    .novo-usuario form .buttons button:first-child {
+        margin-left: 0;
+    }
+
+    .editar-perfil .card-default > .flex {
+        display: block;
+    }
+
+    .buttons > button:not(.gradient):first-child,
+    .editar-perfil .btn-cancelar {
+        margin-right: 10px;
+        padding: 0 27px;
+        border: 1px solid #e9eaeb;
+        border-radius: 8px;
+        text-transform: uppercase;
+    }
+
+    .title-main-modal.title-main-modal-mobile {
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .info-1 form .title-with-button button {
+        padding: 10px 8px !important;
+    }
+
+    .editar-perfil .footer-modal {
+        justify-content: space-between;
+        margin-top: 27px;
+    }
+
+    .footer-modal button.gradient {
+        padding: 0 9px;
+    }
+
+    .novo-usuario form .buttons button,
+    .footer-modal button,
+    .novo-usuario button.gradient.fullcolor {
+        height: 42px
+    }
+
+
+    .footer-modal button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 555px) {
+    .editar-perfil .modal-content {
+        max-width: 340px;
+        width: 100%;
+        margin: 0 15px;
+        padding: 30px 0 12px 0;
+    }
+
+    .editar-perfil .modal form button.gradient:not(.icon-add-person) {
+        padding: 0 9px;
+    }
+
+    .editar-perfil .line {
+        margin: 30px 0 16px 0;
+    }
+
+    .editar-perfil .title-modal {
+        font-size: 18px;
+        padding: 11px 0 16px 0;
+    }
+
+    .editar-perfil .subtitle-modal {
+        font-size: 13px;
+    }
+
+    .editar-perfil .title-main-modal {
+        font-size: 11px;
+    }
+
+    .editar-perfil .main-modal {
+        padding: 0 13px;
+    }
+
+    .editar-perfil .input-modal {
+        margin-top: 6px;
+    }
+    
+    .editar-perfil .bancos-grid {
+        grid-column-gap: 6px;
+    }
+    
+
+    .editar-perfil .banco {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+    }
+
+    .editar-perfil .box-cpf p {
+        padding: 13px 9px;
+    }
+
+    .editar-perfil .input-modal {
+        width: 100%;
+    }
+
+    .form-modal {
+        grid-template-columns: 26% 55.5% 1fr;
+        grid-column-gap: 5px;
+    }
+
+    .editar-perfil .upload,
+    .editar-perfil .buttons .excluir {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .editar-perfil .add-foto {
+        padding: 20px !important;
+    }
+
+    .editar-perfil h2 + p.subtitle {
+        width: 90%;
+    }
+
+    .editar-perfil .edit-photo .buttons {
+        align-items: flex-end;
+    }
+
+    .edit-photo .upload {
+        display: block;
+        text-align: center;
+    }
+
+    .excluir {
+        padding: 12.5px 33px;
+        margin-top: 6px;
+    }
+
+    .informacoes-bancarias {
+        margin-top: 18px;
+    }
+
+    form.informacoes-gerais label {
+        margin-top: 13px;
+        padding-left: 9px;
+    }
+
+    form.informacoes-gerais input {
+        padding: 0px 10px;
+        font-size: 15px;
+    }
+
+    form.informacoes-gerais .columns-2 input.ddd {
+        margin-right: 6px;
+    }
+
+    .editar-perfil form .uppercase.custom-select + .select2-container .select2-selection .select2-selection__rendered {
+        font-size: 14px;
+    }
+
+    .informacoes-bancarias .form-title {
+        font-size: 16px;
+    }
+
+    .icon-square {
+        display: flex;
+        align-self: baseline;
+    }
+
+    .icon-square img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .square {
+        justify-content: flex-start;
+    }
+
+    .square.prazos-tarifas {
+        height: 200px;
+        align-items: flex-start;
+    }
+
+    .square .text-gradient {
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .square:not(.prazos-tarifas) {
+        flex-direction: row;
+        height: auto;
+        padding: 18px 16px;
+    }
+
+    .square.prazos-tarifas .title-square {
+        font-size: 16px;
+    }
+
+    .square.prazos-tarifas .subtitle-square {
+        font-size: 13px;
+    }
+
+    .square:nth-child(2) .title-square,
+    .square:nth-child(3) .title-square,
+    .square:nth-child(2) .subtitle-square,
+    .square:nth-child(3) .subtitle-square {
+        display: none;
+        color: #000;
+    }
+
+    .square:nth-child(3) .subtitle-square {
+        color: #8d8d8d;
+    }
+
+    .square:nth-child(2) .text-gradient,
+    .square:nth-child(3) .text-gradient {
+        display: none;
+    }
+
+    .square:nth-child(2) .subtitle-square {
+        margin-top: 0px;
+    }
+
+    .info-banco-mobile.display-none {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 13px;
+        text-align: left;
+    }
+
+    .info-banco-mobile.display-none .title-square,
+    .info-banco-mobile.display-none .subtitle-square,
+    .info-banco-mobile .text-gradient.display-none {
+        display: inline-block;
+    }
+
+    .info-banco-mobile .text-gradient.display-none {
+        margin-top: 5px;
+    }
+
+    .buttons button {
+        font-size: 12px;
+    }
+
+    button.gradient {
+        padding: 0 15px;
+    }
+
+    .novo-usuario button.gradient {
+        padding: 0 23px;
+    }
+
+    .editar-perfil .edit-photo .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .editar-perfil .edit-photo .upload {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .info-1 .card-default {
+        padding: 15px;
+    }
+
+    .info-1 form .title-with-button button {
+        padding: 10px 0 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .p30 {
+        padding: 18px !important;
+    }
+
+    .editar-perfil main .container {
+        width: 82%;
+    }
+}
+
+@media (max-width: 358px) {
+    .upload {
+        padding: 15px 7px;
+    }
+    .excluir {
+        padding: 12.5px 20px;
+    }
+
+    form.informacoes-gerais,
+    .informacoes-bancarias {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 330px) {
+    .editar-perfil .banco {
+        padding: 4px;
+    }
+
+    .square {
+        margin-top: 16px;
+    }
+}
+
+
+/* fim de editar-perfil-1 */
+
+@media (max-width: 1431px) {
+    .historico {
+        width: 63%;
+    }
+
+    .historico .export a {
+        margin: 0 7px;
+    }
+}
+
+@media (max-width: 1173px) {
+    .historico {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .historico > .flex.mB50 {
+        margin-bottom: 30px;
+    }
+
+    .resumo-financeiro .table-prices {
+        display: block;
+        margin-bottom: 55px;
+    }
+}
+
+@media (max-width: 740px) {
+    .historico .export {
+        flex-direction: column;
+    }
+
+    .historico .export span {
+        display: none;
+    }
+
+    .historico .export a {
+        margin-top: 19px;
+    }
+}
+
+
+.notifications-row.notifications-content .row.flex {
+    display: inherit;
+    flex-direction: column;
+}
+
+@media (min-width: 920px) {
+    .notifications-row.notifications-content .row.flex {
+        display: flex;
+        flex-direction: row;
+
+    }
+    .notifications-row.notifications-content .card-notification {
+        flex-direction: column;
+        max-width: 250px;
+        margin-right: 10px;
+    }
+    .notifications-row.notifications-content .card-notification .thumb {
+        align-self: inherit;
+        max-width: inherit;
+        height: 70px;
+    }
+    .notifications-row.notifications-content .card-notification .desc {
+        padding: 25px;
+    }
+    .notifications-row.notifications-content .day {
+        text-align: left;
+        margin: 40px 0px 10px;
+    }
+    .notifications-row.notifications-content .day:first-child {
+        margin-top: 0px;
+    }
+    .notifications-row.notifications-content {
+        padding: 0;
+    }
+}
+
+@media (max-width: 690px) {
+
+    .dashboard-home .card-convidados-sizer,
+    .dashboard-home .card-convidados {
+        width: calc(100%);
+    }
+
+}
+
+@media (max-width: 660px) {
+    .filtro form label {
+        margin-top: 15px;
+    }
+
+    .config-accordion .config-item .config-item-title {
+        padding: 0 22px;
+    }
+
+    .config-accordion .config-item p.fz20 {
+        font-size: 15px;
+    }
+
+    .config-accordion .config-item .config-item-content button {
+        margin-top: 14px !important;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+        text-align: left;
+    }
+
+    .config-accordion .config-item .config-item-content .divider {
+        display: none;
+    }
+
+    .config-accordion .config-item p.filtro-title {
+        font-size: 14px;
+    }
+
+
+    .config-item-content form {
+        margin-top: 10px;
+    }
+
+    .config-item-content .mT40 {
+        margin-top: 34px !important;
+    }
+
+    .filtro form .uppercase.custom-select + .select2-container .select2-selection .select2-selection__rendered {
+        font-size: 15px;
+    }
+
+    .historico > .flex.mB50 {
+        margin-bottom: 18px;
+    }
+
+    .historico .card.bgwhite {
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .historico .columns-4:not(.total) {
+        display: block;
+    }
+
+    .historico .title-grid:not(.total) {
+        display: none;
+    }
+
+    .historico .columns-4 p:nth-child(1) {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .historico .columns-4.total p:nth-child(1) {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .historico .columns-4 p:nth-child(3) {
+        display: none;
+    }
+
+    .historico .columns-4 p:nth-child(4) {
+        position: absolute;
+        right: 20px;
+        bottom: 17px;
+    }
+
+    .historico .columns-4 a {
+        font-size: 14px;
+    }
+
+    .historico .columns-4.pX30 {
+        padding-right: 21px !important;
+    }
+
+    .historico .columns-4.total p:first-child {
+        padding-right: 24px;
+    }
+
+    .pill.status {
+        padding: 9px 15px;
+    }
+
+    .pill.status span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 551px) {
+    .resumo-financeiro main .container .summary {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e6e7e9;
+        padding-bottom: 0px;
+    }
+
+    .resumo-financeiro .config-accordion .config-item {
+        width: auto;
+    }
+}
+
+
+/* pagina usuarios */
+
+@media (max-width: 500px) {
+    .usuarios main .container .summary {
+        margin-bottom: 34px;
+    }
+}
+
+@media (max-width: 360px) {
+    .editar-perfil.usuarios main .container {
+        width: 84%;
+    }
+}
+
+@media (max-width: 360px) {
+    .usuarios .card-user-modal {
+        display: block;
+        margin: 7px auto;
+    }
+}
+
+/* media height modal editar-perfil-1 */
+
+@media (max-height: 600px) {
+    [data-open="nova-conta"] .modal-content {
+        padding-top: 20px;
+    }
+
+    [data-open="nova-conta"] .line {
+        margin: 16px 0 16px 0;
+    }
+
+    [data-open="nova-conta"] .title-modal {
+        padding-bottom: 9px;
+    }
+
+    [data-open="nova-conta"] .footer-modal {
+        margin-top: 20px;
+    }
+
+    .editar-perfil .select2-container--default .select2-selection--single,
+    .input-modal {
+        height: 35px;
+    }
+}
+
+
+/* modal usuarios */
+
+@media screen and (max-height: 860px) {
+
+    .modal.modal-white.active .line {
+        margin: 30px 0 30px 0;
+    }
+
+    div[data-open="usuarios"] .footer-modal .text .title {
+        margin-bottom: 8px;
+    }
+
+    div[data-open="usuarios"] .footer-modal button.gradient.fullcolor.mT30.open-user-add {
+        margin-top: 12px !important;
+    }
+
+    .modal.modal-white.active .title-modal {
+        padding: 5px 0 12px 0;
+    }
+
+}
+
+@media screen and (max-height: 820px) {
+
+    .editar-perfil .footer-modal {
+        margin-top: 30px;
+    }
+
+    div[data-open="usuarios"] .usuarios-row .add-usuario-content form p.title {
+        margin-bottom: 0px;
+    }
+
+    div[data-open="usuarios"] form.informacoes-gerais label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .modal.modal-white .modal-content {
+        padding: 20px 0 20px 0;
+    }
+
+    div[data-open="usuarios"] .add-usuario-content .line {
+        display: none;
+    }
+
+    div[data-open="usuarios"] .add-usuario-content .main-modal.novo-usuario {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-height:750px) {
+    .modal-white .modal-content {
+        overflow-y: auto;
+        overscroll-behavior: none;
+        max-height: 90%;
+    }
+
+/*
+    .editar-perfil .banco {
+        padding: 10px 19px;
+    }
+
+    .editar-perfil .input-modal {
+        width: 190px;
+    }
+*/
+}

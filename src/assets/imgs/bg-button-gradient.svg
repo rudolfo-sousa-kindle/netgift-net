@@ -1,0 +1,13 @@
+<svg
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="160px" height="53px">
+ <defs>
+   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+     <stop offset="0%" stop-color="#00a8e5" />
+     <stop offset="100%" stop-color="#00dcc5" />
+   </linearGradient>
+ </defs>
+<path fill-rule="evenodd"  stroke="url(#gradient)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+ d="M7.000,1.000 L152.000,1.000 C155.314,1.000 158.000,3.686 158.000,7.000 L158.000,45.000 C158.000,48.314 155.314,51.000 152.000,51.000 L7.000,51.000 C3.686,51.000 1.000,48.314 1.000,45.000 L1.000,7.000 C1.000,3.686 3.686,1.000 7.000,1.000 Z"/>
+</svg>

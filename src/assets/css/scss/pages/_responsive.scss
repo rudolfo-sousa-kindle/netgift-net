@@ -1,0 +1,391 @@
+.responsive {
+    .login-mobile {
+        color: #fff;
+        font-weight: 300;
+        display: none;
+    }
+
+    @media (max-width: 1330px) {
+        .container {
+            max-width: 85%;
+        }
+
+        .div-btn-contato::after {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1130px) {
+        .container {
+            max-width: 90%;
+        }
+
+        .txt-login .titulo {
+            line-height: 37px;
+            font-size: 35px;
+        }
+
+        form {
+            width: 437px;
+        }
+
+        form.card-purple::before {
+            right: 394px;
+        }
+
+        .input-login {
+            height: 49px;
+        }
+
+        .cadastrar .checkbox [type="checkbox"]:not(:checked) + label {
+            padding-left: 28px;
+        }
+
+        .label-none {
+            display: none;
+        }
+
+        .container .label-visible-mobile {
+            display: inline-block;
+        }
+    }
+
+    @media (max-width: 1000px) {
+
+        footer .menu-footer,
+        footer .copyright a {
+            display: none;
+        }
+
+        .copyright {
+            display: none;
+        }
+
+        .container .copyright-mobile {
+            display: block;
+            opacity: .6;
+            margin-bottom: 41px;
+            letter-spacing: 0.4px;
+            font-size: 11px;
+        }
+    }
+
+    @media (max-width: 930px) {
+        main {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .container .txt-login {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .icon:not(.brief-card) {
+            margin: auto;
+        }
+
+        .form {
+            margin-top: 33px;
+        }
+
+        div.container::after {
+            width: 138px;
+            height: 128px;
+            right: -10px;
+            margin-top: -128px;
+            background-size: cover;
+        }
+
+        .esqueceu-senha {
+            display: none;
+        }
+    }
+
+    @media (max-width: 820px) {
+        header {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 44px;
+        }
+
+        .progresso {
+            margin-top: 36px;
+        }
+
+        .div-btn-contato {
+            display: none;
+        }
+
+        btn-contato::after {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .txt-login .titulo {
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        .txt-login .titulo,
+        .txt-login .titulo-bold {
+            font-weight: 300;
+        }
+
+        &.login .subtitulo {
+            margin-bottom: 28px;
+        }
+
+        &.login .title-mobile {
+            display: block;
+            font-size: 25px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        &.login:not(.cadastrar):not(.recuperar-senha) main {
+            margin-bottom: 40px;
+        }
+
+        .subtitulo {
+            font-size: 20px;
+        }
+
+        br {
+            display: none;
+        }
+
+        .icon,
+        .p-1,
+        .p-2,
+        .txt-facebook,
+        .txt-login a.gradient.border {
+            display: none;
+        }
+
+        .container .login-mobile {
+            display: block;
+            margin-bottom: 59px;
+            text-align: center;
+        }
+
+        .login-mobile:not(.cadastrar):not(.tipo-cadastro):not(.recuperar-senha):not(.cadastro-concluido) {
+            margin: auto auto 59px auto;
+            line-height: 23px;
+        }
+
+        .login-mobile span {
+            display: block;
+        }
+
+        .login-mobile p {
+            display: block;
+            line-height: 32px;
+        }
+
+        .login-mobile .cyan {
+            font-weight: 400;
+        }
+
+        .txt-redes-sociais {
+            font-weight: 300;
+        }
+
+        footer .flex-space {
+            justify-content: center;
+        }
+    }
+
+
+    @media (max-width: 450px) {
+        &.bg-login {
+            background: url(../imgs/background-cadastro-mobile.png), linear-gradient(#5129de, #8742e8);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &.bg-login.login:not(.recuperar-senha):not(.cadastrar):not(.cadastro-concluido):not(.recuperar-senha):not(.tipo-cadastro) {
+            background: url(../imgs/background-login-mobile.png), linear-gradient(#5129de, #8742e8);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo img {
+            width: 140px;
+        }
+
+        .progresso .barra-progresso {
+            width: 250px;
+        }
+
+        .progresso .txt-progresso {
+            font-size: 12px;
+        }
+
+        .progresso .txt-progresso .active {
+            font-size: 13px;
+        }
+
+        .txt-login {
+            margin-top: 44px;
+        }
+
+        .txt-login .titulo {
+            margin-bottom: 30px;
+        }
+
+        .form {
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        form label {
+            letter-spacing: 0.1px;
+        }
+
+        form.card-purple {
+            padding: 34px;
+        }
+
+        form.card-purple::before {
+            margin-top: -13px;
+            right: 303px;
+            transform: scaleX(-1) rotate(-46deg);
+        }
+
+        form.card-purple.ball-top::before {
+            margin-top: -69px;
+            right: 334px;
+            transform: scaleX(-1) rotate(-21deg);
+        }
+
+        form.card-purple label {
+            font-size: 12px;
+            margin: 0 0 5px 14px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .column-form {
+            grid-column-gap: 7px;
+        }
+
+        .input-login {
+            padding: 0px 13px;
+            font-size: 13px;
+        }
+
+        .input-login[type="email"],
+        .input-login[type="password"] {
+            margin-bottom: 13px;
+        }
+
+        .column-form,
+        .column-form:nth-of-type(2) div:nth-of-type(2) {
+            margin-top: 16px;
+        }
+
+        .column-form:nth-of-type(2) {
+            display: block;
+        }
+
+        .cbx .checkbox-span {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+        }
+
+        .cbx .checkbox-span svg {
+            width: 16px;
+            height: 14px;
+        }
+
+        button.gradient.comecar-festa {
+            height: 60px;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        &.recuperar-senha button.gradient.comecar-festa {
+            margin-top: 3px;
+        }
+
+        .btn-facebook {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-facebook span {
+            line-height: inherit;
+            padding-left: 21px;
+            font-size: 13px;
+        }
+
+        .facebook-svg {
+            width: 25px;
+        }
+
+        &.tipo-cadastro form.card-purple {
+            padding: 34px 34px 25px 34px;
+        }
+
+        .txt-redes-sociais {
+            width: 85%;
+            margin: 23px auto 0 auto;
+            line-height: 18px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .titulo {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .form .shadow-20 {
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+        }
+
+        .checkbox {
+            padding: 20px 0px 20px 18px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        form.card-purple::before {
+            right: 298px;
+        }
+
+        button.gradient.comecar-festa {
+            font-size: 13px;
+        }
+
+        .btn-facebook {
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        form.card-purple.ball-top::before {
+            margin-top: -69px;
+            right: 291px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .cbx .checkbox-span {
+            margin-right: 5px;
+        }
+    }
+
+    @media (max-width: 330px) {
+        form button.gradient:not(.icon-add-person) {
+            padding: 0 13px;
+        }
+    }
+}

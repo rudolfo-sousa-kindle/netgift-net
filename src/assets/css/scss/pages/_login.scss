@@ -1,0 +1,364 @@
+.login {
+    height: auto;
+
+    &.bg-login {
+        background: url('../imgs/background-login.png'), linear-gradient(#5129de, #7b31e3);
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: inherit;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 91px;
+    }
+
+    .div-btn-contato::after {
+        content: '';
+        background: url('../imgs/esfera.svg');
+        position: absolute;
+        display: block;
+        width: 51px;
+        height: 51px;
+        transform: scaleX(-1);
+        opacity: 0.8;
+        background-size: cover;
+        right: -124px;
+        top: 56px;
+    }
+
+    .btn-contato {
+        font-family: 'Museo Sans', sans-serif;
+        font-size: 13px;
+        border: 1px solid #fcbe13;
+        border-radius: 5px;
+        background: transparent;
+        cursor: pointer;
+        padding: 16.5px 47px;
+        color: #fff;
+        transition: .2s all linear;
+
+        &:hover {
+            background-color: #fcbe13;
+        }
+    }
+
+    main {
+        margin: 194px 0 134px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .txt-login {
+        margin-top: 40px;
+        color: #fff;
+    }
+
+    .titulo {
+        font-size: 40px;
+        margin-bottom: 45px;
+        letter-spacing: 0.3px;
+    }
+
+    .titulo-bold {
+        font-weight: 600;
+    }
+
+    .subtitulo {
+        font-size: 30px;
+        color: #fff;
+        margin-bottom: 94px;
+        font-weight: 300;
+    }
+
+    .p-1 {
+        margin-top: 25px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .p-2 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 32px;
+    }
+
+    a.btn-criar-conta.gradient {
+        width: 143px;
+        height: 50px;
+        margin: auto;
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        padding: 0 18px;
+    }
+
+    .btn-txt-link-criar-conta {
+        line-height: 31px;
+    }
+
+    .ball:after {
+        content: '';
+        background: url(../imgs/esfera.svg);
+        display: block;
+        width: 103px;
+        height: 103px;
+        position: absolute;
+        top: 286px;
+        right: 443px;
+        z-index: -1;
+        opacity: 0.8;
+        background-size: cover;
+    }
+
+    .form .shadow-20 {
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    form {
+        width: 497px;
+    }
+    
+    .form {
+        position: relative;
+        z-index: 9;
+    }
+
+    footer {
+        background: none;
+        background-image: none;
+        z-index: -1;
+        position: inherit;
+    }
+
+    form.card-purple {
+        position: relative;
+        padding: 39px;
+    }
+
+    form.card-purple::before {
+        content: '';
+        background: url(../imgs/esfera.svg);
+        position: absolute;
+        display: block;
+        width: 103px;
+        height: 103px;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1) rotate(77deg);
+        opacity: 0.8;
+        background-size: cover;
+        margin-top: -98px;
+        right: 454px;
+        z-index: -1;
+    }
+
+    form.card-purple label {
+        margin-bottom: 8px;
+        display: block;
+        color: #fff;
+        text-transform: inherit;
+    }
+
+    form.card-purple label:last-child {
+        margin-top: 23px;
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        font-size: 14px;
+        color: #d8d8d9;
+        font-weight: 300;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        font-size: 14px;
+        color: #d8d8d9;
+        font-weight: 300;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        font-size: 14px;
+        color: #d8d8d9;
+        font-weight: 300;
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        font-size: 14px;
+        color: #d8d8d9;
+        font-weight: 300;
+    }
+
+    .input-login {
+        width: 100%;
+        border-radius: 5px;
+        height: 60px;
+    }
+
+    .input-login[type="email"] {
+        margin-bottom: 23px;
+    }
+
+    button.gradient.comecar-festa {
+        margin-top: 29px;
+    }
+    
+      .checkbox .label-checkbox {
+        font-family: 'Museo Sans', sans-serif;
+        letter-spacing: 0.1px;
+        margin: 0;
+    }
+
+
+    .cbx {
+        margin: auto;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        margin-left: 22px;
+    }
+
+    .cbx .checkbox-span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 16px;
+        transform: translate3d(0, 0, 0);
+        position: relative;
+        width: 27px;
+        height: 27px;
+        border-radius: 3px;
+        transform: scale(1);
+        vertical-align: middle;
+        border: 1px solid #fff;
+        transition: all 0.2s ease;
+    }
+
+    .cbx .checkbox-span svg {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        width: 22px;
+        height: 20px;
+        stroke: #a8a8a8;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transition-delay: 0.1s;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .cbx .checkbox-span:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #506EEC;
+        display: block;
+        transform: scale(0);
+        opacity: 1;
+        border-radius: 50%;
+    }
+
+    .cbx:hover .checkbox-span {
+        border-color: #506EEC;
+    }
+
+    .inp-cbx:checked + .cbx .checkbox-span {
+        background: #fff;
+        border-color: #e6e6e6;
+        animation: wave 0.4s ease;
+    }
+
+    .inp-cbx:checked + .cbx .checkbox-span svg {
+        stroke-dashoffset: 0;
+    }
+
+    .inp-cbx:checked + .cbx .checkbox-span:before {
+        transform: scale(3.5);
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+
+    @keyframes wave {
+        50% {
+            transform: scale(0.9);
+        }
+    }
+
+    .div-facebook {
+        background-image: -webkit-linear-gradient(0deg, #5129de 0%, #7b30e3 253%);
+        background-image: linear-gradient(0deg, #5129de 0%, #7b30e3 253%);
+        margin-top: -4px;
+        padding: 28px 39px;
+    }
+
+    .btn-facebook {
+        background: #4e59cd;
+        width: 100%;
+        height: 65px;
+        padding: 0 20px;
+        font-size: 17px;
+        color: #fff;
+        border-radius: 8px;
+        transition: .2s all linear;
+        letter-spacing: -0.5px;
+        @include font2(400);
+
+        &:hover {
+            background: #5f69cc;
+        }
+    }
+
+    .div-esqueceu-senha {
+        display: flex;
+        justify-content: center;
+    }
+
+    .esqueceu-senha {
+        display: inline-block;
+        margin-top: 31px;
+        text-align: center;
+    }
+
+    .esqueceu-senha.cyan {
+        font-weight: 300;
+    }
+
+    .btn-facebook span {
+        line-height: 34px;
+    }
+
+    .facebook-svg {
+        width: 33px;
+        float: left;
+    }
+
+    footer::after {
+        background-image: none;
+    }
+    
+    .container::after {
+        content: '';
+        background: url(../imgs/esfera.svg);
+        display: block;
+        width: 175px;
+        height: 175px;
+        position: absolute;
+        background-size: cover;
+        filter: blur(5px);
+        right: -284px;
+        margin-top: -175px;
+        z-index: 999;
+    }
+    
+    .copyright-mobile {
+	    display: none;
+    }
+}

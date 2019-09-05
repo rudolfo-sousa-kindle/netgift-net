@@ -1,0 +1,965 @@
+.label-theme {
+    margin-top: 0;
+}
+
+.novo-tema div.selecione {
+    padding: 0;
+    height: 45px;
+}
+
+.novo-tema .selecione > div {
+    background-color: transparent;
+    border: none;
+}
+
+.novo-tema .selecione > div input {
+    height: 29px;
+}
+
+.novo-tema .selecione > div:nth-child(1) {
+    background-color: #f8f9fb;
+}
+
+.novo-tema .selecione > div {
+    background-color: #ffffff;
+}
+
+.wrap-editor {
+    margin-top: 50px;
+    height: 1800px;
+    position: relative;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+.convidado .card-default {
+    padding: 0;
+    display: block;
+    box-shadow: none;
+}
+
+.convidado #titulo-header {
+    margin-top: 40px;
+    font-size: 48px;
+    margin-bottom: 6px;
+}
+
+.convidado #data-header {
+    font-size: 22px;
+}
+
+.convidado .btn-cta-primary {
+    background-color: #00b1ff;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.convidado .btn-cta-secondary {
+    color: #00b1ff;
+    cursor: pointer;
+}
+
+.convidado #contagem-header {
+    font-size: 22px;
+}
+
+.title-content {
+    font-size: 28px;
+}
+
+.convidado .theme-site-header {
+    background-image: url('../imgs/header-galeria-de-templates.png');
+    min-height: auto;
+    padding: 81px 0;
+}
+
+.convidado .theme-site-address {
+    background-image: url('../imgs/header-buscar-festa.png');
+}
+
+.convidado .theme-site-countdown {
+    background-image: url('../imgs/header-galeria-de-templates.png');
+}
+
+.enable-edit {
+    border: 1px solid transparent;
+    transition: all ease .2s, outline ease 0s;
+}
+
+.enable-edit:hover,
+.enable-edit:focus,
+.is-editing{
+    outline: 1px solid #4a63ef;
+}
+
+.dialog .custom-select + .select2-container .select2-selection {
+    padding: 0 0px;
+}
+
+.novo-tema .dialog .custom-select + .select2-container {
+    background: #FFF;
+    height: 20px;
+}
+
+.novo-tema .dialog .custom-select + .select2-container .select2-selection .select2-selection__rendered {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.novo-tema .dialog .select2-container--default .select2-results > .select2-results__options {
+    padding: 0;
+}
+
+.dialog-color-text {
+    z-index: 3;
+}
+
+.dialog-color-custom {
+    z-index: 4;
+    width: 245px;
+}
+
+.dialog.dialog-color-custom .dialog-header {
+    background-color: #f5f6fa;
+    color: #000;
+}
+
+.dialog.dialog-color-custom .dialog-header .dialog-close {
+    background-color: #dcdde1;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.dialog.dialog-color-custom .dialog-header .dialog-close:hover {
+    background-color: #bebebe;
+}
+
+.disabled:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+}
+
+.area-convidado .disabled:after {
+    content: none;
+}
+
+.a-color-picker input{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: #f8f9fb;
+}
+
+.a-color-picker-transparent{
+    background-image: none !important;
+}
+
+.a-color-picker input[nameref="RGBHEX"]{
+    border: 1px solid #f2f2f2;
+}
+
+input[readonly] {
+    opacity: 1;
+}
+
+.a-color-picker-transparent{
+    width: 100%;
+}
+
+.a-color-picker-row.a-color-picker-rgb, .a-color-picker-row.a-color-picker-rgbhex{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.a-color-picker-hsl > label, .a-color-picker-rgb > label, .a-color-picker-single-input > label{
+    color: #000c !important;
+    font-size: 14px;
+    margin: 8px 0;
+    font-family: 'Museo Sans', sans-serif;
+}
+
+.a-color-picker-row.a-color-picker-rgb .columns-3, .a-color-picker-row.a-color-picker-rgbhex .columns-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    width: 100%;
+}
+
+.a-color-picker-palette{
+    padding: 15px !important;
+}
+.a-color-picker-palette-color, .custom-color-paleta {
+    border: 1px solid #ebebeb;
+    box-shadow: none !important;
+    width: 23px !important;
+    height: 23px !important;
+    flex: none !important;
+    margin: 2px !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+}
+
+.a-color-picker-palette-add, .custom-color-paleta.add {
+    font-size: 14px;
+    line-height: 20px !important;
+    color: #b4b4b4 !important;
+    text-align: center;
+    cursor: pointer;
+}
+
+.paleta-cores {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.paleta-cor {
+    width: 23px;
+    height: 23px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #404040;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.paleta-cor.transparent{
+    position: relative;
+}
+
+.paleta-cor.transparent:after{
+    content: '';
+    border-bottom: 2px solid #ff313a;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-50deg) translate(0px, -10px);
+    
+}
+
+.paleta-cor span{
+    margin-top: -1px;
+}
+
+.paleta-cor.open-dialog:hover {
+    background-color: #d9d9d9 !important;
+}
+
+.paleta-cor:not(.ng-right-open):not(.active):hover {
+    border: 1px solid #afaeae;
+}
+
+.paleta-cor.active:not(.open-dialog), .custom-color-paleta.active:not(.add) {
+    border: 2px solid #4a63ef;
+}
+
+.confirm-custom-color{
+    margin: 15px;
+    width: 88% !important;
+    height: 40px !important;
+}
+
+.a-color-picker-row.a-color-picker-palette{
+    display: none;
+}
+
+.custom-colors-paleta{
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.editar-background{
+    position: absolute;
+    background: #4a63ef;
+    color: #FFF;
+    padding: 10px 15px;
+    border-radius: 100px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all ease .2s;
+    opacity: 0;
+}
+.editar-background:hover{
+    opacity: 1 !important;
+}
+
+.drag-drop{
+    width: 85%;
+    border-radius: 5px;
+    height: 150px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    background: #ebebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .2s;
+    cursor: pointer;
+}
+
+.drag-drop.over{
+    background: #d6d6d6;
+    box-shadow: inset 0px 0px 1px 3px rgba(74, 99, 239, 0.34);
+}
+
+.drag-drop:hover{
+    background: #f4f4f4;
+/*    box-shadow: inset 0px 0px 1px 3px rgba(74, 99, 239, 0.34);*/
+}
+
+.queue{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+/* THEME SITE */
+
+/* remover site publicado */
+
+[class^="theme-site-"]{
+    position: relative;
+}
+
+[class^="theme-site-"]:hover .editar-background{
+    opacity: 0.8;
+}
+
+.container-editor .element:hover,
+.theme-site-header:hover,
+.theme-site-about:hover,
+.theme-site-address:hover,
+.theme-site-album:hover,
+.theme-site-countdown:hover {
+    /*    border: 1px solid #4a63ef;*/
+    outline: 1px solid #4a63ef;
+    cursor: pointer;
+}
+
+.convidado .container-editor .element:hover,
+.convidado .theme-site-header:hover,
+.convidado .theme-site-about:hover,
+.convidado .theme-site-address:hover,
+.convidado .theme-site-album:hover,
+.convidado .theme-site-countdown:hover {
+    outline: none;
+    cursor: auto;
+}
+
+.theme-site {
+    padding: 0;
+    min-height: 500px;
+    margin-bottom: 50px;
+    transition: all ease .2s;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.convidado.theme-site {
+    min-width: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 0;
+}
+
+.theme-site.mobile {
+    width: 460px !important;
+}
+
+.container-editor {
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.container-editor .element {
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.theme-site-header {
+    width: 100%;
+    height: 100%;
+    padding: 7% 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-editor #contagem-header {
+    margin-top: 40px;
+    letter-spacing: 0px;
+}
+
+.container-editor .btn-cta {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.container-editor .btn-cta-primary {
+    margin-top: 50px;
+    border-radius: 5px;
+    transition: all ease .2s;
+}
+
+.container-editor .btn-cta-primary:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container-editor .btn-cta-secondary {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.theme-site-about,
+.theme-site-casamento-welcome,
+.theme-site-casamento-about,
+.theme-site-casamento-padrinhos {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mobile .theme-site-casamento-padrinhos {
+    height: auto;
+}
+
+.convidado .theme-site-about  {
+    background: #eee;
+    height: auto;
+    padding: 80px 0 140px 0;
+}
+
+.theme-site-casamento-padrinhos{
+    min-height: 500px;
+}
+
+.theme-site-casamento-welcome,
+.theme-site-casamento-about,
+.theme-site-casamento-padrinhos{
+    display: none;
+}
+
+.theme-site-about #avatar-about,
+#avatar-casamento-about,
+#avatar-casamento-about2,
+.element.avatar {
+    border-radius: 200px;
+    background-color: #000;
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.element.avatar.avatar-segundo{
+    margin-left: -45px;
+    background-color: rgb(245, 246, 250) !important;
+}
+
+#avatar-casamento-about2{
+    margin-left: -65px;
+    background-color: rgb(245, 246, 250) !important;
+}
+
+.theme-site-about #titulo-about,
+#titulo-casamento-welcome,
+#titulo-casamento-about {
+    margin-top: 50px;
+}
+
+.theme-site-about #descricao-about,
+#descricao-casamento-welcome,
+#descricao-casamento-about,
+#descricao-casamento-padrinhos {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 1.3em;
+}
+
+.content-couple {
+    padding: 136px 0px;
+    justify-content: center;
+}
+
+.content-couple p,
+.content-godparents .text-godparents {
+    margin-top: 45px;
+    text-align: center;
+    line-height: 19px;
+}
+
+.godparent {
+    margin: 0 17px;
+}
+
+.content-couple .text-couple,
+.content-godparents .text-main-godparents {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-couple {
+    justify-content: center;
+}
+
+.photo-couple img,
+.photo-godparents img {
+    border-radius: 100px;
+}
+
+.photo-couple img {
+    width: 150px;
+    height: 150px;
+}
+
+.photo-couple img:nth-child(1) {
+    margin-right: -40px;
+}
+
+.content-godparents {
+    width: 80%;
+    padding: 100px 0;
+    margin: auto;
+}
+
+.photo-godparents img {
+    width: 120px;
+    height: 120px;
+}
+
+.text-main-godparents p,
+.text-main-godparents h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.photo-godparents img:nth-child(1) {
+    margin-right: -20px;
+}
+
+.text-godparents h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.text-godparents p {
+    font-size: 15px;
+}
+
+.padrinhos-nome{
+    margin: 40px 0px 20px 0px;
+}
+
+.mobile .padrinhos-nome {
+    margin: 25px 0px 15px 0px;
+}
+
+#descricao-casamento-padrinhos{
+    margin-bottom: 50px;
+}
+
+.theme-site-address {
+    width: 100%;
+    min-height: 650px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-site-address #descricao-address {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 1.3em;
+}
+
+.theme-site-address #endereco-address {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 30px;
+    line-height: 1.3em;
+    border-radius: 5px;
+    padding: 30px 15px;
+}
+
+.theme-site-address #endereco-address span {
+    display: block;
+}
+
+.theme-site-address #mapa-address {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: -250px;
+    display: block;
+    width: 80%;
+}
+
+.theme-site-album {
+    min-height: 900px;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.theme-site-album #titulo-album {
+    margin-top: 60px;
+}
+
+.theme-site-album #grid-album {
+    max-width: 800px;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.convidado .theme-site-album #grid-album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.theme-site-casamento-padrinhos .theme-padrinhos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mobile .theme-site-casamento-padrinhos .theme-padrinhos-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+}
+
+.theme-site-casamento-padrinhos .theme-padrinhos-grid .padrinhos-grid {
+    text-align: center;
+} 
+
+.mobile .theme-site-casamento-padrinhos .theme-padrinhos-grid .padrinhos-grid {
+    margin-bottom: 60px;
+} 
+
+.theme-site-album #grid-album .photo-album {
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    border-radius: 5px;
+    display: block;
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all ease .3s;
+}
+
+.convidado .theme-site-album #grid-album .photo-album {
+    background-color: transparent;
+    width: 249.33px;
+    height: 234px;
+}
+
+.theme-site-album #grid-album .photo-album img {
+    width: 249.33px;
+    height: 234px;
+}
+
+.theme-site-album #grid-album .photo-album:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.theme-site-countdown {
+    width: 100%;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-site-countdown .btn-cta-primary {
+    margin-top: 30px;
+}
+
+.theme-site-countdown .btn-cta-secondary {
+    margin-top: 20px;
+}
+
+
+/* mobile */
+
+.theme-site.mobile [style^="font-size: 48px;"],
+.theme-site.mobile [style^="font-size: 38px;"],
+.theme-site.mobile [style^="font-size: 28px;"] {
+    font-size: 26px !important;
+}
+
+.theme-site.mobile [style^="font-size: 26px;"] {
+    font-size: 20px !important;
+}
+
+.theme-site.mobile [style^="font-size: 18px;"],
+.theme-site.mobile [style^="font-size: 16px;"] {
+    font-size: 14px !important;
+}
+
+.theme-site.mobile .theme-site-header,
+.theme-site.mobile .theme-site-about {
+    height: 450px;
+}
+
+.theme-site.mobile .theme-site-about #avatar-about {
+    width: 120px;
+    height: 120px;
+}
+
+.theme-site.mobile .theme-site-album #grid-album {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.convidado .theme-site-countdown {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 1607px) {
+    .dashboard .theme-site-casamento-padrinhos .theme-padrinhos-grid {
+        width: 100%;
+    } 
+}
+
+@media (max-width: 1366px) {
+    .theme-site-about #avatar-about, 
+    #avatar-casamento-about, 
+    #avatar-casamento-about2, 
+    .element.avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .padrinhos-nome,
+    .mobile .padrinhos-nome {
+        font-size: 26px;
+        margin: 23px 0px 13px 0px;
+    }
+}
+
+@media (max-width: 1190px) {
+    .theme-site-casamento-padrinhos,
+    .mobile .theme-site-casamento-padrinhos {
+        height: auto;
+    }
+
+    .theme-site-casamento-padrinhos .theme-padrinhos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-site-casamento-padrinhos .theme-padrinhos-grid .padrinhos-grid {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 1171px) {
+    .content-godparents {
+        width: 85%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .convidado .theme-site-about {
+        padding: 40px 0 90px 0;
+    }
+
+    .content-godparents,
+    .content-couple {
+        padding: 60px 0;
+    } 
+}
+
+@media (max-width: 885px) {
+    .content-godparents .text-main-godparents {
+        max-width: 460px;
+    }
+
+    .text-main-godparents p, 
+    .text-main-godparents h3 {
+        margin-bottom: 29px;
+    }
+
+    .content-couple p, 
+    .content-godparents .text-godparents {
+        margin-top: 26px;
+    }
+
+    .photo-godparents img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .text-godparents h3 {
+        margin-bottom: 9px;
+        font-size: 20px;
+    }
+
+    .text-godparents p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 825px) {
+    .godparents {
+        flex-direction: column;
+    }
+
+    .godparent {
+        width: 70%;
+        margin: 0 auto 60px auto;
+    }
+
+    .godparent:nth-child(3) {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 735px) {
+    .content-couple .text-couple {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .convidado .theme-site-header {
+        min-height: 450px;
+    }
+
+    .container-editor .btn-cta-primary {
+        font-size: 1em;
+    }
+
+    .convidado .theme-site-about #avatar-about {
+        width: 120px;
+        height: 120px;
+    }
+
+    .convidado .title-content {
+        font-size: 23px;
+    }
+
+    .convidado .theme-site-about #descricao-about {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    .convidado .theme-site-address #mapa-address {
+        width: 100%;
+    }
+
+    .convidado .theme-site-album #grid-album {
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .convidado .theme-site-header {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 360px) { 
+    .area-convidado .webdoor .link-menu {
+        font-size: 10px;
+    }
+
+    .convidado .theme-site-album #grid-album {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+
+    .convidado .theme-site-album #grid-album .photo-album {
+        height: 200px;
+    }
+
+    .convidado .theme-site-album {
+        height: auto;
+    }
+
+    .convidado .theme-site-album #titulo-album {
+        margin-top: 120px;
+    }
+
+    .convidado .theme-site-album #grid-album {
+        height: auto;
+    }
+
+    .convidado .theme-site-countdown {
+        margin-top: 50px;
+    }
+}

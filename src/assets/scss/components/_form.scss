@@ -1,0 +1,711 @@
+@import '../mixins.scss';
+/* === SELECT ORDENAR === */
+
+.ordenar + .select2-container {
+    width: auto !important;
+    height: 50px;
+    background: #cacaca;
+    @include linear-gradient(to right, #cacaca 0%, #bdc9cb 100%);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    z-index: 1;
+
+    &.select2-container--open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .select2-selection {
+        padding: 0 20px;
+        background: transparent;
+        border: 0;
+        height: 100%;
+        outline: none;
+        @include flex(center, space-between);
+
+        .select2-selection__rendered {
+            font-size: 13px;
+            color: #3d3d3d;
+            text-transform: uppercase;
+            height: 100%;
+            padding: 0;
+            @include flex(center, center);
+            
+            strong{
+                font-weight: 800;
+            }
+
+//            &:after {
+//                content: attr(title);
+//                display: block;
+//                position: absolute;
+//                display: flex;
+//                align-items: center;
+//                right: 40px;
+//                text-shadow: 0 0.5px 0 #3d3d3d, 0 -0.5px 0.1px #3d3d3d;
+//                transform: translateY(-0.5px);
+//            }
+        }
+
+        .select2-selection__arrow {
+            height: 100%;
+            position: inherit;
+            @include flex(center, center);
+            padding-left: 10px;
+        }
+
+        b[role="presentation"] {
+            border-radius: 5px;
+            border: 1.5px solid #888;
+            position: inherit;
+
+            &:after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                background: #888;
+                display: block;
+                position: absolute;
+                border-radius: 10px;
+                margin-top: 5px;
+                margin-left: -2px;
+            }
+
+            &:before {
+                content: '';
+                width: 3px;
+                height: 3px;
+                background: #888;
+                display: block;
+                position: absolute;
+                border-radius: 10px;
+                margin-top: -7px;
+                margin-left: -2px;
+            }
+        }
+    }
+}
+
+.ordenar.ordenar-mobile + .select2-container .select2-selection .select2-selection__rendered:after {
+    content: '';
+}
+
+.select2-container--open .select2-dropdown--below {
+    // transform: translateY(-2px);
+    background: #FFF;
+    z-index: 1; // padding-top: 2px;
+    border: 0 solid #aaa;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #ababab;
+    color: white;
+}
+
+.select2-results__options li:last-child.select2-results__option--highlighted[aria-selected] {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.select2-results__option {
+    padding: 10px 30px;
+}
+
+/* === SELECT CUSTOM === */
+
+.custom-select.bg-white + .select2-container {
+    background: #FFF;
+    box-shadow: 0 0;
+
+    .select2-selection {
+        b[role="presentation"] {
+            border-radius: 5px;
+            border: 1.5px solid #888;
+            position: inherit;
+
+            &:after {
+                content: '';
+                display: none;
+            }
+
+            &:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+}
+
+.custom-select.bg-white + .select2-container .select2-selection .select2-selection__rendered {
+    text-transform: inherit;
+}
+
+.custom-select.flat + .select2-container {
+    background: #f2f2f2;
+    box-shadow: 0 0;
+}
+
+.custom-select + .select2-container {
+    width: 285px !important;
+    height: 60px;
+    background: #cacaca;
+    @include linear-gradient(to right, #cacaca 0%, #bdc9cb 100%);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    z-index: 1;
+
+    &.select2-container--open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .select2-selection {
+        padding: 0 20px;
+        background: transparent;
+        border: 0;
+        height: 100%;
+        outline: none;
+        @include flex(center, space-between);
+
+        .select2-selection__rendered {
+            font-size: 13px;
+            color: #3d3d3d;
+            text-transform: uppercase;
+            height: 100%;
+            padding: 0;
+            @include flex(center, center);
+        }
+
+        .select2-selection__arrow {
+            height: 100%;
+            position: inherit;
+            @include flex(center, center);
+            padding-left: 15px;
+        }
+
+        b[role="presentation"] {
+            border-radius: 5px;
+            border: 1.5px solid #888;
+            position: inherit;
+
+            &:after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                background: #888;
+                display: block;
+                position: absolute;
+                border-radius: 10px;
+                margin-top: 5px;
+                margin-left: -1px;
+            }
+
+            &:before {
+                content: '';
+                width: 3px;
+                height: 3px;
+                background: #888;
+                display: block;
+                position: absolute;
+                border-radius: 10px;
+                margin-top: -7px;
+                margin-left: -1px;
+            }
+        }
+    }
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #ababab;
+    color: white;
+}
+
+.select2-results__options li:last-child.select2-results__option--highlighted[aria-selected] {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.select2-results__option {
+    padding: 10px 30px;
+}
+
+.buttons {}
+
+form .buttons button {
+    height: 60px;
+
+    &:first-child {
+        margin-left: 18px;
+    }
+}
+
+form .buttons > button:first-child {
+    margin-right: 15px;
+}
+
+form button.gradient:not(.icon-add-person) {
+    padding: 0 28px;
+}
+
+form p.title, p.form-title {
+    font-size: 20px;
+    @include font(500);
+    color: #3d3d3d;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+
+    &.bdT {
+        border-top: 1px solid #f2f2f2;
+        padding-top: 40px;
+    }
+}
+
+.informacoes {
+    #save-1,
+    #save-2 {
+        display: none;
+    }
+}
+
+form .title-with-button {
+    p {
+        margin: 0 20px 0 0;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 10px 15px !important;
+        border: 1px solid transparent !important;
+        height: inherit;
+    }
+
+    &.bordertop {
+        margin-top: 40px;
+        padding-top: 25px;
+        border-top: 1px solid #f2f2f2;
+    }
+}
+
+.filtro {
+    position: relative;
+}
+
+.filtro .options {
+    position: absolute;
+    background: rgba(202, 202, 202, 1);
+    @include linear-gradient(to right, rgba(202, 202, 202, 1) 0%, rgba(189, 201, 203, 1) 100%);
+    border-radius: 0 0 5px 5px;
+    width: 286px;
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+}
+
+.filtro .options li {
+    display: block;
+    color: #3d3d3d;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+// Fim Filtro
+// Input
+form label {
+    color: #3d3d3d;
+    font-weight: 400;
+    font-family: 'Museo Sans', sans-serif;
+    font-size: 12px;
+    margin-bottom: 17px;
+    margin-top: 30px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+input {
+    border-radius: 5px;
+    border: 0;
+    background-color: #f2f2f2;
+    color: #000000;
+    width: 360px;
+    height: 60px;
+    outline: none;
+    //    text-indent: 27px;
+    padding: 0px 27px;
+    @include font(400);
+    font-size: 18px;
+    border: 2px solid transparent;
+    transition: all ease 0.1s;
+
+    &:focus {
+        border: 2px solid #a3c4fc !important;
+    }
+}
+
+input[readonly],
+select[readonly],
+select[readonly] + .select2-container {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+input[type=number] {
+    width: 170px;
+    padding-right: 15px;
+}
+
+
+textarea {
+    @include font(300);
+    border-radius: 5px;
+    border: 0;
+    background-color: #f2f2f2;
+    color: #000000;
+    outline: none;
+    padding: 27px;
+    transition: all ease 0.1s;
+    resize: none;
+    border: 2px solid transparent;
+
+    &:focus {
+        border: 2px solid #a3c4fc;
+    }
+}
+
+form .small,
+form .small.custom-select + .select2-container {
+    width: 180px !important;
+
+    .select2-selection .select2-selection__rendered {
+        font-size: 20px;
+        @include font(600);
+        color: #000;
+    }
+}
+
+form .uppercase,
+form .uppercase.custom-select + .select2-container {
+
+    .select2-selection .select2-selection__rendered {
+        font-size: 18px;
+        @include font(400);
+        color: #000;
+    }
+}
+
+// Fim input
+/* === ALIGN === */
+
+form .flex-space > .flex-column:not(:last-child) {
+    margin-right: 20px;
+}
+
+.copy-link label {
+    color: #3d3d3d;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.copy-link label {
+    margin-top: 20px;
+}
+
+label.prefixo {
+    position: absolute;
+    font-weight: 400;
+    color: #3d3d3d;
+    font-size: 18px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.copy-link input[type=text] {
+    width: 80%;
+    background: #FFF;
+    height: 50px;
+    box-shadow: 1.5px 1.3px 2px 0 rgba(25, 42, 66, 0.1);
+    font-weight: 400;
+    color: #3d3d3d;
+    font-size: 18px;
+    padding-left: 195px;
+    padding-right: 15px;
+    text-indent: inherit;
+}
+
+/* === DATA === */
+
+.ui-datepicker .ui-datepicker-title, .ui-datepicker th{
+    font-weight: 600 !important;
+}
+
+.ui-widget {
+    @include font(400);
+    color: #666;
+    width: 20.5em;
+}
+
+.ui-widget table tbody tr {
+    height: auto;
+    background: transparent;
+    border-radius: inherit;
+    box-shadow: 0 0 0 transparent;
+    margin: 0;
+    width: auto;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 0 0 1em;
+}
+
+.ui-widget-header {
+    background: #FFF;
+    border: 0;
+}
+
+span.ui-datepicker-month:after {
+    content: ',';
+    display: inline-block;
+}
+
+.ui-widget.ui-widget-content {
+    border: 0;
+    padding: 1.5em 1.8em;
+    border-radius: 5px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+}
+
+.ui-datepicker td a,
+.ui-datepicker td span {
+    display: block;
+    padding: 0.4em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.ui-button,
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+html .ui-button.ui-state-disabled:active,
+html .ui-button.ui-state-disabled:hover {
+    border: 0;
+    background: none;
+    font-weight: normal;
+    color: #333;
+    border-radius: 300px;
+    width: 23px;
+    height: 22px;
+    padding: 16px 15px 14px;
+    line-height: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.3s;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.ui-datepicker-unselectable.ui-state-disabled > .ui-state-default {
+    background: none;
+}
+
+.ui-datepicker-today .ui-state-default {
+    background: #f7f7f7;
+}
+
+.ui-datepicker td .ui-state-default:hover {
+    background: #00d6c8;
+    color: #FFF;
+}
+
+.ui-state-default.ui-state-active {
+    background: #00afe0;
+    color: #FFF;
+}
+
+.ui-button:focus,
+.ui-button:hover,
+.ui-state-focus,
+.ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-focus,
+.ui-widget-header .ui-state-hover {
+    border: 0;
+    background: none;
+    font-weight: normal;
+    color: #222;
+}
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev {
+    cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 0;
+    top: 0;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 0;
+    top: 0;
+}
+
+.ui-button:focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-state-default .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-state-hover .ui-icon,
+.ui-widget-header .ui-icon {
+    background: none;
+}
+
+.ui-datepicker-next.ui-corner-all:before {
+    content: '';
+    display: block;
+    width: 15px;
+    border-top: 2px solid #cecece;
+    -webkit-transform: translate(4px, 14.5px);
+    transform: translate(4px, 14.5px);
+    transition: all ease 0.3s;
+}
+
+.ui-datepicker-next.ui-corner-all:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #cecece;
+    border-right: 2px solid #cecece;
+    -webkit-transform: rotate(45deg) translate(12px);
+    transform: rotate(45deg) translate(12px);
+    transition: all ease 0.3s;
+}
+
+.ui-datepicker-prev.ui-corner-all:before {
+    content: '';
+    display: block;
+    width: 15px;
+    border-top: 2px solid #cecece;
+    -webkit-transform: translate(12px, 15px);
+    transform: translate(12px, 15px);
+    transition: all ease 0.3s;
+}
+
+.ui-datepicker-prev.ui-corner-all:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #cecece;
+    border-left: 2px solid #cecece;
+    -webkit-transform: rotate(-45deg) translate(2px, 15px);
+    transform: rotate(-45deg) translate(2px, 15px);
+    transition: all ease 0.3s;
+}
+
+.ui-datepicker-next.ui-corner-all:hover:before,
+.ui-datepicker-prev.ui-corner-all:hover:before {
+    border-top-color: #333;
+}
+
+.ui-datepicker-next.ui-corner-all:hover:after,
+.ui-datepicker-prev.ui-corner-all:hover:after {
+    border-top-color: #333;
+    border-right-color: #333;
+    border-left-color: #333;
+}
+
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+    display: none;
+}
+
+form.card-purple {
+    border-radius: 8px;
+    background-image: -webkit-linear-gradient(0deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    background-image: linear-gradient(0deg, rgb(81, 41, 222) 0%, rgb(123, 48, 227) 100%);
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.1); // width: 100%;
+    // height: 253px;
+    padding: 20px;
+
+    label {
+        color: #FFF;
+        @include font2(400);
+        font-size: 14px;
+        margin: 0 0 15px 20px;
+    }
+
+    button.gradient {
+        max-width: 100%;
+        margin: 15px 0 0;
+    }
+
+    p.obs {
+        color: #FFF;
+        font-size: 13px;
+        @include font(300);
+        line-height: 1.3em;
+        text-align: center;
+        padding: 0 25px;
+        margin-top: 15px;
+
+        strong {
+            @include font(400);
+        }
+    }
+
+}
+
+.custom-select + .select2-container {
+    width: 100% !important;
+}
+
+.custom-select.bg-white + .select2-container .select2-selection b[role="presentation"] {
+    border: 0 solid transparent;
+    transition: all ease 0.3s;
+    transform-origin: -2px;
+
+    &:before {
+//        content: '\e800';
+        content: '\e884';
+        font-family: "netgift_icons";
+        font-size: 16px;
+        display: block;
+        background: transparent;
+        width: inherit;
+        height: inherit;
+        margin-left: -7px;
+        color: #333;
+    }
+}
+
+.custom-select.bg-white + .select2-container.select2-container--open .select2-selection b[role="presentation"] {
+    transform: rotate(180deg);
+//    transform-origin: 0px;
+}
+
+.custom-select.bg-white.t0 + .select2-container.select2-container--open .select2-selection b[role="presentation"] {
+    transform: rotate(180deg);
+    transform-origin: 0px;
+}

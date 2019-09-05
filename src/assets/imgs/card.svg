@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="45px">
+    <defs>
+        <linearGradient id="PSgrad_0" x1="0%" x2="100%" y1="0%" y2="0%">
+            <stop offset="0%" stop-color="rgb(0,168,229)" stop-opacity="1" />
+            <stop offset="97%" stop-color="rgb(0,220,197)" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="PSgrad_1" x1="0%" x2="0%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="rgb(81,41,222)" stop-opacity="1" />
+            <stop offset="100%" stop-color="rgb(123,48,227)" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="PSgrad_2" x1="0%" x2="0%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="rgb(109,139,245)" stop-opacity="1" />
+            <stop offset="100%" stop-color="rgb(113,90,230)" stop-opacity="1" />
+        </linearGradient>
+
+    </defs>
+    <path fill-rule="evenodd" fill="url(#PSgrad_0)" d="M6.000,-0.000 L67.000,-0.000 C70.314,-0.000 73.000,2.686 73.000,6.000 L73.000,39.000 C73.000,42.314 70.314,45.000 67.000,45.000 L6.000,45.000 C2.686,45.000 -0.000,42.314 -0.000,39.000 L-0.000,6.000 C-0.000,2.686 2.686,-0.000 6.000,-0.000 Z" />
+    <text kerning="auto" font-family="OpenSans" fill="rgb(255, 255, 255)" transform="matrix( 0.64821659976645, 0, 0, 0.64821659976646,9.49484645056958, 37.0928663990658)" font-size="12px">&#48;&#48;&#48;&#48;&#32;&#48;&#48;&#48;&#48;&#32;&#48;&#48;&#48;&#48;</text>
+    <text kerning="auto" font-family="OpenSans" fill="rgb(255, 255, 255)" transform="matrix( 0.64821659976645, 0, 0, 0.64821659976646,7.41135505467463, 14.416974698949)" font-size="12px">CARD</text>
+    <path fill-rule="evenodd" opacity="0.4" fill="url(#PSgrad_1)" d="M51.328,7.000 C54.823,7.000 57.656,9.910 57.656,13.500 C57.656,17.090 54.823,20.000 51.328,20.000 C47.833,20.000 45.000,17.090 45.000,13.500 C45.000,9.910 47.833,7.000 51.328,7.000 Z" />
+    <path fill-rule="evenodd" opacity="0.502" fill="url(#PSgrad_2)" d="M57.672,7.000 C61.167,7.000 64.000,9.910 64.000,13.500 C64.000,17.090 61.167,20.000 57.672,20.000 C54.177,20.000 51.344,17.090 51.344,13.500 C51.344,9.910 54.177,7.000 57.672,7.000 Z" />
+</svg>
