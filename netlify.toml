@@ -1,0 +1,3 @@
+[ build ]
+   command = " npm execute a compilação "
+   publish = " / public "
