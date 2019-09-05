@@ -53,25 +53,25 @@ export default class App extends Component {
               
                 <Switch location={location}>
                   <Route path="/" exact component={HomePage} />
-                  <Route path="/sobre" exact component={noRequireAuth(Sobre)} />
-                  <Route path="/login" exact component={noRequireAuth(Login)} />
-                  <Route path="/templates" exact component={noRequireAuth(GaleriaTemplates)} />
-                  <Route path="/contato" exact component={noRequireAuth(Contato)} />
-                  <Route path="/buscar-festa" exact component={noRequireAuth(BuscarFesta)} />
-                  <Route path="/cadastro" exact component={noRequireAuth(Cadastro)} />
-                  <Route path="/recuperar-senha" exact component={noRequireAuth(RecuperarSenha)} />
-                  <Route path="/cadastro-concluido" exact component={noRequireAuth(CadastroConcluido)} />
-                  <Route path="/tipo-cadastro" exact component={noRequireAuth(TipoCadastro)} />
-                  <Route path="/recuperar-senha/nova-senha" exact component={noRequireAuth(RecuperarSenhaNova)} />
-                  <Route path="/dashboard" exact component={requireAuth(Dashboard)} />
-                  <Route path="/dashboard/*" exact component={requireAuth(Dashboard)} />
-                  <Route path="/criarFesta" exact component={requireAuth(CriarFesta)} />
-                  <Route path="/festa/:id" exact component={HomeConvidado} />
-                  <Route path="/festa/:id/lista-de-presentes" exact component={noRequireAuth(ListaPresentes)} />
-                  <Route path="/festa/:id/carrinho" exact component={noRequireAuth(Carrinho)} />
-                  <Route path="/festa/:id/pagamento" exact component={noRequireAuth(Pagamento)} />
-                  <Route path="/festa/:id/confirmacao" exact component={noRequireAuth(Checkout)} />
-                  <Route path="/organizador/:id/painel" exact component={noRequireAuth(PainelControle)} />
+                  <Route path="/sobre" component={noRequireAuth(Sobre)} />
+                  <Route path="/login" component={noRequireAuth(Login)} />
+                  <Route path="/templates" component={noRequireAuth(GaleriaTemplates)} />
+                  <Route path="/contato" component={noRequireAuth(Contato)} />
+                  <Route path="/buscar-festa" component={noRequireAuth(BuscarFesta)} />
+                  <Route path="/cadastro" component={noRequireAuth(Cadastro)} />
+                  <Route path="/recuperar-senha" component={noRequireAuth(RecuperarSenha)} />
+                  <Route path="/cadastro-concluido" component={noRequireAuth(CadastroConcluido)} />
+                  <Route path="/tipo-cadastro" component={noRequireAuth(TipoCadastro)} />
+                  <Route path="/recuperar-senha/nova-senha" component={noRequireAuth(RecuperarSenhaNova)} />
+                  <Route path="/dashboard" component={requireAuth(Dashboard)} />
+                  <Route path="/dashboard/*" component={requireAuth(Dashboard)} />
+                  <Route path="/criarFesta" component={requireAuth(CriarFesta)} />
+                  <Route path="/festa/:id" component={HomeConvidado} />
+                  <Route path="/festa/:id/lista-de-presentes" component={noRequireAuth(ListaPresentes)} />
+                  <Route path="/festa/:id/carrinho" component={noRequireAuth(Carrinho)} />
+                  <Route path="/festa/:id/pagamento" component={noRequireAuth(Pagamento)} />
+                  <Route path="/festa/:id/confirmacao" component={noRequireAuth(Checkout)} />
+                  <Route path="/organizador/:id/painel" component={noRequireAuth(PainelControle)} />
                 </Switch>
               </TransitionGroup>
             )
