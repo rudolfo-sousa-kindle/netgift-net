@@ -520,15 +520,13 @@ jQuery(document).ready(function ($) {
 
 
     //ABRIR MAPA
-    if ($("#mostrar-mapa").length > 0) {
-        $("#mostrar-mapa").click(function (e) {
-            e.preventDefault();
+    $("#mostrar-mapa").click(function (e) {
+        e.preventDefault();
 
-            var end = $("#endereco-festa").val();
+        var end = $("#endereco-festa").val();
 
-            window.open("https://www.google.com/maps/place/" + end, "_blank");
-        });
-    }
+        window.open("https://www.google.com/maps/place/" + end, "_blank");
+    });
 
 
     //TABELA COM SORT

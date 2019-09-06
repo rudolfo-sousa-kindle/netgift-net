@@ -10,6 +10,7 @@ import {fetchGetEvent, setThemeEvent, setSaulitationEvent, setLocalEvent} from "
 import {fetchTheme} from "../actions/themesActions"; 
 
 import Select from 'react-select';
+import arrow from '../assets/imgs/arrow-down.svg';
 
 const image2base64 = require('image-to-base64');
 
@@ -232,7 +233,7 @@ class SiteFesta extends Component {
         var reader = new FileReader();
         
         if(file){
-        var url = reader.readAsDataURL(file);
+            var url = reader.readAsDataURL(file);
 
             reader.onloadend = function (e) {
                 this.setState({
@@ -434,7 +435,7 @@ class SiteFesta extends Component {
                                         <p className="blue-small mT20">Título</p>
                                         <input onInput={() => this.onInput()} type="text" placeholder="Que bom que você está aqui!" className="bd-black" id="tituloSaudacao" defaultValue={EVENTO ? EVENTO.salutation.title : ""} />
                                         <p className="blue-small">Texto</p>
-                                        <textarea onInput={() => this.onInputDescricao()} id="saudacaoDescricao" name="name" className="bd-black" defaultValue={EVENTO ? EVENTO.salutation.text : ""}></textarea>
+                                       {EVENTO ? <textarea onInput={() => this.onInputDescricao()} id="saudacaoDescricao" name="name" className="bd-black">{EVENTO.salutation.text}</textarea>: ""}
                                         <button onClick={() => this.handleSetSaudacao()} className="fullcolor gradient w100">Atualizar</button>
                                     </div>
                                 </div>
@@ -449,15 +450,15 @@ class SiteFesta extends Component {
                                         <p className="gray">Apresente a festa para que os seus convidados entendam um pouco mais sobre o evento.
                                         <br /> Separe Rua, Número, Cidade e Estado por vírgula</p>
                                         <p className="blue-small">Local da Festa</p>
-                                        <input onInput={() => this.handleChangeLocal()} id="endereco" type="text" placeholder="R. Pereira da Silva, 259, Icaraí, Niterói - RJ" className="bd-black" />
-                                        <p className="blue-small">Exibir Mapa</p>
+                                        <input onInput={() => this.handleChangeLocal()} id="endereco-festa" type="text" placeholder="R. Pereira da Silva, 259, Icaraí, Niterói - RJ" defaultValue={EVENTO ? EVENTO.address.street : ""} className="bd-black" />
+                                        <p className="blue-small" id="mostrar-mapa">Exibir Mapa</p>
                                         <div className="flex flex-center flex-space mT20">
                                             <label className="switch">
                                                 <input type="checkbox" checked="" />
                                                 <span className="slider round"></span>
                                             </label>
                                             <p>Exibindo Mapa</p>
-                                            <img src="../assets/imgs/arrow-down.svg" alt="Ver mais" width="8px" />
+                                            <img src={arrow} alt="Ver mais" width="8px" />
                                         </div>
                                         <button onClick={() => this.handleSetLocal()} className="fullcolor gradient w100 mT20">Atualizar</button>
                                     </div>

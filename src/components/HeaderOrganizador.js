@@ -82,7 +82,7 @@ class HeaderOrganizador extends Component {
             this.state.events_list = eventsByUser;
         }
 
-        if ( undefined !== eventOrganizer.items && eventOrganizer.items.length !== 0 && undefined === eventOrganizer.items.ERROR ) {
+        if ( undefined !== eventOrganizer.items && eventOrganizer.items.length !== 0 && undefined === eventOrganizer.items.ERROR && undefined !== eventOrganizer.items.EVENTO ) {
             var slug  = eventOrganizer.items.EVENTO.slug;
         }
 

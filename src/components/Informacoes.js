@@ -92,7 +92,7 @@ class Informacoes extends Component {
 
                                 <div className="flex flex-column">
                                     <label htmlFor="nascimento-pessoa-1">Data de nascimento</label>
-                                    <input type="text" className="custom-date small" id="nascimento-pessoa-1" name="nascimento_pessoa_1" defaultValue={eventOrganizer.items.length !== 0 ? eventOrganizer.items.owners : ''} required readOnly />
+                                    <input type="text" className="custom-date small" id="nascimento-pessoa-1" name="nascimento_pessoa_1" defaultValue={undefined !== eventOrganizer.items && eventOrganizer.items.length !== 0 ? eventOrganizer.items.owners : ''} required readOnly />
                                 </div>
 
                                 <div className="flex flex-column">
