@@ -88,18 +88,20 @@ class SiteFesta extends Component {
         $( '#link-site' ).addClass( 'active' );
         this.props.fetchGetEvent(this.props.match.params.id)
         .then((res) => {
-            res.EVENTO.event_pictures.map((item) => {
-                // console.log(item.url)
-                this.setState({
-                    album : this.state.album.concat(item.url)
+            if ( 0 !== Object.keys( res.EVENTO.event_pictures ).length ) {
+                res.EVENTO.event_pictures.map((item) => {
+                    // console.log(item.url)
+                    this.setState({
+                        album : this.state.album.concat(item.url)
+                    })
+                    // console.log(this.state)
+                    this.state.album.map((item) => {
+                        console.log(item)
+                        var div = "<div className='photo-album' style=background-image: url(" + item + "))></div>"
+                        $("#grid-album").append(div);
+                    })
                 })
-                // console.log(this.state)
-                this.state.album.map((item) => {
-                    console.log(item)
-                    var div = "<div className='photo-album' style=background-image: url(" + item + "))></div>"
-                    $("#grid-album").append(div);
-                })
-            })
+            }
             this.props.fetchTheme(res.EVENTO.theme_id).then((res) => {
                 var sessions = {};
 
@@ -161,14 +163,16 @@ class SiteFesta extends Component {
                     sessions
                 };
 
-                res.sessions.map((sess) => {
+                if ( undefined !== res.sessions ) {
+                    res.sessions.map((sess) => {
 
-                    sess.sub_sessions.map((subSess) => {
-                        subSess.features.map( ( feature ) => {
-                            sessions[sess.session][subSess.sub_session][feature.name] = feature.value;
-                        });
+                        sess.sub_sessions.map((subSess) => {
+                            subSess.features.map( ( feature ) => {
+                                sessions[sess.session][subSess.sub_session][feature.name] = feature.value;
+                            });
+                        })
                     })
-                })
+                }
 
                 this.setState(() => {
                     return sessions

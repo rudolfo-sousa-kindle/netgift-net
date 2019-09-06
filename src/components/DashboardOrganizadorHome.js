@@ -26,7 +26,11 @@ class DashboardOrganizadorHome extends Component {
         this.props.fetchInvited(this.props.match.params.id).then( () => {
             setMasonry();
         });
-        this.props.fetchGetEvent(this.props.match.params.id);
+        this.props.fetchGetEvent(this.props.match.params.id).then( () => {
+            this.setState({
+                await: false
+            });
+        });
         this.props.fetchEventsByUser(localStorage.getItem('id_user'));
         setSelect2();
         $( '#link-home' ).addClass( 'active' );
@@ -93,7 +97,7 @@ class DashboardOrganizadorHome extends Component {
         }
 
         date_to_event = Math.round( ( date_to_event - Date.now() ) / ( 1000 * 3600 * 24 ) );
-
+console.log( date_to_event );
 
         return (
             <div>
