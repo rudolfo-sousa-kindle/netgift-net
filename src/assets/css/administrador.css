@@ -521,6 +521,12 @@ h3 {
     margin-top: 50%
 }
 
+form[name=form-financial] label {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 11px;
+}
+
 @media screen and (max-height: 600px) {
     #menu-mobile .bottom {
         margin-top: 20%
@@ -8386,6 +8392,12 @@ body.contato {
 
 .fileContainer > p {
     opacity: 0;
+}
+
+@media( max-width: 1700px ) {
+    div.form-extrato.grid {
+        grid-template-columns: 28% 28% 28% 1fr;
+    }
 }
 
 @media (max-width: 1330px) {

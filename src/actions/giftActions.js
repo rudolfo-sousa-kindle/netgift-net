@@ -1,5 +1,6 @@
 import axios from "axios";
 import { parse } from "path";
+import Snackbar from 'node-snackbar';
 
 export const FETCH_GIFT_BEGIN   = 'FETCH_GIFT_BEGIN';
 export const FETCH_GIFT_BEGIN_NEXT   = 'FETCH_GIFT_BEGIN_NEXT';
@@ -130,12 +131,18 @@ export function sendGift({description, nome_presente, image, category_id, price}
           var item = categoria[i];
           axios.post(`${URL}/gift/` + data.id + `/category/` + item)
           .then((res) => {
-            console.log(res)
           })
         }
         dispatch(sendGiftSuccess(data.success));
-        return data;
+        Snackbar.show({
+          pos: 'bottom-center',
+          text: 'Presente adicionado com sucesso',
+          backgroundColor: '#da1e1e',
+          showAction: false,
+          duration: 5000
+        });
         history.push("/dashboard/presentes/" + data.id);
+        return data;
       })
       .catch(error => dispatch(fetchGiftsFailure(error)));
   }
@@ -174,6 +181,13 @@ export function editGift({description, nome_presente, image, category_id, price,
           })
         }
         dispatch(sendGiftSuccess(data));
+        Snackbar.show({
+          pos: 'bottom-center',
+          text: 'Presente editado com sucesso',
+          backgroundColor: '#da1e1e',
+          showAction: false,
+          duration: 5000
+        });
         history.push("/dashboard/presentes")
         return data;
       })

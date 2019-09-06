@@ -14,7 +14,6 @@ import { fetchSetSlug } from '../actions/setSlugAction';
 import { fetchEventsByUser } from '../actions/eventsByUserAction';
 
 import ResumeOrganizer from './ResumeOrganizer';
-import EditInvited from './EditInvited';
 import Inviteds from './Inviteds';
 
 import anel from "../assets/imgs/anel.png";
@@ -24,11 +23,13 @@ import $ from 'jquery';
 class DashboardOrganizadorHome extends Component {
 
     componentDidMount() {
-        this.props.fetchInvited(this.props.match.params.id);
+        this.props.fetchInvited(this.props.match.params.id).then( () => {
+            setMasonry();
+        });
         this.props.fetchGetEvent(this.props.match.params.id);
         this.props.fetchEventsByUser(localStorage.getItem('id_user'));
         setSelect2();
-        setMasonry();
+        $( '#link-home' ).addClass( 'active' );
 
         var user = localStorage.getItem('user');
         if(user) { 
@@ -96,7 +97,6 @@ class DashboardOrganizadorHome extends Component {
 
         return (
             <div>
-                <EditInvited />
                 
                 <div className="container">
                     <div className="summary flex-end">

@@ -927,6 +927,19 @@
         display: block;
     }
 
+    .multi-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    div.valor-total {
+        width: 100%;
+    }
+
+    .transacao-mobile.active {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+
     .title-main-grid h6,
     .multi-grid p,
     .origem-mobile,

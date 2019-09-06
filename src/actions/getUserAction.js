@@ -32,3 +32,9 @@ export function fetchGetUser(id_user){
         .catch(error => dispatch(fetchGetUserFailure(error)));
     }
 }
+
+export function editUserImage(id, image){
+    return dispatch => {
+        dispatch(fetchGetUserBegin());
+    }
+}

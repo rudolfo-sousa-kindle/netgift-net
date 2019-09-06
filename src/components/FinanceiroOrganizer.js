@@ -7,6 +7,7 @@ import { CSVLink, CSVDownload } from "react-csv";
 
 import { fetchResumeFinancial } from '../actions/resumeFinancialAction';
 import setSelect2 from "../assets/js/setSelect2";
+import $ from 'jquery';
 
 import "../assets/css/jquery-ui.css";
 
@@ -14,6 +15,7 @@ class FinanceiroOrganizer extends Component {
     componentDidMount() {
         this.props.fetchResumeFinancial(this.props.match.params.id, 10, 1);
         setSelect2();
+        $( '#link-financeiro' ).addClass( 'active' );
     }
 
     render() {

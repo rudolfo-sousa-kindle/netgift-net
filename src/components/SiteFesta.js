@@ -85,6 +85,7 @@ class SiteFesta extends Component {
 
     componentDidMount(){
         this.props.fetchThemes( null, null, null, null, null, 1);
+        $( '#link-site' ).addClass( 'active' );
         this.props.fetchGetEvent(this.props.match.params.id)
         .then((res) => {
             res.EVENTO.event_pictures.map((item) => {
@@ -182,9 +183,7 @@ class SiteFesta extends Component {
         });
         setTimeout(() => {
             var preview = $(".uploadPicture").attr("src");
-            console.log(preview)
             this.state.header.background.imagem = preview;
-            console.log(this.state.header.background.imagem)
             sessions.header.background.imagem = preview;
             this.setState(() => {
                 return sessions
@@ -221,7 +220,9 @@ class SiteFesta extends Component {
     }
 
     handleSetTema(){
-        this.props.setThemeEvent(this.props.match.params.id, this.state.theme);
+        this.props.setThemeEvent(this.props.match.params.id, this.state.theme).then( ( res ) =>{
+            $( '.tema .title' ).html( res.event.theme.name );
+        });
     }
 
     handleSetSaudacao(){
@@ -272,6 +273,8 @@ class SiteFesta extends Component {
             sessions
         };
 
+        console.log( newValue )
+
         this.setState({
             theme : newValue.value
         })
@@ -288,8 +291,6 @@ class SiteFesta extends Component {
         this.setState(() => {
             return sessions
         })
-        
-        console.log(this.state);
 
         $("#btn1").removeClass("disabled");
         $(".config-cabecalho").removeClass("disabled");
@@ -297,7 +298,13 @@ class SiteFesta extends Component {
 
     render() {
         const {items} = this.props.themes;
-        const {EVENTO} = this.props.event.items
+
+        const {event} = this.props;
+        var EVENTO    = false;
+
+        if ( undefined !== event.items ) {
+            EVENTO = event.items.EVENTO;
+        }
 
         if(EVENTO){
             $("#enderecoEscrito").text(EVENTO.address.street);
@@ -325,6 +332,7 @@ class SiteFesta extends Component {
                 $("#titulo-about").text(EVENTO.salutation.title);
                 $("#descricao-about").text(EVENTO.salutation.text);
             }
+            console.log( EVENTO );
         return(
             <div className="site-aniversario">
                 <div className="container">

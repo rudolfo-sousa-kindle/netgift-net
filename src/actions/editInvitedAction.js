@@ -1,4 +1,7 @@
 import axios from "axios";
+import $ from "jquery";
+import Snackbar from 'node-snackbar';
+
 const URL   = "http://51.15.99.120:4700";
 
 export const FETCH_EDIT_INVITED_BEGIN   = 'FETCH_EDIT_INVITED_BEGIN';
@@ -26,10 +29,31 @@ export function fetchEditInvited(id_event, id_user, obj){
       return axios.put(`${URL}/invite/${id_event}/user/${id_user}/send`, obj)
         .then((response) => {
           var {data} = response;
-          console.log(response);
           dispatch(fetchEditInvitedSuccess(data));
+          $('.nb-spinner').hide();
+          setTimeout(() => {
+            Snackbar.show({
+                pos: 'bottom-center',
+                text: 'Dados do usuário alterados com sucesso',
+                backgroundColor: '#8332f5',
+                showAction: false,
+                duration: 5000
+            });
+          }, 1000);
           return data;
         })
-        .catch(error => dispatch(fetchEditInvitedFailure(error)));
+        .catch(error => {
+            $('.nb-spinner').hide();
+            setTimeout(() => {
+                Snackbar.show({
+                    pos: 'bottom-center',
+                    text: 'Não foi possível alterar os dados de usuário. Tente novamente mais tarde',
+                    backgroundColor: '#da1e1e',
+                    showAction: false,
+                    duration: 5000
+                });
+            }, 1000);
+            dispatch(fetchEditInvitedFailure(error))
+        });
     }
 }

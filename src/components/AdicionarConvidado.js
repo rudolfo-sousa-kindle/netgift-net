@@ -6,9 +6,11 @@ import { fetchInvited } from '../actions/invitedAction';
 import { fetchSendInvited } from '../actions/sendInviteAction';
 import { fetchListGroups } from '../actions/listGroupsAction';
 import ResumeOrganizerMobile from './ResumeOrganizerMobile';
+import CSVReader from 'react-csv-reader'
 
 import  $ from 'jquery';
 import setMask from '../assets/js/mask'
+import Snackbar from 'node-snackbar';
 
 import setTooltipster, { setMessages, setValidate } from '../assets/js/plugins';
 import setSelect2 from "../assets/js/setSelect2";
@@ -44,16 +46,37 @@ class AdicionarConvidado extends Component {
             objSendInvite.escort_child  = $('[name="criancas_convidado"]').val() !== '' ? parseInt($('[name="criancas_convidado"]').val()) : 0;
             objSendInvite.group_id      = parseInt($('[name="grupo_convidado"]').val());
 
-            if(element.target.className === 'gradient border bgwhite') {
-                objSendInvite.send_email = false;
-            } else if(element.target.className === 'gradient fullcolor' || element.target.className === 'fullcolor gradient w100 flex') {
-                objSendInvite.send_email = true;
+            if(element.target.className === 'gradient border bgwhite flex') {
+                objSendInvite.send_mail = false;
+            } else if(element.target.className === 'gradient fullcolor flex' || element.target.className === 'fullcolor gradient w100 flex') {
+                objSendInvite.send_mail = true;
             }
 
-            console.log($(element.target).find('.nb-spinner'))
+            console.log(this.props.match.params.id)
 
             this.props.fetchSendInvited( this.props.match.params.id, objSendInvite );
         }
+    }
+
+    handleForce( csv ) {
+        console.log( csv );
+        csv.map( ( convidado, index ) => {
+            var invite = {
+                "email": convidado[1],
+                "name": convidado[0],
+                "escort_adult": convidado[5],
+                "escort_child": convidado[6],
+                "group_id": convidado[4],
+                "telephone_ddd": convidado[2],
+                "telephone": convidado[3],
+                "send_mail": false
+            }
+            this.props.fetchSendInvited( this.props.match.params.id, invite, false, true );
+        });
+    }
+
+    triggerClick() {
+        $( '.csv-input' ).click();
     }
 
 
@@ -66,9 +89,15 @@ class AdicionarConvidado extends Component {
                     <div className="summary">
                         <div className="left">
                             <h2 className="title">Convidados</h2>
-                            {/* <div className="buttons">
-                                <button data-href="/logged/convidados-2.html" className="gradient fullcolor">Importar convidados</button>
-                            </div> */}
+                            <div className="buttons">
+                                <CSVReader
+                                    cssClass="gradient fullcolor"
+                                    onFileLoaded={( item ) => this.handleForce( item )}
+                                    onError={this.handleDarkSideForce}
+                                    inputStyle={{display : 'none'}}
+                                  />
+                                <button onClick={this.triggerClick} className="gradient fullcolor">Importar convidados</button>
+                            </div>
                         </div>
                         <div className="brief flex flex-end">
                             <div className="brief content">

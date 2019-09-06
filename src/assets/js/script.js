@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
 
 
     if ($("#menu-mobile").length > 0) {
-        $('#root > div').SecretNav({
+        $('#app').SecretNav({
             navSelector: '#menu-mobile', // selector of the nav tag
             openSelector: '.open-menu', // selector of the menu's opener
             position: 'left' // left | top
@@ -140,7 +140,6 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '[data-modal="confirmar-presenca"]', function (e) {
         e.stopPropagation();
         e.preventDefault();
-        console.log( 'teste' );
         $(".modal.confirmar-presenca").toggleClass("active");
     });
 
@@ -262,34 +261,32 @@ jQuery(document).ready(function ($) {
     }
 
     //ACCORDION SITE DO ANIVERSARIO
-    if ($(".config-accordion").length > 0) {
-        $(document).on('click', '.config-item .config-item-title', function (e) {
-            $(this).parent().toggleClass("active");
-            $(this).parent().find(".config-item-content").stop().slideDown();
-            
-            if (!$(this).parent().hasClass("active")) {
-                $(this).parent().find(".config-item-content").stop().slideUp();
-            }
-        });
+    $(document).on('click', '.config-item .config-item-title', function (e) {
+        $(this).parent().toggleClass("active");
+        $(this).parent().find(".config-item-content").stop().slideDown();
+        
+        if (!$(this).parent().hasClass("active")) {
+            $(this).parent().find(".config-item-content").stop().slideUp();
+        }
+    });
 
-        $(document).on('change', '.config-item [type="checkbox"]', function() {
-            if ( $(this).prop('checked') ) {
-                $(this).parents('.config-item').find('.config-item-content').stop().slideDown();
-            } else {
-                $(this).parents('.config-item').find('.config-item-content').stop().slideUp();
-                $(this).parents('.config-item').find('input').removeAttr('value');
-                $(this).parents('.config-item').find('textarea').val('');
-            }
-        });
+    $(document).on('change', '.config-item [type="checkbox"]', function() {
+        if ( $(this).prop('checked') ) {
+            $(this).parents('.config-item').find('.config-item-content').stop().slideDown();
+        } else {
+            $(this).parents('.config-item').find('.config-item-content').stop().slideUp();
+            $(this).parents('.config-item').find('input').removeAttr('value');
+            $(this).parents('.config-item').find('textarea').val('');
+        }
+    });
 
-        $('.config-accordion .fullcolor').click(function() {
-            $(this).find('.nb-spinner').show();
+    $('.config-accordion .fullcolor').click(function() {
+        $(this).find('.nb-spinner').show();
 
-            setTimeout(() => {
-                $(this).find('.nb-spinner').hide();
-            }, 1000);
-        })
-    }
+        setTimeout(() => {
+            $(this).find('.nb-spinner').hide();
+        }, 1000);
+    })
 
     $(".fullcolor.gradient.fileup-btn").click(function () {
         $(this).parents(".config-item").css("height", "auto");
@@ -492,35 +489,27 @@ jQuery(document).ready(function ($) {
 
 
     //EDITAR INFORMAÇÕES
+    $(document).on('click', '#edit-1', function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $("#save-1").css('display', 'flex');
 
-    if ($(".informacoes").length > 0) {
+        $(".form-1").find("input[readonly]").removeAttr("readonly");
+        $(".form-1").find("select[readonly]").removeAttr("readonly");
+    });
 
-        $("#edit-1").click(function (e) {
-            e.preventDefault();
-            $(this).hide();
-            $("#save-1").show();
+    $(document).on('click', '#edit-2', function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $("#save-2").css('display', 'flex');
 
-            $(".form-1").find("input[readonly]").removeAttr("readonly");
-            $(".form-1").find("select[readonly]").removeAttr("readonly");
-        });
-
-        $("#edit-2").click(function (e) {
-            e.preventDefault();
-            $(this).hide();
-            $("#save-2").show();
-
-            $(".form-2").find("input[readonly]").removeAttr("readonly");
-            $(".form-2").find("select[readonly]").removeAttr("readonly");
-        });
-
-        // $('.informacoes .gradient.fullcolor.bgwhite').click(function(e) {
-        //     e.preventDefault();
-        // })
-    }
-
+        $(".form-2").find("input[readonly]").removeAttr("readonly");
+        $(".form-2").find("select[readonly]").removeAttr("readonly");
+    });
+    
 
     //ABRIR MAPA
-    $("#mostrar-mapa").click(function (e) {
+    $(document).on( 'click', "#mostrar-mapa", function (e) {
         e.preventDefault();
 
         var end = $("#endereco-festa").val();
@@ -530,8 +519,6 @@ jQuery(document).ready(function ($) {
 
 
     //TABELA COM SORT
-
-    if ($(".custom-table").length > 0) {
         var table = $('.custom-table').DataTable({
             dom: 'frt',
             pageLength: 6,
@@ -572,7 +559,6 @@ jQuery(document).ready(function ($) {
         });
 
         $(".custom-table th").first().click().click();
-    }
 
     // ADICIONAR PRESENTE A LISTA
     $(document).on('click', '.card-gift .gradient', function () {
@@ -1293,7 +1279,7 @@ jQuery(document).ready(function ($) {
             x: -540
         });
 
-        $('.informacoes-gerais .fullcolor').html('Adicionar usuário');
+        $('.informacoes-gerais .fullcolor .text-btn-modal').html('Adicionar usuário');
 
         $('.informacoes-gerais input').each(function(index, item) {
             $(item).val('');
@@ -1307,14 +1293,19 @@ jQuery(document).ready(function ($) {
             ease: Power1.easeOut,
             x: 0
         });
-        $('.informacoes-gerais .fullcolor').html('adicionar usuário');
+
+        $('[data-open="usuarios"] .header-modal .title-modal').html('Adicionar novo usuário');
+        $('[data-open="usuarios"] .header-modal .subtitle-modal').show();
+        $('.informacoes-gerais .fullcolor .text-btn-modal').html('adicionar usuário');
         $(".add-usuario-content").css("display", "");
     });
 
 
     $(document).on('click', '.card-user-modal .editar', function() {
         $(".add-usuario-content").css("display", "inline-block");
-        $('.informacoes-gerais .fullcolor').html('Salvar alterações');
+        $('.informacoes-gerais .fullcolor .text-btn-modal').html('Salvar alterações');
+        $('[data-open="usuarios"] .header-modal .subtitle-modal').hide();
+        $('[data-open="usuarios"] .header-modal .title-modal').html('Editar usuário');
 
         TweenMax.to('.modal-content .usuarios-row', .3, {
             ease: Power1.easeOut,

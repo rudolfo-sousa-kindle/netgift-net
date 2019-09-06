@@ -27,6 +27,7 @@ class ModalUsuarios extends Component {
         });
 
         if(arrayInputs) {
+            $('.nb-spinner').show();
             objAddUser.email =         $('[name="email"]').val();
             objAddUser.first_name =    $('[name="first_name"]').val();
             objAddUser.last_name =     $('[name="last_name"]').val();
@@ -34,10 +35,10 @@ class ModalUsuarios extends Component {
             objAddUser.telephone =     $('[name="telephone"]').val();
             objAddUser.description =   $('[name="description"]').val();
             
+            let id_user = localStorage.getItem('id_user');
             if(item.target.innerHTML == 'Adicionar usuário') {
-                this.props.fetchAddUser(id_event, objAddUser);
+                this.props.fetchAddUser(id_event, id_user, objAddUser);
             } else {
-                let id_user = localStorage.getItem('id_user');
                 this.props.fetchEditUser(id_event, id_user, objAddUser); 
             }
         }
@@ -155,7 +156,7 @@ class ModalUsuarios extends Component {
 
                                 <div className="img-usuarios"><img src="../assets/imgs/modal-user-add.svg" alt="" /></div>
 
-                                <h4 className="title-modal">Adicionar novo usário</h4>
+                                <h4 className="title-modal">Adicionar novo usuário</h4>
                                 <p className="subtitle-modal">Adicionar um novo usuário faz com que ele tenha acesso ao site e possa ajudá-lo a organizar a melhor festa.</p>
 
                                 <div className="line"></div>
@@ -269,7 +270,7 @@ class ModalUsuarios extends Component {
                                                 <div className="flex mT20 footer-modal">
                                                     <div className="buttons flex flex-space w100">
                                                         <button className="text-gradient border grey open-users">Voltar</button>
-                                                        <button className="gradient fullcolor" onClick={(item) => this.configUser(item)}>Adicionar usuário</button>
+                                                        <button className="gradient fullcolor flex" onClick={(item) => this.configUser(item)}> <span className="text-btn-modal">Adicionar usuário</span> <span className="nb-spinner"></span></button>
                                                     </div>
                                                 </div>
                                             </form>

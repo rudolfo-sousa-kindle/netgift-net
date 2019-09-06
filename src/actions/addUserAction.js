@@ -47,7 +47,9 @@ export function fetchAddUser(id_event, id_user, obj){
         .then((response) => {
           var {data} = response;
           dispatch(fetchAddUserSuccess(data));
+          $('.nb-spinner').hide();
           setTimeout(() => {
+            $('.modal-white').removeClass('active');
             Snackbar.show({
                 pos: 'bottom-center',
                 text: 'Usuário adicionado com sucesso',
@@ -57,15 +59,16 @@ export function fetchAddUser(id_event, id_user, obj){
             });
           }, 1000);
           
-          return axios.put(`${URL}/users/${id_user}/picture`)
-          .then((response) => {
-            var {data} = response;
-            dispatch(fetchPictureUserSuccess(data));
-            return data;
-          })
-          .catch(error => dispatch(fetchPictureUserFailure(error)));
+          // return axios.put(`${URL}/users/${id_user}/picture`)
+          // .then((response) => {
+          //   var {data} = response;
+          //   dispatch(fetchPictureUserSuccess(data));
+          //   return data;
+          // })
+          // .catch(error => dispatch(fetchPictureUserFailure(error)));
         })
         .catch(error => {
+          $('.nb-spinner').hide();
           setTimeout(() => {
             Snackbar.show({
                 pos: 'bottom-center',

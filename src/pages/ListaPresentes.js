@@ -38,7 +38,11 @@ class ListaPresentes extends Component {
         this.props.dispatch(fetchThemeConfigurations());
         this.props.dispatch(fetchGetEvent(this.props.match.params.id)).then( ( response ) => {
             this.state.event_id = response.EVENTO.id;
-            this.props.dispatch(fetchGifts(response.EVENTO.id, ''));
+            this.props.dispatch(fetchGifts(response.EVENTO.id, '')).then( (response) => {
+                    this.setState({
+                        gifts: response.adicionados,
+                    });
+                });;
         });
     }
 
@@ -48,15 +52,14 @@ class ListaPresentes extends Component {
         if ( 0 !== this.state.event_id ) {
             this.props.dispatch(fetchGifts(this.state.event_id, search)).then( (response) => {
                 this.setState({
-                    gifts: response.gift,
+                    gifts: response.adicionados,
                 });
             } );
         } else {
             this.props.dispatch(fetchGetEvent(this.props.match.params.id)).then( ( response ) => {
                 this.props.dispatch(fetchGifts(response.EVENTO.id, search)).then( (response) => {
-                    console.log( response.gift );
                     this.setState({
-                        gifts: response.gift,
+                        gifts: response.adicionados,
                     });
                 });
             });
@@ -126,7 +129,75 @@ class ListaPresentes extends Component {
         const event_cart_link       = "/festa/" + id + "/carrinho";
         const event_payment_link    = "/festa/" + id + "/pagamento";
         let id_event;
-        console.log(this.props)
+
+        var sessions = {};
+
+        sessions['header'] = {};
+        sessions['header']["titulo"] = {};
+        sessions['header']["data"] = {};
+        sessions['header']["cta_presentear"] = {};
+        sessions['header']["cta_confirmar_presenca"] = {};
+        sessions['header']["faltam_n_dias"] = {};
+        sessions['header']["background"] = {};
+
+        sessions['saudacao'] = {};
+        sessions['saudacao']["titulo"] = {};
+        sessions['saudacao']["descricao"] = {};
+        sessions['saudacao']["background"] = {};
+
+        sessions['localizacao'] = {};
+        sessions['localizacao']["titulo"] = {};
+        sessions['localizacao']["data"] = {};
+        sessions['localizacao']["endereco"] = {};
+        sessions['localizacao']["background"] = {};
+
+        sessions['fotos'] = {}
+        sessions['fotos']["titulo"] = {};
+        sessions['fotos']["background"] = {};
+
+        sessions['rodape'] = {};
+        sessions['rodape']["titulo"] = {};
+        sessions['rodape']["cta_presentear"] = {};
+        sessions['rodape']["cta_confirmar_presenca"] = {};
+        sessions['rodape']["faltam_n_dias"] = {};
+        sessions['rodape']["background"] = {};
+
+        sessions['casamento-welcome'] = {};
+        sessions['casamento-welcome']["casament-welcome-titulo"] = {};
+        sessions['casamento-welcome']["casament-welcome-description"] = {};
+        sessions['casamento-welcome']["casamento-welcome-background"] = {};
+
+        sessions['casamento-about'] = {};
+        sessions['casamento-about']["casamento-about-titulo"] = {};
+        sessions['casamento-about']["casamento-about-description"] = {};
+        sessions['casamento-about']["casamento-about-background"] = {};
+
+        sessions['casamento-padrinhos'] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-title"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-description"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho-description"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho1-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho1-descricao"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinhos-background"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho2-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho2-descricao"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho3-titulo"] = {};
+        sessions['casamento-padrinhos']["casamento-padrinho3-descricao"] = {};
+        
+        if(undefined !== event && event.template !== undefined) {
+          event.template.sessions.map((sess) => {
+
+              sess.sub_sessions.map((subSess) => {
+                  subSess.features.map( ( feature ) => {
+                      sessions[sess.session][subSess.sub_session][feature.name] = feature.value;
+                  });
+              })
+          })
+        }
+        console.log( gifts );
+
+
         if(this.props.getEvent !== undefined) {
             event = this.props.event;
 
@@ -187,7 +258,7 @@ class ListaPresentes extends Component {
 
                 <ConfirmarPresenca />
 
-                <header className="webdoor" style={bgImage(event !== undefined ? event.template.sessions[0].sub_sessions[5].features[1].value: '')}>
+                <header className="webdoor" style={defaultStyle({backgroundImage:sessions.header.background.imagem, backgroundColor: sessions.header.background.fundo_cor})}>
                     <div className="container">
                         <div className="menu flex flex-space flex-center">
                             <nav className="flex">
@@ -211,12 +282,12 @@ class ListaPresentes extends Component {
 
                         <div className="intro-header flex flex-center">
                             <h1 className="title-header" id="titulo-header"
-                                style={defaultStyle({fontSize: fontSizeTitle, textAlign: textAlignTitle, color: colorTitle, bgColor: backgroundColorTitle, fontFamily: fontFamilyTitle})}
+                                style={defaultStyle({fontSize: sessions.header.titulo.texto_fonte_tamanho, textAlign: sessions.header.titulo.alinhamento, color: sessions.header.titulo.texto_fonte_cor, backgroundColor: sessions.header.titulo.texto_fundo_cor, fontFamily: sessions.header.titulo.estilo, fontWeight: sessions.header.titulo.negrito})}
                             >
                                 {event !== undefined ? event.EVENTO.name: ''}
                             </h1>
 
-                            <p className="txt-header">{event !== undefined ? event.template.description: ''}</p>
+                            <p className="txt-header" style={defaultStyle({fontSize: sessions.header.titulo.texto_fonte_tamanho, textAlign: sessions.header.titulo.alinhamento, color: sessions.header.titulo.texto_fonte_cor, backgroundColor: sessions.header.titulo.texto_fundo_cor, fontFamily: sessions.header.titulo.estilo, fontWeight: sessions.header.titulo.negrito})}>{event !== undefined ? event.template.description: ''}</p>
 
                             <div className="link-presente flex flex-center">
                                 <img src={presente} alt="lista de presentes" />
@@ -279,10 +350,10 @@ class ListaPresentes extends Component {
                         </div>
 
                         {
-                            gifts.length > 0 ? 
+                            this.state.gifts.length > 0 ? 
                             <div className="cards-gift flex flex-wrap">
                             {
-                                gifts.map((item) => {
+                                this.state.gifts.map((item) => {
                                     return (
                                         <div>
                                             <div className="card-gift flex flex-column" key={item.id}>
@@ -371,7 +442,7 @@ class ListaPresentes extends Component {
 
 const mapStateToProps = state => ({
     themeConfigurations: state.themeConfigurations.items,
-    event: state.getEvent.event,
+    event: state.getEvent.item,
     filterByCategory: state.filterByCategory,
     getEvent: state,
     gifts: state.gifts,

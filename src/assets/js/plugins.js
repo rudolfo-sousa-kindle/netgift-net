@@ -71,6 +71,20 @@ export default function setTooltipster() {
         trigger: 'custom',
         position: 'bottom'
     });
+
+    $('.form-1 input').tooltipster({
+        animation: 'fade',
+        updateAnimation: 'null',
+        trigger: 'custom',
+        position: 'bottom'
+    });
+
+    $('.form-2 input').tooltipster({
+        animation: 'fade',
+        updateAnimation: 'null',
+        trigger: 'custom',
+        position: 'bottom'
+    });
 }
 
 export function setMask() {
@@ -459,4 +473,81 @@ export function setValidate() {
             //funcao se tudo estiver ok
         }
     });
+
+    $('.form-1').validate({
+        rules: {
+            nome_pessoa_1: {
+                required: true,
+                minlength: 2
+            },
+            nascimento_pessoa_1: {
+                required: true,
+                dtNascimento: true
+            }
+        },
+        
+        errorPlacement: function (error, element) {
+            var ele = element,
+                err = error.text();
+                console.log(error)
+            ele.addClass('formError')
+            if (err != null && err !== '') {
+                setTooltipster();
+                ele.tooltipster('content', err);
+                ele.tooltipster('open');
+            }
+        },
+        
+        unhighlight:  function (element, errorClass, validClass) {
+            $(element)
+                  .removeClass("formError")
+                  .removeClass(errorClass)
+                  .addClass(validClass)
+                  .tooltipster('close');
+        },
+        submitHandler: function (form) {
+            //funcao se tudo estiver ok
+        }
+    });
+
+    $('.form-2').validate({
+        rules: {
+            nome_festa: {
+                required: true,
+                minlength: 2
+            },
+            data_festa: {
+                required: true,
+            },
+            hora_festa: {
+                required: true,
+            },
+            endereco_festa: {
+                required: true,
+            }
+        },
+        
+        errorPlacement: function (error, element) {
+            var ele = element,
+                err = error.text();
+                console.log(error)
+            ele.addClass('formError')
+            if (err != null && err !== '') {
+                ele.tooltipster('content', err);
+                ele.tooltipster('open');
+            }
+        },
+        
+        unhighlight:  function (element, errorClass, validClass) {
+            $(element)
+                  .removeClass("formError")
+                  .removeClass(errorClass)
+                  .addClass(validClass)
+                  .tooltipster('close');
+        },
+        submitHandler: function (form) {
+            //funcao se tudo estiver ok
+        }
+    });
+    
 }

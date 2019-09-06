@@ -71,14 +71,30 @@ export function signInAction({ email, password }, history) {
   return async dispatch => {
     try {
       const res = await axios.post(`${URL}/login`, { "email" : email, "password" : password, "facebook_id" : "" }, config);
-      dispatch({ type: AUTHENTICATED });
-      var jsonAux = JSON.stringify(res.data.user[0]);
-      var jsonAuxBanks = JSON.stringify(res.data.banks);
-      var jsonAuxEvents = JSON.stringify(res.data.events);
-      localStorage.setItem("user", jsonAux);
-      localStorage.setItem("banks", jsonAuxBanks);
-      localStorage.setItem("events", jsonAuxEvents);
-      history.push("/dashboard/home");
+        if ( res.status === 200 ) {
+          dispatch({ type: AUTHENTICATED });
+          var jsonAux = JSON.stringify(res.data.user[0]);
+          var jsonAuxBanks = JSON.stringify(res.data.banks);
+          var jsonAuxEvents = JSON.stringify(res.data.events);
+          localStorage.setItem("user", jsonAux);
+          localStorage.setItem("banks", jsonAuxBanks);
+          localStorage.setItem("events", jsonAuxEvents);
+          history.push("/dashboard/home");
+        } else {
+          dispatch({
+            type: AUTHENTICATION_ERROR,
+            payload: "Invalid email or password"
+          });
+          Snackbar.show({
+            pos: 'bottom-center',
+            text: 'E-mail ou senha inválidos',
+            backgroundColor: '#da1e1e',
+            showAction: false,
+            duration: 5000
+          });
+
+          return false;
+        }
     } catch (error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
@@ -282,7 +298,7 @@ export function fetchGifts(id, search){
     return axios.get(`${URL}/gift/event/${id}`, search)
       .then((response) => {
         var {data} = response;
-        dispatch(fetchGiftsSuccess(data.gift));
+        dispatch(fetchGiftsSuccess(data));
         return data;
       })
       .catch(error => dispatch(fetchGiftsFailure(error)));

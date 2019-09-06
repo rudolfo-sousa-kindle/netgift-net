@@ -53,9 +53,7 @@ $(document).ready(function ($) {
                     checkPoint = "etapa-5";
                     break;
             }
-
-            setMessages();
-            setValidate();
+            
             progress();
         }
     });
@@ -126,9 +124,6 @@ $(document).ready(function ($) {
 
         $(".etapa-2 .campos").append(novoCampo);
 
-        setMask();
-        setValidate();
-
         scrollToElement($(".etapa-2 .campos .linha-" + camposUsers), $(".etapa-2 .campos"));
 
         $(".etapa-2 .adicionar-campo").css("top", parseInt($(".etapa-2 .adicionar-campo").css("top")) + $(".etapa-2 .campos .linha-" + camposUsers).height() + 25);
@@ -139,6 +134,16 @@ $(document).ready(function ($) {
 
         $(".adicionar-campo.trash").show();
 
+    });
+
+    $(document).on('change', '.linha .label-checkbox', function() {
+        var storageUser = localStorage.getItem('user');
+        if($(this).prop('checked')) {
+            $(this).parents('.linha-1').find('input[type="email"]').val(JSON.parse(storageUser).email);
+        } else {
+            $(this).parents('.linha-1').find('input[type="email"]').val('');
+        }
+        
     });
 
     $(".adicionar-campo.trash").click(function() {
@@ -265,10 +270,6 @@ $(document).ready(function ($) {
                         var arr = Array.from($('.etapa-2 .campos .linha'));
                         $(".etapa-2 .adicionar-campo").css("top", "30px");
                     }
-
-                    setMask();
-                    setMessages();
-                    setValidate();
 
                     $("#mapa").hide();
 

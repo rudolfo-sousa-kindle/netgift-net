@@ -54,7 +54,6 @@ class HeaderOrganizador extends Component {
     
         if(user) { 
             this.props.fetchGetUser( user.id ).then( ( res ) => {
-                console.log( res.events );
                 localStorage.setItem( 'banks', JSON.stringify( res.banks ) );
                 localStorage.setItem( 'events', JSON.stringify( res.events ) );
                 localStorage.setItem( 'user', JSON.stringify( res.user[0] ) );
@@ -88,7 +87,6 @@ class HeaderOrganizador extends Component {
 
         return(
             <div>
-                <ModalUsuarios />
 
                 <MenuOrganizador id={this.props.id} />
 
@@ -101,7 +99,7 @@ class HeaderOrganizador extends Component {
                                 </Link>
                             </div>
                             <div className="options">
-                                <Link to={"/festa/" + slug} className="gradient border"><span>Ver meu site</span></Link>
+                                <a href={"/festa/" + slug} className="gradient border"><span>Ver meu site</span></a>
                                 <div className="notification"><span><i className="ng-notification"></i></span>
                                     <div className="notifications">
                                         <div className="flex flex-space flex-end notifications-header">
@@ -190,12 +188,12 @@ class HeaderOrganizador extends Component {
                                 </h1>
                                 <nav>
                                     <ul>
-                                        <li className="active"><Link to={"/dashboard/home/" + this.props.id}>Painel de Controle</Link></li>
-                                        <li><Link to={"/dashboard/lista-de-presentes/" + this.props.id}>Lista de Presentes</Link></li>
-                                        <li><Link to={"/dashboard/site/" + this.props.id}>Site da Festa</Link></li>
-                                        <li><Link to={"/dashboard/convidados/" + this.props.id}>Convidados</Link></li>
-                                        <li><Link to={"/dashboard/informacoes/" + this.props.id}>Informações</Link></li>
-                                        <li><Link to={"/dashboard/financeiro/" + this.props.id}>Financeiro</Link></li>
+                                        <li id="link-home"><Link to={"/dashboard/home/" + this.props.id}>Painel de Controle</Link></li>
+                                        <li id="link-presentes"><Link to={"/dashboard/lista-de-presentes/" + this.props.id}>Lista de Presentes</Link></li>
+                                        <li id="link-site"><Link to={"/dashboard/site/" + this.props.id}>Site da Festa</Link></li>
+                                        <li id="link-convidado"><Link to={"/dashboard/convidados/" + this.props.id}>Convidados</Link></li>
+                                        <li id="link-informacoes"><Link to={"/dashboard/informacoes/" + this.props.id}>Informações</Link></li>
+                                        <li id="link-financeiro"><Link to={"/dashboard/financeiro/" + this.props.id}>Financeiro</Link></li>
                                     </ul>
                                 </nav>
                             </div>

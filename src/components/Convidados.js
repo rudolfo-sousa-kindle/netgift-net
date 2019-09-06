@@ -20,6 +20,7 @@ class Convidados extends Component {
     componentDidMount() {
         this.props.fetchInvited(this.props.match.params.id);
         setMasonry();
+        $( '#link-convidado' ).addClass( 'active' );
     }
 
     filter() {

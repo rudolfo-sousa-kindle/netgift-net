@@ -68,11 +68,11 @@ export default class App extends Component {
                   <Route path="/dashboard" component={requireAuth(Dashboard)} />
                   <Route path="/dashboard/*" component={requireAuth(Dashboard)} />
                   <Route path="/criarFesta" component={requireAuth(CriarFesta)} />
-                  <Route path="/festa/:id" component={HomeConvidado} />
-                  <Route path="/festa/:id/lista-de-presentes" component={noRequireAuth(ListaPresentes)} />
+                  <Route path="/festa/:id/lista-de-presentes" component={ListaPresentes} />
                   <Route path="/festa/:id/carrinho" component={noRequireAuth(Carrinho)} />
                   <Route path="/festa/:id/pagamento" component={noRequireAuth(Pagamento)} />
                   <Route path="/festa/:id/confirmacao" component={noRequireAuth(Checkout)} />
+                  <Route path="/festa/:id" component={HomeConvidado} />
                   <Route path="/organizador/:id/painel" component={noRequireAuth(PainelControle)} />
                 </Switch>
               </TransitionGroup>

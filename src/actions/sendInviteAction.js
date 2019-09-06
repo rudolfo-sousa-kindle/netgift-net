@@ -25,7 +25,7 @@ export const fetchSendInvitedFailure = error => ({
     payload: { error }
 });
 
-export function fetchSendInvited(event_id, obj, send_to_all = false){
+export function fetchSendInvited(event_id, obj, send_to_all = false, is_import = false){
     return dispatch => {
       dispatch(fetchSendInvitedBegin());
       if ( send_to_all ) {
@@ -62,16 +62,18 @@ export function fetchSendInvited(event_id, obj, send_to_all = false){
             dispatch(fetchSendInvitedFailure(error))
           });
       } else {
+            console.log(obj)
         return axios.post(`${URL}/invite/${event_id}/send`, obj, config)
           .then((response) => {
             var {data} = response;
-            console.log(response)
             dispatch(fetchSendInvitedSuccess(data));
             $('.flex .nb-spinner').hide();
+
+            var message = obj.send_mail ? 'Convite enviado' : is_import ? 'Convidados adicionados' : 'Convidado adicionado';
             setTimeout(() => {
               Snackbar.show({
                   pos: 'bottom-center',
-                  text: 'Convite enviado',
+                  text: message,
                   backgroundColor: '#8332f5',
                   showAction: false,
                   duration: 5000

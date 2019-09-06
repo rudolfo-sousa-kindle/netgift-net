@@ -20,9 +20,8 @@ class EditInvited extends Component {
         objEditInvited.telephone =     $('.modal-invited [name="telephone"]').val();
         objEditInvited.description =   $('.modal-invited [name="description"]').val();
 
+        $('[data-open="convidados"] .nb-spinner').show();
         this.props.fetchEditInvited(id_event, id_user, objEditInvited); 
-        console.log(objEditInvited)
-        $('.modal-invited').removeClass('active');
 
         if(id_user == $('.card-convidados[data-id='+ id_user +']').attr('data-id')) {   
             if($('.modal-invited [name="email"]').val() !== '') {
@@ -143,7 +142,8 @@ class EditInvited extends Component {
                                             <div className="flex mT20 footer-modal">
                                                 <div className="buttons flex flex-space w100">
                                                     <button className="text-gradient border grey open-users">Voltar</button>
-                                                    <button className="gradient fullcolor" onClick={(item) => this.saveInvited(item)}>Salvar alterações</button>
+                                                    <button className="gradient fullcolor flex" onClick={(item) => this.saveInvited(item)}>Salvar alterações
+                                                    <span className="nb-spinner"></span></button>
                                                 </div>
                                             </div>
                                         </form>

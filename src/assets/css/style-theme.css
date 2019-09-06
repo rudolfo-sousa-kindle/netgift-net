@@ -20,7 +20,7 @@
 
 @media (max-width: 1024px) {
     .convidado .theme-site-header {
-        background-position: right;
+        background-position: center;
     }
 
     .area-convidado #titulo-header {

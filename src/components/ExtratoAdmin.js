@@ -40,6 +40,10 @@ class Extrato extends Component{
         })
     }
 
+    datails( item ) {
+        console.log( item )
+    }
+
     paginate = () => {
         var search         = $( '#nome-usuario' ).val();
         var date_start     = $( '#inicio-periodo' ).val();
@@ -154,7 +158,6 @@ class Extrato extends Component{
 
                 <div className="main-grid">
                     <div className="title-main-grid grid multi-grid">
-                        <p className="data-mobile">11/01/2018</p>
                         <h6>Data</h6>
                         <h6>Tipo</h6>
                         <h6>para</h6>
@@ -181,8 +184,6 @@ class Extrato extends Component{
                                     <div className="grid multi-grid flex-center">
                                         <div className="pill status green status-mobile">
                                             <span className="nome-mobile">{item.buyer}</span>
-
-                                            <div className="line"></div>
                                         </div>
 
                                         <p>{new Date( item.date ).toLocaleDateString( 'pt-br' )}</p>
@@ -211,14 +212,14 @@ class Extrato extends Component{
 
                                         <p>{new Date( item.possible_date ).toLocaleDateString( 'pt-br' )}</p>
 
-                                        <button className="btn-detalhes">detalhes</button>
+                                        <button className="btn-detalhes" onClick={this.details}>detalhes</button>
 
                                         <div className="transacao-mobile">
                                             <div className="line"></div>
                                             <div className="flex-space">
                                                 <div>
                                                     <span className="title-mobile">data</span>
-                                                    <p>13/01/2019</p>
+                                                    <p>{new Date( item.date ).toLocaleDateString( 'pt-br' )}</p>
                                                 </div>
 
                                                 <div>
@@ -228,17 +229,17 @@ class Extrato extends Component{
 
                                                 <div>
                                                     <span className="title-mobile">Taxas</span>
-                                                    <p className="taxas">R$13,00</p>
+                                                    <p className="taxas">R${`${taxa}`}</p>
                                                 </div>
 
                                                 <div>
                                                     <span className="title-mobile">Status</span>
-                                                    <p>Efetuado</p>
+                                                    <p>{item.status ? "Efetuado" : "Pendente"}</p>
                                                 </div>
 
                                                 <div>
                                                     <span className="title-mobile">Liberação</span>
-                                                    <p>13/02/19</p>
+                                                    <p>{new Date( item.possible_date ).toLocaleDateString( 'pt-br' )}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -247,10 +248,6 @@ class Extrato extends Component{
                             )
                         }) : "Nenhuma transação encontrada"
                     }
-
-                    <div className="title-main-grid multi-grid data-content-mobile">
-                        <p className="data-mobile">11/01/2018</p>
-                    </div>
 
                     {
                         last_page ? "" : <button className="btn-large" onClick={this.paginate}>Ver Mais</button>

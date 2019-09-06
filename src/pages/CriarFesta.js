@@ -84,7 +84,7 @@ class CriarFesta extends Component {
 
     
     criarFesta() {
-        console.log( this.props.match.params.type )
+
         if(this.props.authenticated && localStorage.getItem('user')) {
             return (
                 <div className="parent first-div">
@@ -93,7 +93,7 @@ class CriarFesta extends Component {
                             <div className="logo"><a href="/"><img src={logo} alt="NetGift" /></a></div>
                             <div className="account">
                                 <p><span>Não quer criar uma festa agora?</span> <span>Acesse sua conta</span></p>
-                                <Link to="/dashboard/home" className="gradient border hover-animation"><span>Minha conta</span></Link>
+                                <a href="/dashboard/home" className="gradient border hover-animation"><span>Minha conta</span></a>
                             </div>
                         </div>
                     </header>

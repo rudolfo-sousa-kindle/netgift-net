@@ -349,7 +349,7 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $('.btn-detalhes').click(function () {
+    $(document).on( 'click', '.btn-detalhes', function () {
         var transicaoExpanded = $(this).parent().find('.transacao-mobile');
         var btnDetalhes = transicaoExpanded.parent().find('.btn-detalhes');
 

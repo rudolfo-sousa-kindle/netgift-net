@@ -15,6 +15,7 @@ import $ from 'jquery';
 class PresentesOrganizador extends Component {
     componentDidMount() {
         this.props.fetchGetEvent(this.props.match.params.id);
+        $( '#link-presentes' ).addClass( 'active' );
     }
 
     transferTax(item) {

@@ -408,7 +408,7 @@ body.page-criar-festa .campos {
 body.page-criar-festa .campos .linha {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 35px;
     max-width: 620px;
 }
@@ -459,7 +459,7 @@ body.page-criar-festa .cbx span:first-child {
 }
 
 body.page-criar-festa .checkbox {
-    margin-bottom: -23px;
+    margin-top: 10px;
 }
 
 body.page-criar-festa .cbx span:last-child {
